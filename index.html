@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Chandigarh Multispeciality Dental Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Sans+Gurmukhi:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"Chandigarh Multispeciality Dental Clinic","telephone":"+919915510261","address":{"@type":"PostalAddress","streetAddress":"Morinda Road, Opposite Bus Stand","addressLocality":"Chamkaur Sahib","addressRegion":"Punjab","postalCode":"140112","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:00"}],"medicalSpecialty":"Dentistry"}
+</script>
+<style>
+/* Layout: dark, glassy, motion-rich. Floating pill nav, big hero with glossy tooth, treatment marquee,
+   bento grid with animated tiles, interactive chart, glass booking. Aqua→sky gradient is the brand; marigold marks selection only. */
+:root{
+  --bg:#051218; --bg2:#0a222b; --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.13);
+  --ink:#eaf7f7; --muted:#8fb1b6; --aqua:#2de2d0; --sky:#6cb8ff; --mark:#ffb52e; --on-aqua:#03201f;
+  --grad:linear-gradient(115deg,var(--aqua),var(--sky));
+  --blob1:rgba(45,226,208,.30); --blob2:rgba(108,184,255,.26);
+  --enamel:#f4fbfb; --root:#3a5d63; --tooth-line:#6f9a9f; --good:#4cc784; --shadow:0 30px 80px rgba(0,0,0,.45);
+  --f-display:"Plus Jakarta Sans","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
+  --f-hero:"Unbounded","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
+  --f-body:"Figtree","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
+  --rh:1.12em; --bad:#ff6b6b; --warn:#ffb52e; --smile-top:#ffffff; --smile-bot:color-mix(in srgb,var(--aqua) 50%,#ffffff);
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#eef8f8; --bg2:#dff1f1; --glass:rgba(255,255,255,.72); --glass2:rgba(255,255,255,.92); --line:rgba(6,60,70,.13);
+    --ink:#06222a; --muted:#46686e; --aqua:#079a8c; --sky:#2a7fd8; --mark:#f5a012; --on-aqua:#ffffff;
+    --blob1:rgba(45,226,208,.38); --blob2:rgba(108,184,255,.34); --smile-top:#c9f4ee; --smile-bot:#1fa89b; --bad:#c62828; --warn:#a85a00;
+    --enamel:#ffffff; --root:#cfe2e2; --tooth-line:#7fa3a6; --good:#1f8a4c; --shadow:0 30px 70px rgba(6,60,70,.16); color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#eef8f8; --bg2:#dff1f1; --glass:rgba(255,255,255,.72); --glass2:rgba(255,255,255,.92); --line:rgba(6,60,70,.13);
+  --ink:#06222a; --muted:#46686e; --aqua:#079a8c; --sky:#2a7fd8; --mark:#f5a012; --on-aqua:#ffffff;
+  --blob1:rgba(45,226,208,.38); --blob2:rgba(108,184,255,.34); --smile-top:#c9f4ee; --smile-bot:#1fa89b; --bad:#c62828; --warn:#a85a00;
+  --enamel:#ffffff; --root:#cfe2e2; --tooth-line:#7fa3a6; --good:#1f8a4c; --shadow:0 30px 70px rgba(6,60,70,.16); color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:balance;margin:0}
+/* Plus Jakarta Sans for headings and labels; Unbounded stays only on the hero headline and the footer word */
+.hero h1{font-family:var(--f-hero);font-weight:500}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:8px}
+.wrap{max-width:76rem;margin-inline:auto;padding-inline:1.1rem}
+.mono{font-family:var(--f-mono)}
+.gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font:500 .74rem/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--aqua)}
+.kicker::before{content:"";width:1.6rem;height:2px;background:var(--grad);border-radius:2px}
+/* Scrolling stays smooth: only the floating bars blur what is behind them; cards use plain translucent fills */
+.glass{background:var(--glass);border:1px solid var(--line)}
+.nav.glass,.callbar.glass,.toast.glass{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.chip.glass{background:color-mix(in srgb,var(--bg2) 90%,transparent)}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ambient background */
+.ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(120% 80% at 50% 0,var(--bg2),var(--bg) 60%)}
+.ambient i{position:absolute;border-radius:50%;will-change:transform;contain:strict}
+.ambient i:nth-child(1){width:52rem;height:52rem;background:radial-gradient(circle,var(--blob1) 0%,transparent 66%);top:-16rem;right:-16rem;animation:drift 18s ease-in-out infinite alternate}
+.ambient i:nth-child(2){width:46rem;height:46rem;background:radial-gradient(circle,var(--blob2) 0%,transparent 66%);top:22rem;left:-20rem;animation:drift 22s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(4rem,3rem) scale(1.15)}}
+
+/* nav */
+.navwrap{position:sticky;top:calc(env(safe-area-inset-top,0px) + .7rem);z-index:30;padding-inline:.8rem;margin-top:.7rem}
+.nav{max-width:64rem;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.5rem .55rem .5rem 1.1rem;border-radius:99px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font:500 .95rem var(--f-display);letter-spacing:-.02em}
+.brand svg{width:1.9rem;height:1.9rem}
+.brand small{display:block;font:400 .62rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.15rem}
+.nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;font-weight:500;font-size:.93rem}
+.nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav .acts{display:flex;gap:.5rem;align-items:center}
+.icon-btn{width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.icon-btn svg{width:1.15rem;height:1.15rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.1rem;padding:.6rem 1.5rem;border-radius:99px;font:600 1rem var(--f-body);text-decoration:none;border:1px solid var(--line);background:var(--glass);color:var(--ink);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--grad);border-color:transparent;color:var(--on-aqua);box-shadow:0 10px 30px color-mix(in srgb,var(--aqua) 40%,transparent)}
+.btn.sm{min-height:2.5rem;padding:.35rem 1.1rem;font-size:.92rem}
+.btn svg{width:1.1rem;height:1.1rem}
+@media(max-width:820px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(2.5rem,6vw,5rem) 2rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:2rem;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:.55rem;font:500 .78rem var(--f-mono);padding:.4rem .9rem;border-radius:99px}
+/* Only the state word (Open / Closed) and the dot change colour; the rest of the pill stays neutral.
+   closed = red, open = green, countdown under one hour = amber */
+.pill i{width:.55rem;height:.55rem;border-radius:50%;background:var(--bad);box-shadow:0 0 0 4px color-mix(in srgb,var(--bad) 28%,transparent)}
+.pill .stw{font-weight:600;color:var(--bad)}
+.pill.open i{background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 28%,transparent);animation:ping 2s infinite}
+.pill.open .stw{color:var(--good)}
+.pill.soon i{background:var(--warn);box-shadow:0 0 0 4px color-mix(in srgb,var(--warn) 30%,transparent);animation:ping 1.1s infinite}
+.pill.soon .stw{color:var(--warn)}
+@keyframes ping{50%{box-shadow:0 0 0 8px color-mix(in srgb,var(--good) 0%,transparent)}}
+.hero h1{font-size:clamp(2.5rem,7.2vw,5.6rem);margin:1.4rem 0 1.4rem;letter-spacing:-.045em}
+.hero .lede{color:var(--muted);font-size:1.18rem;max-width:34rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.stage{position:relative;aspect-ratio:1;max-width:30rem;margin-inline:auto;width:100%}
+.stage .ring{position:absolute;inset:6%;border-radius:50%;border:1px dashed var(--line);animation:spin 40s linear infinite}
+.stage .ring.b{inset:-2%;animation-duration:70s;animation-direction:reverse;border-style:solid;opacity:.5}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stage .glow{position:absolute;inset:14%;border-radius:50%;background:var(--grad);filter:blur(60px);opacity:.45}
+.stage svg.big{position:absolute;inset:8%;width:84%;height:84%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(2deg)}}
+.stage canvas.gl{position:absolute;inset:-8%;width:116%;height:116%;display:none;pointer-events:none}
+.stage.gl-on canvas.gl{display:block}
+.stage.gl-on svg.big{display:none}
+.stage.gl-on .spark{display:none}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.hero h1 .w{display:inline-block;animation:wordin .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*70ms + 120ms)}
+@keyframes wordin{from{transform:translateY(.6em) rotate(3deg);opacity:.15}to{transform:none;opacity:1}}
+.tilt{transition:transform .25s ease-out;will-change:transform}
+.spark{position:absolute;width:1rem;height:1rem;background:var(--ink);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);animation:tw 3s ease-in-out infinite}
+.spark:nth-of-type(1){top:14%;left:16%}.spark:nth-of-type(2){top:22%;right:12%;animation-delay:1s;width:.7rem;height:.7rem}.spark:nth-of-type(3){bottom:20%;left:8%;animation-delay:2s;width:.6rem;height:.6rem}
+@keyframes tw{0%,100%{transform:scale(.4);opacity:.3}50%{transform:scale(1);opacity:1}}
+.chip{position:absolute;display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;border-radius:1.1rem;box-shadow:var(--shadow);font-size:.85rem;line-height:1.25}
+.chip b{display:block;font:500 1rem var(--f-display);letter-spacing:-.02em}
+.chip span{color:var(--muted)}
+.chip .ic{width:2.3rem;height:2.3rem;border-radius:.8rem;background:var(--grad);display:grid;place-items:center;color:var(--on-aqua)}
+.chip .ic svg{width:1.2rem;height:1.2rem}
+.chip.c1{left:-2%;top:16%;animation:bob 5s ease-in-out infinite}
+.chip.c2{right:-3%;bottom:20%;animation:bob 6s ease-in-out infinite reverse}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}.stage{max-width:24rem}.chip.c1{left:0}.chip.c2{right:0}}
+
+/* marquee */
+.marquee{margin-top:2.5rem;overflow:hidden;border-block:1px solid var(--line);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:3rem;width:max-content;padding-block:1.1rem;animation:mq 32s linear infinite}
+.track span{display:flex;align-items:center;gap:3rem;font:500 1.5rem var(--f-display);letter-spacing:-.03em;white-space:nowrap;color:var(--muted)}
+.track span::after{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--grad)}
+@keyframes mq{to{transform:translate3d(-50%,0,0)}}
+
+section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.head{display:grid;gap:1.1rem;max-width:44rem;margin-bottom:2.6rem}
+.head h2{font-size:clamp(2rem,5vw,3.6rem)}
+.head p{color:var(--muted);font-size:1.1rem}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem}
+.tile{position:relative;border-radius:1.8rem;padding:1.6rem;overflow:hidden;min-height:17rem;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;transition:transform .3s}
+.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(22rem circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--aqua) 22%,transparent),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.tile:hover{transform:translateY(-4px)}
+.tile:hover::before{opacity:1}
+.tile h3{font-size:1.45rem;position:relative}
+.tile p{color:var(--muted);font-size:.97rem;position:relative;max-width:26rem}
+.tile .tag{position:relative;font:500 .7rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--aqua)}
+.tile svg.art{position:absolute;top:1rem;right:1rem;left:1rem;width:calc(100% - 2rem);height:9.5rem;overflow:visible}
+.t1{grid-column:span 3;grid-row:span 2;min-height:26rem}
+.t1 svg.art{height:15rem}
+.t2,.t3{grid-column:span 3}
+.t4,.t5{grid-column:span 3}
+.t6{grid-column:span 6;min-height:11rem;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.4rem}
+@media(max-width:900px){.t1,.t2,.t3,.t4,.t5{grid-column:span 6}.t1{grid-row:auto;min-height:22rem}}
+/* tile art */
+.art .stroke{fill:none;stroke:var(--tooth-line);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.art .fill{fill:var(--enamel);stroke:var(--tooth-line);stroke-width:2.5}
+.canal{fill:none;stroke:var(--aqua);stroke-width:5;stroke-linecap:round;stroke-dasharray:6 200;animation:canal 3.2s ease-in-out infinite}
+@keyframes canal{0%{stroke-dasharray:0 200}60%,100%{stroke-dasharray:200 0}}
+.beam{fill:var(--aqua);animation:sweep 3.4s ease-in-out infinite alternate;filter:drop-shadow(0 0 10px var(--aqua))}
+@keyframes sweep{from{transform:translateX(-8rem)}to{transform:translateX(8rem)}}
+.align rect{transform-box:fill-box;transform-origin:center bottom;animation:straight 4s ease-in-out infinite alternate}
+.align rect:nth-child(1){--r:-14deg}.align rect:nth-child(2){--r:9deg}.align rect:nth-child(3){--r:-6deg}.align rect:nth-child(4){--r:12deg}.align rect:nth-child(5){--r:-10deg}
+@keyframes straight{from{transform:rotate(var(--r)) translateY(3px)}to{transform:rotate(0) translateY(0)}}
+.chipped{animation:xf 4s ease-in-out infinite alternate}
+@keyframes xf{0%,35%{opacity:1}65%,100%{opacity:0}}
+.whole{animation:xf 4s ease-in-out infinite alternate-reverse}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pl 2.2s ease-in-out infinite}
+@keyframes pl{50%{transform:scale(1.4);opacity:.5}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.stat{border-radius:1.5rem;padding:1.4rem}
+.stat b{display:block;font:500 clamp(2rem,5vw,3.2rem)/1 var(--f-display);letter-spacing:-.04em;margin-bottom:.5rem}
+.stat span{color:var(--muted);font-size:.92rem}
+.stat b.txt{font-size:clamp(1.35rem,3.2vw,1.9rem);line-height:1.15;letter-spacing:-.03em;padding-block:.35rem .55rem}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* chart */
+.lab{border-radius:2rem;padding:clamp(1rem,3vw,2.2rem);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(1.2rem,3vw,3rem);box-shadow:var(--shadow)}
+@media(max-width:900px){.lab{grid-template-columns:minmax(0,1fr)}}
+.mouth{display:grid;grid-template-columns:1fr 1fr;position:relative}
+.mouth::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px dashed var(--line)}
+.mouth::after{content:"";position:absolute;top:50%;left:0;right:0;border-top:1px dashed var(--line)}
+.quad{display:flex;gap:2px;padding:1rem .2rem}
+.quad.r{justify-content:flex-end}.quad.l{justify-content:flex-start}
+.tooth{flex:1 1 0;min-width:0;max-width:3.4rem;background:none;border:0;padding:.15rem 0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.15rem;color:var(--muted);font:400 .62rem var(--f-mono)}
+.tooth svg{width:100%;height:auto;overflow:visible;transition:transform .2s}
+.tooth.low svg{transform:scaleY(-1)}
+.tooth:hover svg{transform:translateY(-4px)}
+.tooth.low:hover svg{transform:scaleY(-1) translateY(-4px)}
+.tooth .crown{fill:url(#enm);stroke:var(--tooth-line);stroke-width:1.5}
+.tooth .rootp{fill:var(--root);stroke:var(--tooth-line);stroke-width:1}
+.tooth[aria-pressed="true"]{color:var(--ink);font-weight:500}
+.tooth[aria-pressed="true"] .crown{fill:var(--mark);stroke:var(--mark);filter:drop-shadow(0 0 8px var(--mark))}
+.tooth.same .crown{stroke:var(--aqua);stroke-width:2.5}
+.tooth.low .n{order:-1}
+.side{display:flex;justify-content:space-between;font:400 .68rem var(--f-mono);color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.readout{display:grid;gap:.9rem;align-content:start}
+.readout .who{font:500 .76rem var(--f-mono);color:var(--aqua);letter-spacing:.08em;text-transform:uppercase}
+.readout h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.readout p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tags span{font:500 .82rem var(--f-body);padding:.35rem .85rem;border-radius:99px;border:1px solid var(--line);background:var(--glass)}
+.readout small{color:var(--muted);font-size:.8rem}
+.readout .btn{justify-self:start}
+.readout{scroll-margin-top:5.5rem;border-radius:1rem}
+.readout.flash{animation:rflash 1.1s ease-out}
+@keyframes rflash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--mark) 55%,transparent);background:color-mix(in srgb,var(--mark) 10%,transparent)}100%{box-shadow:0 0 0 14px transparent;background:transparent}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;border-radius:1.6rem;padding:1.5rem;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--grad);color:var(--on-aqua);font:500 1rem var(--f-display);margin-bottom:1.1rem}
+.steps b{display:block;font:500 1.2rem var(--f-display);letter-spacing:-.02em;margin-bottom:.4rem}
+.steps p{color:var(--muted);font-size:.96rem}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* book */
+.book{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.2rem;align-items:stretch}
+.book form{align-content:space-between}
+@media(max-width:900px){.book{grid-template-columns:minmax(0,1fr)}}
+.card{border-radius:2rem;padding:clamp(1.3rem,3vw,2.2rem)}
+.card h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:.9rem 0 1.6rem}
+.info{display:grid;gap:1.3rem;margin:0}
+.info dt{font:500 .7rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.info dd{margin:.25rem 0 0;font-size:1.1rem}
+.copyrow{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.copyrow b{font:500 clamp(1.4rem,3vw,1.9rem) var(--f-display);letter-spacing:-.03em;user-select:all}
+table{border-collapse:collapse;width:100%;max-width:21rem;font-size:.98rem}
+td{padding:.32rem 0;border-bottom:1px dashed var(--line)}
+td:last-child{text-align:right;font-family:var(--f-mono);font-size:.86rem}
+tr.today td{font-weight:600;color:var(--aqua)}
+form{display:grid;gap:1rem}
+form h3{font-size:1.6rem}
+label{display:grid;gap:.4rem;font:500 .84rem var(--f-body);color:var(--muted)}
+input,select,textarea{font:400 1rem var(--f-body);color:var(--ink);background:color-mix(in srgb,var(--bg) 55%,transparent);border:1px solid var(--line);border-radius:1rem;padding:.85rem 1rem;width:100%}
+select option{background:var(--bg2);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--aqua);outline-offset:1px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media(max-width:480px){.two{grid-template-columns:minmax(0,1fr)}}
+.tooth-note{font:500 .82rem var(--f-mono);color:var(--mark);min-height:1.2em}
+form .fine{font-size:.82rem;color:var(--muted)}
+
+/* rating, faq */
+.rate{border-radius:2rem;padding:clamp(1.4rem,4vw,2.6rem);display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;justify-content:space-between}
+.rate .num{font:500 clamp(4rem,11vw,7rem)/.9 var(--f-display);letter-spacing:-.06em}
+.rate .big{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+.stars{display:flex;gap:.25rem}
+.stars svg{width:1.7rem;height:1.7rem}
+.rate p{color:var(--muted);margin-top:.5rem}
+.faq{display:grid;gap:.7rem}
+details{border-radius:1.4rem;padding:1.2rem 1.5rem}
+summary{cursor:pointer;font:500 1.15rem var(--f-display);letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);font:400 1.1rem var(--f-mono);color:var(--aqua);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:.7rem;max-width:44rem}
+
+footer{position:relative;padding-block:3rem 2rem;overflow:hidden;border-top:1px solid var(--line)}
+/* footer word: glossy enamel with a moving shine and twinkles */
+footer .word{position:relative;width:fit-content;max-width:100%;font:600 clamp(2.4rem,12vw,10rem)/1.05 var(--f-hero);letter-spacing:-.06em;margin-bottom:1.6rem;padding-bottom:.05em;
+  background:
+    linear-gradient(105deg,transparent 42%,rgba(255,255,255,.95) 50%,transparent 58%) no-repeat,
+    linear-gradient(180deg,var(--smile-top) 0%,var(--smile-bot) 100%);
+  background-size:250% 100%,100% 100%;background-position:160% 0,0 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:1px color-mix(in srgb,var(--tooth-line) 80%,transparent);
+  filter:drop-shadow(0 6px 26px color-mix(in srgb,var(--aqua) 38%,transparent));
+  animation:enamel 4.5s ease-in-out infinite}
+@keyframes enamel{0%,30%{background-position:160% 0,0 0}75%,100%{background-position:-60% 0,0 0}}
+footer .word::before,footer .word::after{content:"";position:absolute;width:clamp(.9rem,2.6vw,1.9rem);aspect-ratio:1;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);filter:drop-shadow(0 0 8px var(--aqua));animation:tw 2.6s ease-in-out infinite;-webkit-text-stroke:0}
+footer .word::before{top:6%;left:12%}
+footer .word::after{top:14%;right:2%;animation-delay:1.3s}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;color:var(--muted);font-size:.9rem}
+.callbar{display:none}
+@media(max-width:820px){
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;inset-inline:.7rem;bottom:calc(.7rem + env(safe-area-inset-bottom,0px));z-index:40;padding:.5rem;border-radius:99px;box-shadow:var(--shadow)}
+  footer{padding-bottom:6rem}
+}
+.rv{transform:translateY(28px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{transform:none}
+}
+
+/* ---- hero motion ---- */
+:root{--grad-shine:linear-gradient(100deg,var(--aqua),var(--sky),var(--aqua) 60%,var(--sky))}
+.hero .gt{background-image:var(--grad-shine);background-size:250% 100%;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.roll{display:inline-block;height:var(--rh);overflow:hidden;vertical-align:bottom;padding-right:.05em}
+.rollbox{display:flex;flex-direction:column;animation:roll 9s cubic-bezier(.7,0,.2,1) infinite}
+.rollbox>span{display:block;height:var(--rh);line-height:var(--rh);white-space:nowrap}
+@keyframes roll{
+  0%,20%{transform:translateY(0)}
+  25%,45%{transform:translateY(calc(var(--rh) * -1))}
+  50%,70%{transform:translateY(calc(var(--rh) * -2))}
+  75%,95%{transform:translateY(calc(var(--rh) * -3))}
+  100%{transform:translateY(calc(var(--rh) * -4))}
+}
+/* "Smile": glossy enamel lettering, a drawn smile with teeth that light up in a wave */
+.smile{position:relative;padding-bottom:.34em}
+.smile .sm-t{display:inline-block;padding-bottom:.04em;
+  background:
+    linear-gradient(105deg,transparent 40%,rgba(255,255,255,1) 50%,transparent 60%) no-repeat,
+    linear-gradient(180deg,var(--smile-top) 0%,var(--smile-bot) 100%);
+  background-size:260% 100%,100% 100%;background-position:170% 0,0 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:1.5px color-mix(in srgb,var(--tooth-line) 85%,transparent);
+  filter:drop-shadow(0 4px 22px color-mix(in srgb,var(--aqua) 45%,transparent));
+  animation:enamel 4.2s 1.4s ease-in-out infinite}
+.smile::before,.smile::after{content:"";position:absolute;width:.32em;aspect-ratio:1;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);filter:drop-shadow(0 0 8px var(--aqua));animation:tw 2.4s ease-in-out infinite}
+.smile::before{top:-.06em;left:-.1em}
+.smile::after{top:.06em;right:-.12em;animation-delay:1.2s}
+.sm-svg{position:absolute;left:50%;bottom:.02em;height:.3em;width:auto;transform:translateX(-50%);overflow:visible}
+.sm-svg .lip{stroke-dasharray:230;stroke-dashoffset:230;animation:lipdraw 1s .9s ease-out forwards}
+@keyframes lipdraw{to{stroke-dashoffset:0}}
+.sm-svg .tt{fill:#fff;stroke:var(--tooth-line);stroke-width:.8;transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);
+  animation:tpop .5s calc(1.5s + var(--k)*.09s) cubic-bezier(.3,1.7,.5,1) forwards,tshine 3.6s calc(3s + var(--k)*.15s) ease-in-out infinite}
+@keyframes tpop{to{transform:scaleY(1)}}
+@keyframes tshine{0%,68%,100%{fill:#fff;filter:none}80%{fill:#bffff4;filter:drop-shadow(0 0 5px #2de2d0)}}
+@media(prefers-reduced-motion:reduce){.sm-svg .lip{stroke-dashoffset:0}.sm-svg .tt{transform:none}}
+/* Hindi and Punjabi: no negative tracking, taller lines so matras are not clipped */
+html[lang="hi"],html[lang="pa"]{--rh:1.45em}
+html[lang="hi"] *,html[lang="pa"] *{letter-spacing:normal!important}
+html[lang="hi"] h1,html[lang="hi"] h2,html[lang="hi"] h3,html[lang="pa"] h1,html[lang="pa"] h2,html[lang="pa"] h3{line-height:1.3}
+html[lang="hi"] .hero h1,html[lang="pa"] .hero h1{font-size:clamp(2.2rem,6.4vw,4.6rem)}
+html[lang="hi"] body,html[lang="pa"] body{line-height:1.7}
+/* language switch */
+.lang{display:flex;gap:2px;padding:3px;border-radius:99px;border:1px solid var(--line);background:var(--glass)}
+.lang button{border:0;background:transparent;color:var(--muted);font:600 .8rem var(--f-body);min-width:2.3rem;height:2.3rem;padding:0 .5rem;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--grad);color:var(--on-aqua)}
+.hero .sub{font:500 clamp(1.15rem,2.6vw,1.6rem)/1.2 var(--f-display);letter-spacing:-.03em;margin-bottom:1rem}
+.marquee.alt{margin-top:0;border-top:0}
+.marquee.alt .track{animation-duration:46s}
+.track.rev{animation-direction:reverse}
+.marquee.alt .track span{color:var(--ink);-webkit-text-stroke:0;font-size:1.5rem;font-weight:500;letter-spacing:-.01em}
+.marquee .track{will-change:transform;backface-visibility:hidden;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.stage{cursor:pointer;-webkit-user-select:none;user-select:none}
+.stage.gl-on canvas.gl{pointer-events:none}
+.hint{position:absolute;left:50%;bottom:-.3rem;transform:translateX(-50%);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap;animation:hintp 2.4s ease-in-out infinite}
+@keyframes hintp{50%{opacity:.4;transform:translate(-50%,-4px)}}
+.star{position:fixed;z-index:70;pointer-events:none;width:var(--s,.9rem);height:var(--s,.9rem);background:var(--c,#fff);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);filter:drop-shadow(0 0 6px var(--c,#fff))}
+.hero-cta .btn{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .2s}
+@media(max-width:700px){.marquee.alt .track span{font-size:1.2rem}.hint{bottom:-1rem}}
+
+/* ---- mobile ---- */
+html{-webkit-text-size-adjust:100%}
+a,button,summary,.tooth{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+section[id]{scroll-margin-top:5.5rem}
+@media(hover:none){.tile:hover,.btn:hover{transform:none}.tooth:hover svg{transform:none}.tooth.low:hover svg{transform:scaleY(-1)}}
+@media(max-width:900px){
+  /* treatments become a swipeable carousel */
+  .bento{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-1.1rem;padding:.2rem 1.1rem 1rem;scroll-padding-inline:1.1rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .bento::-webkit-scrollbar{display:none}
+  .bento .tile{flex:0 0 min(82%,22rem);grid-column:auto;grid-row:auto;min-height:20rem;scroll-snap-align:start}
+  .bento .t1 svg.art{height:9.5rem}
+  .bento .t6{flex-direction:column;align-items:flex-start;justify-content:flex-end}
+  .swipe{display:flex!important}
+}
+.dots{display:none;justify-content:center;gap:.5rem;margin-top:.2rem}
+.dots button{width:.55rem;height:.55rem;padding:0;border-radius:99px;border:0;background:var(--line);cursor:pointer;transition:width .3s,background .3s}
+.dots button.on{width:1.6rem;background:var(--grad)}
+@media(max-width:900px){.dots{display:flex}}
+.swipe{display:none;align-items:center;gap:.6rem;margin:-1.2rem 0 1rem;font:500 .74rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.swipe svg{width:1.1rem;height:1.1rem;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(6px)}}
+@media(max-width:820px){
+  .nav .acts .btn{display:none}
+  .nav{padding-left:.9rem}
+  .icon-btn{width:2.75rem;height:2.75rem}
+  body{padding-bottom:0}
+}
+@media(max-width:700px){
+  section{padding-block:3rem}
+  .hero{padding-top:1.6rem}
+  .hero h1{font-size:clamp(2.1rem,10.5vw,3.2rem);letter-spacing:-.04em;margin-block:1.1rem}
+  .hero .lede{font-size:1.05rem}
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{width:100%}
+  .stage{max-width:19rem;margin-top:.5rem}
+  .chip{padding:.5rem .7rem;font-size:.75rem;gap:.5rem}
+  .chip b{font-size:.85rem}
+  .chip .ic{width:1.9rem;height:1.9rem;border-radius:.65rem}
+  .chip.c1{left:-2%;top:8%}.chip.c2{right:-2%;bottom:10%}
+  .ambient i:nth-child(1){width:34rem;height:34rem;top:-10rem;right:-14rem}.ambient i:nth-child(2){width:30rem;height:30rem;left:-16rem}
+  .marquee{margin-top:1.6rem}
+  .track span{font-size:1.05rem;gap:1.8rem}.track{gap:1.8rem}
+  .head{margin-bottom:1.8rem}
+  .head p{font-size:1rem}
+  .stat{padding:1.1rem}
+  .lab{padding:1rem;border-radius:1.6rem}
+  /* chart: one quadrant per row so every tooth is a real tap target */
+  .mouth{grid-template-columns:minmax(0,1fr);gap:.2rem}
+  .mouth::before,.mouth::after{display:none}
+  .side{display:none}
+  .quad,.quad.r,.quad.l{justify-content:center;gap:3px;padding:1.5rem .1rem .6rem;position:relative;border-bottom:1px dashed var(--line)}
+  .quad:last-child{border-bottom:0}
+  .quad::before{content:attr(data-label);position:absolute;top:.3rem;left:.2rem;font:500 .66rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .tooth{max-width:none;padding:.3rem 0;font-size:.68rem}
+  .tooth svg{max-width:2.6rem}
+  .readout .btn{width:100%}
+  .steps li{padding:1.2rem}
+  .card{border-radius:1.6rem}
+  .copyrow b{font-size:1.35rem}
+  .rate{border-radius:1.6rem}
+  .rate .btn{width:100%}
+  details{padding:1rem 1.1rem}
+  summary{font-size:1.02rem}
+  footer .word{font-size:clamp(2.4rem,13vw,4rem)}
+}
+/* WhatsApp buttons in WhatsApp green (same in light and dark) */
+#wabtn,#wa{background:#25d366;border-color:#25d366;color:#052e16;font-weight:700;box-shadow:0 8px 22px rgba(37,211,102,.35)}
+#wabtn:hover,#wa:hover{background:#3ee07d;border-color:#3ee07d}
+/* Call button in blue, so it differs from the green WhatsApp button and the teal booking buttons */
+#callbtn{background:#1f6fd0;border-color:#1f6fd0;color:#ffffff;font-weight:700;box-shadow:0 8px 22px rgba(31,111,208,.35)}
+#callbtn:hover{background:#2f80e6;border-color:#2f80e6}
+/* shown when the phone dialer does not open after tapping Call */
+.toast{position:fixed;left:50%;bottom:calc(5.4rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:.9rem;padding:.55rem .6rem .55rem 1.2rem;border-radius:99px;box-shadow:var(--shadow);max-width:calc(100% - 1.6rem);white-space:nowrap}
+.toast[hidden]{display:none}
+.toast b{font:700 1.05rem var(--f-display);letter-spacing:-.01em}
+@media(min-width:821px){.toast{bottom:1.4rem}}
+/* ---- Plus Jakarta Sans weights (kept here so they win over the earlier component rules) ---- */
+.stat b,.rate .num{font-weight:800;letter-spacing:-.03em}
+.steps b,summary,.chip b,.hero .sub,.brand,.copyrow b,.steps li::before{font-weight:700;letter-spacing:-.015em}
+.track span{font-weight:700;letter-spacing:-.02em}
+.marquee.alt .track span{font-weight:600;letter-spacing:-.01em}
+/* ---- layout safety for longer text (all languages) and Indic scripts ---- */
+.tile{min-height:0;padding-top:11.5rem}
+.t1{padding-top:16.5rem}
+.t6{padding-top:1.6rem}
+.tile p,.tile h3,.steps p,.head p{overflow-wrap:anywhere}
+.btn{text-align:center;line-height:1.3;padding-block:.7rem}
+.brand span,.lang button,.nav .acts,.nav ul a{white-space:nowrap}
+@media(max-width:980px){.nav ul{display:none}}
+.chip{max-width:12.5rem}
+.swipe{margin:-.8rem 0 1rem}
+html:is([lang="hi"],[lang="pa"]) .sm-t,
+html:is([lang="hi"],[lang="pa"]) footer .word{-webkit-text-stroke:0;filter:drop-shadow(0 0 1px var(--tooth-line)) drop-shadow(0 4px 20px color-mix(in srgb,var(--aqua) 40%,transparent))}
+html:is([lang="hi"],[lang="pa"]) .sm-t,
+html:is([lang="hi"],[lang="pa"]) footer .word{font-weight:600;background-image:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.95) 50%,transparent 60%),var(--grad)}
+html:is([lang="hi"],[lang="pa"]) .hero h1{margin-bottom:1.6rem;font-size:clamp(2.4rem,8.5vw,4.6rem)}
+html:is([lang="hi"],[lang="pa"]) .hero h1 .smile{padding-right:.22em;margin-right:.12em}
+html:is([lang="hi"],[lang="pa"]) .hero h1 .roll{margin-left:.06em;padding-right:.15em}
+html:is([lang="hi"],[lang="pa"]) .hero .sub{line-height:1.45;margin-top:.4rem}
+html:is([lang="hi"],[lang="pa"]) .hero .lede{line-height:1.75}
+html:is([lang="hi"],[lang="pa"]) .head h2{font-size:clamp(1.7rem,4.2vw,2.8rem)}
+html:is([lang="hi"],[lang="pa"]) .tile h3{font-size:1.25rem}
+html:is([lang="hi"],[lang="pa"]) .readout h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
+html:is([lang="hi"],[lang="pa"]) .card h2{font-size:clamp(1.6rem,3.6vw,2.3rem)}
+html:is([lang="hi"],[lang="pa"]) .steps b,html:is([lang="hi"],[lang="pa"]) summary{font-size:1.05rem}
+html:is([lang="hi"],[lang="pa"]) .stat b{line-height:1.15}
+html:is([lang="hi"],[lang="pa"]) .tile .tag,html:is([lang="hi"],[lang="pa"]) .kicker{letter-spacing:.02em;line-height:1.4}
+html:is([lang="hi"],[lang="pa"]) .nav ul{gap:1rem;font-size:.86rem}
+html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2.2rem,10vw,8rem)}
+@media(max-width:1020px){html:is([lang="hi"],[lang="pa"]) .nav ul{display:none}}
+@media(max-width:900px){.bento .tile{padding-top:11.5rem}.bento .t1{padding-top:11.5rem}.bento .t6{padding-top:1.6rem}}
+/* small laptops and tablets in landscape: keep the 3D canvas inside the screen, and size the Hindi/Punjabi headline for the narrower column */
+@media(min-width:901px) and (max-width:1279px){.stage canvas.gl{inset:-2%;width:104%;height:104%}}
+@media(min-width:901px){html:is([lang="hi"],[lang="pa"]) .hero h1{font-size:clamp(2.2rem,4.4vw,4.6rem)}}
+/* very narrow phones: keep the 3D canvas inside the screen */
+@media(max-width:380px){.stage.gl-on canvas.gl,.stage canvas.gl{inset:-4%;width:108%;height:108%}}
+/* phones: one treatment at a time, the next one slides in */
+@media(max-width:640px){.bento{gap:1.3rem}.bento .tile{flex:0 0 100%;min-height:21rem}}
+@media(max-width:430px){
+  .lang button{min-width:2.3rem;height:2.4rem;padding:0 .35rem;font-size:.78rem}
+  .nav{gap:.4rem;padding-right:.4rem}
+  .nav .acts{gap:.35rem}
+  .brand svg{width:1.6rem;height:1.6rem;flex:none}
+  .brand{gap:.45rem;font-size:.72rem;min-width:0}
+  #theme{display:none}
+  .nav{max-width:100%}
+}
+@media(max-width:380px){
+  .brand small{display:none}
+  .brand{font-size:.88rem}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="lipg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2de2d0"/><stop offset="1" stop-color="#6cb8ff"/></linearGradient><linearGradient id="enm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--enamel)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--enamel) 70%,var(--aqua))"/></linearGradient></defs></svg>
+<div class="ambient" aria-hidden="true"><i></i><i></i></div>
+
+<div class="navwrap">
+  <div class="nav glass">
+    <a class="brand" href="#top" aria-label="Chandigarh Dental home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2de2d0"/><stop offset="1" stop-color="#6cb8ff"/></linearGradient></defs><rect width="40" height="40" rx="13" fill="url(#lg)"/><path fill="#fff" d="M20 12.5c-3-2.4-8-1.6-8.600 3.200-.4 3.600 1.600 5.600 2.100 9 .3 2 .6 3.800 1.800 3.800 1.500 0 1.400-4.300 4.700-4.300s3.200 4.300 4.700 4.300c1.200 0 1.500-1.800 1.800-3.800.5-3.400 2.500-5.400 2.100-9-.6-4.800-5.600-5.600-8.600-3.200z"/></svg>
+      <span>Chandigarh Dental<small>Chamkaur Sahib</small></span>
+    </a>
+    <ul><li><a href="#treatments">Treatments</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li></ul>
+    <div class="acts">
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true" lang="en">EN</button><button type="button" data-l="pa" aria-pressed="false" lang="pa" aria-label="ਪੰਜਾਬੀ">ਪੰ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi" aria-label="हिन्दी">हि</button></div>
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.800z"/></svg></button>
+      <a class="btn solid sm" href="#book">Book a visit</a>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+<div class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <span class="pill glass" id="openpill"><i></i><span id="opentext">Mon–Sat · 10 AM – 7 PM</span></span>
+      <h1 id="h1" aria-label="Smile like you mean it."><span class="w smile" style="--i:0" aria-hidden="true"><span class="sm-t">Smile</span><svg class="sm-svg" viewBox="0 0 200 44" aria-hidden="true"><path class="lip" d="M8 8Q100 46 192 8" fill="none" stroke="url(#lipg)" stroke-width="5" stroke-linecap="round"/><rect class="tt" style="--k:0" x="38.8" y="18.5" width="12" height="13" rx="4"/><rect class="tt" style="--k:1" x="57.2" y="22" width="12" height="13" rx="4"/><rect class="tt" style="--k:2" x="75.6" y="24.3" width="12" height="13" rx="4"/><rect class="tt" style="--k:3" x="94" y="25" width="12" height="13" rx="4"/><rect class="tt" style="--k:4" x="112.4" y="24.3" width="12" height="13" rx="4"/><rect class="tt" style="--k:5" x="130.8" y="22" width="12" height="13" rx="4"/><rect class="tt" style="--k:6" x="149.2" y="18.5" width="12" height="13" rx="4"/></svg></span> <span class="w" style="--i:1" aria-hidden="true">like</span> <span class="w" style="--i:2" aria-hidden="true">you</span> <span class="w roll" style="--i:3" aria-hidden="true"><span class="rollbox"><span class="gt">mean it.</span><span class="gt">own it.</span><span class="gt">share it.</span><span class="gt">keep it.</span><span class="gt">mean it.</span></span></span></h1>
+      <p class="sub"><span class="gt">Experienced dentistry</span> in Chamkaur Sahib.</p>
+      <p class="lede">Root canals, laser dentistry, braces, tooth reshaping and oral surgery under one roof, opposite the bus stand on Morinda Road.</p>
+      <div class="hero-cta">
+        <a class="btn solid" href="#book">Book an appointment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="#chart">Find your tooth</a>
+      </div>
+    </div>
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="ring b"></div><div class="ring"></div><div class="glow"></div>
+      <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+      <canvas id="gl" class="gl" width="900" height="900"></canvas>
+      <svg class="big" viewBox="0 0 200 240">
+        <defs>
+          <linearGradient id="tg" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#e3f6f6"/><stop offset="1" stop-color="#a9dcdc"/></linearGradient>
+          <linearGradient id="tr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2de2d0" stop-opacity=".0"/><stop offset=".5" stop-color="#2de2d0" stop-opacity=".35"/><stop offset="1" stop-color="#6cb8ff" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path fill="url(#tg)" d="M100 30C70 8 22 22 24 78c2 40 20 62 26 100 4 32 12 48 24 48 16 0 14-50 26-50s10 50 26 50c12 0 20-16 24-48 6-38 26-60 26-100C178 22 130 8 100 30z"/>
+        <path fill="url(#tr)" d="M100 30C70 8 22 22 24 78c2 40 20 62 26 100l50-12z" opacity=".6"/>
+        <path d="M50 62c0-20 22-30 38-20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+        <ellipse cx="146" cy="96" rx="4" ry="12" fill="#fff" opacity=".6"/>
+      </svg>
+      <div class="hint mono">Tap the tooth ✦</div>
+      <div class="chip glass c1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><div><b>Laser</b><span>Gentle gum care</span></div></div>
+      <div class="chip glass c2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>Mon–Sat</b><span>10 AM – 7 PM</span></div></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="track">
+    <span>Root canal</span><span>Laser dentistry</span><span>Straightening</span><span>Tooth reshaping</span><span>Oral surgery</span><span>Check-ups</span>
+    <span>Root canal</span><span>Laser dentistry</span><span>Straightening</span><span>Tooth reshaping</span><span>Oral surgery</span><span>Check-ups</span>
+  </div></div>
+  <div class="marquee alt" aria-hidden="true"><div class="track rev">
+    <span>Brush twice a day</span><span>Floss like you mean it</span><span>See us every six months</span><span>Chamkaur's smile clinic</span>
+    <span>Brush twice a day</span><span>Floss like you mean it</span><span>See us every six months</span><span>Chamkaur's smile clinic</span>
+  </div></div>
+</div>
+
+<section id="treatments">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">Treatments</span><h2>Everything for your smile, <span class="gt">one clinic.</span></h2><p>No second trip to Ropar or Chandigarh for a specialist. Each tile shows the treatment in motion.</p></div>
+    <div class="swipe" aria-hidden="true">Swipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    <div class="bento">
+      <article class="tile glass t1 rv">
+        <svg class="art" viewBox="0 0 300 240" aria-hidden="true">
+          <path class="fill" d="M150 40C112 10 60 30 62 92c2 46 26 62 32 108 4 30 14 40 26 40 16 0 12-44 30-44s14 44 30 44c12 0 22-10 26-40 6-46 30-62 32-108C240 30 188 10 150 40z"/>
+          <path class="canal" d="M110 70C118 110 118 150 116 200"/><path class="canal" d="M190 70C182 110 182 150 184 200" style="animation-delay:.4s"/>
+        </svg>
+        <span class="tag">Teeth 4 – 8</span><h3>Root canal (RCT)</h3><p>Clears the infection inside the tooth, seals it, and lets you keep the tooth you have.</p>
+      </article>
+      <article class="tile glass t2 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true"><path class="stroke" d="M10 80Q80 30 150 70T290 60"/><g><rect class="beam" x="146" y="20" width="8" height="70" rx="4"/></g></svg>
+        <span class="tag">Gums · all teeth</span><h3>Laser dentistry</h3><p>Precise soft-tissue treatment with less bleeding and faster healing.</p>
+      </article>
+      <article class="tile glass t3 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true"><g class="align"><rect class="fill" x="30" y="30" width="36" height="60" rx="12"/><rect class="fill" x="84" y="30" width="36" height="60" rx="12"/><rect class="fill" x="138" y="30" width="36" height="60" rx="12"/><rect class="fill" x="192" y="30" width="36" height="60" rx="12"/><rect class="fill" x="246" y="30" width="36" height="60" rx="12"/></g></svg>
+        <span class="tag">Teeth 1 – 3</span><h3>Straightening</h3><p>Braces and alignment for crowding, gaps and a bite that does not close.</p>
+      </article>
+      <article class="tile glass t4 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true">
+          <path class="fill chipped" d="M120 20h60q6 40-4 76-10 10-26 0-16 10-26 0-10-36-4-76z M150 20l14 18-10 6z" opacity="1"/>
+          <path class="fill whole" d="M120 20h60q6 40-4 76-10 10-26 0-16 10-26 0-10-36-4-76z"/>
+        </svg>
+        <span class="tag">Teeth 1 – 3</span><h3>Tooth reshaping</h3><p>Smooths and rebuilds chipped or uneven teeth so they look natural.</p>
+      </article>
+      <article class="tile glass t5 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true"><path class="stroke" d="M20 100Q150-40 280 100"/><circle cx="60" cy="72" r="6" fill="var(--tooth-line)"/><circle cx="105" cy="46" r="6" fill="var(--tooth-line)"/><circle cx="150" cy="36" r="6" fill="var(--tooth-line)"/><circle cx="195" cy="46" r="6" fill="var(--tooth-line)"/><circle class="pulse" cx="240" cy="72" r="8" fill="var(--mark)"/></svg>
+        <span class="tag">Teeth 6 – 8 · jaw</span><h3>Oral &amp; maxillofacial surgery</h3><p>Extractions, wisdom teeth and surgical care of the mouth and jaw.</p>
+      </article>
+      <article class="tile glass t6 rv">
+        <div><span class="tag">Not sure what you need?</span><h3 style="margin-top:.6rem">Start with a check-up.</h3></div>
+        <a class="btn solid" href="#book">Book a check-up</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-block:0">
+  <div class="wrap stats">
+    <div class="stat glass rv"><b class="gt" data-count="15" data-suffix="+">15+</b><span>Years of experience</span></div>
+    <div class="stat glass rv"><b class="gt" data-count="6">6</b><span>Days a week, Mon to Sat</span></div>
+    <div class="stat glass rv"><b class="gt" data-count="5">5</b><span>Treatments under one roof</span></div>
+    <div class="stat glass rv"><b class="gt" data-count="9">9</b><span>Hours a day, 10 AM to 7 PM</span></div>
+  </div>
+</section>
+
+<section id="chart">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">Tooth chart</span><h2>Which tooth is <span class="gt">bothering you?</span></h2><p>Tap it on the chart. You see what that kind of tooth usually needs, then send it to us with your booking.</p></div>
+    <div class="lab glass rv">
+      <div>
+        <div class="side"><span>Patient's right</span><span>Patient's left</span></div>
+        <div class="mouth" id="mouth"></div>
+      </div>
+      <div class="readout" aria-live="polite">
+        <span class="who" id="r-who"></span>
+        <h3 id="r-title"></h3>
+        <p id="r-note"></p>
+        <div class="tags" id="r-tags"></div>
+        <small>General guide only. The dentist decides after examining you.</small>
+        <button class="btn solid" type="button" id="r-book">Ask about this tooth</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">Your visit</span><h2>Four steps, <span class="gt">no surprises.</span></h2></div>
+    <ol class="steps">
+      <li class="glass rv"><b>Tell us</b><p>Call, or send your tooth and preferred day from the form below.</p></li>
+      <li class="glass rv"><b>Examine</b><p>The dentist checks the tooth and explains it in plain words.</p></li>
+      <li class="glass rv"><b>Agree a plan</b><p>You hear the options and choose before anything starts.</p></li>
+      <li class="glass rv"><b>Treat</b><p>Treatment at the clinic, then follow-up advice for home.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0">
+  <div class="wrap book">
+    <div class="card glass rv">
+      <span class="kicker">Book</span>
+      <h2>Come in, call, or <span class="gt">message us.</span></h2>
+      <dl class="info">
+        <div><dt>Phone</dt><dd class="copyrow"><b id="phone">+91 99155 10261</b><button class="btn sm" type="button" id="copy">Copy</button></dd></div>
+        <div><dt>Address</dt><dd>Morinda Road, Opposite Bus Stand<br>Chamkaur Sahib, Punjab 140112</dd></div>
+        <div><dt>Hours</dt><dd>
+          <table aria-label="Opening hours" id="hours">
+            <tr data-d="1"><td>Monday</td><td>10:00 – 19:00</td></tr>
+            <tr data-d="2"><td>Tuesday</td><td>10:00 – 19:00</td></tr>
+            <tr data-d="3"><td>Wednesday</td><td>10:00 – 19:00</td></tr>
+            <tr data-d="4"><td>Thursday</td><td>10:00 – 19:00</td></tr>
+            <tr data-d="5"><td>Friday</td><td>10:00 – 19:00</td></tr>
+            <tr data-d="6"><td>Saturday</td><td>10:00 – 19:00</td></tr>
+            <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
+          </table></dd></div>
+        <div><dt>Map</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener">Open in Google Maps</a></dd></div>
+      </dl>
+    </div>
+    <form class="card glass rv" id="form" autocomplete="on">
+      <h3>Request an appointment</h3>
+      <div class="tooth-note" id="tooth-note"></div>
+      <div class="two">
+        <label for="name">Your name<input id="name" name="name" autocomplete="name" placeholder="Full name"></label>
+        <label for="day">Preferred day
+          <select id="day" name="day"><option>Any weekday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select>
+        </label>
+      </div>
+      <label for="svc">What do you need?
+        <select id="svc" name="svc"><option>General check-up</option><option>Root canal (RCT)</option><option>Laser dentistry</option><option>Braces / straightening</option><option>Tooth reshaping</option><option>Oral surgery / extraction</option></select>
+      </label>
+      <label for="msg">Anything we should know?<textarea id="msg" name="msg" rows="3" placeholder="For example: pain for two days, swelling, sensitivity to cold"></textarea></label>
+      <a class="btn solid" id="wa" href="https://wa.me/919915510261" target="_blank" rel="noopener">Send on WhatsApp</a>
+      <p class="fine">This opens WhatsApp with your message written for you. You press send there. Prefer to talk? Call the number on this page.</p>
+    </form>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="rate glass rv">
+      <div class="big">
+        <div class="num gt">4.3</div>
+        <div><div class="stars" id="stars" role="img" aria-label="4.3 out of 5 stars"></div><p>Average of 12 patient reviews on Justdial</p></div>
+      </div>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.justdial.com/Ropar/Chandigarh-Multispeciality-Dental-Clinic-Opposite-Bus-Stand-Chamkaur-Sahib/9999P1881-1881-211006133045-B7G6_BZDET">Read the reviews</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv"><span class="kicker">Questions</span><h2>Before you <span class="gt">come in.</span></h2></div>
+    <div class="faq">
+      <details class="glass" open><summary>Where is the clinic?</summary><p>On Morinda Road in Chamkaur Sahib, directly opposite the bus stand. Postcode 140112.</p></details>
+      <details class="glass"><summary>When are you open?</summary><p>Monday to Saturday, 10 AM to 7 PM. The clinic is closed on Sundays.</p></details>
+      <details class="glass"><summary>Which treatments do you offer?</summary><p>Root canal treatment, laser dentistry, teeth straightening, tooth reshaping, and oral and maxillofacial surgery. Call to ask about anything not listed.</p></details>
+      <details class="glass"><summary>How do I book?</summary><p>Call +91 99155 10261, or fill in the form on this page. It opens WhatsApp with your details ready to send.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><div class="word" aria-hidden="true">Smile better</div><div class="row"><span>© <span id="yr"></span> Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib</span><span>Mon–Sat · 10 AM – 7 PM</span></div></div></footer>
+<div class="callbar glass"><a class="btn" id="wabtn" href="https://wa.me/919915510261?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a><a class="btn solid" id="callbtn" href="tel:+919915510261">Call</a></div>
+<div class="toast glass" id="toast" hidden role="status"><b>+91 99155 10261</b><button class="btn solid sm" type="button" id="toastcopy">Copy</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* 3D hero tooth: displaced-sphere crown with cusps, two tapered roots, glossy clearcoat, softbox reflections,
+   orbit rings and floating particles. Falls back to the SVG tooth if WebGL or three.js is unavailable. */
+(function(){
+  var stage = document.querySelector('.stage'), canvas = document.getElementById('gl');
+  if(!stage || !canvas || typeof THREE === 'undefined') return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, renderer;
+  try{ renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true, powerPreference:'high-performance'}); }catch(e){ return; }
+  var small = matchMedia('(max-width: 700px)').matches;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, small ? 1.5 : 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+  renderer.setClearColor(0x000000, 0);
+
+  var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(32, 1, .1, 50);
+  camera.position.set(0, .15, 9.2);
+
+  // reflection environment: gradient dome + bright softboxes
+  var env = new THREE.Scene(), c = document.createElement('canvas'); c.width = 4; c.height = 256;
+  var g = c.getContext('2d'), grd = g.createLinearGradient(0,0,0,256);
+  grd.addColorStop(0,'#cfeeff'); grd.addColorStop(.5,'#1c4a55'); grd.addColorStop(1,'#04141a');
+  g.fillStyle = grd; g.fillRect(0,0,4,256);
+  var dome = new THREE.Mesh(new THREE.SphereGeometry(20,32,32), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c), side:THREE.BackSide}));
+  env.add(dome);
+  [[-8,6,6,6,4,0xffffff],[9,3,4,3,6,0x9ff5ea],[0,-7,7,10,2,0x7cc4ff],[0,10,-4,8,3,0xffffff]].forEach(function(b){
+    var p = new THREE.Mesh(new THREE.PlaneGeometry(b[3],b[4]), new THREE.MeshBasicMaterial({color:b[5], side:THREE.DoubleSide}));
+    p.material.color.multiplyScalar(4); p.position.set(b[0],b[1],b[2]); p.lookAt(0,0,0); env.add(p);
+  });
+  var pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(env, .02).texture;
+
+  var mat = new THREE.MeshPhysicalMaterial({color:0xf6fdfd, roughness:.22, metalness:0, clearcoat:1, clearcoatRoughness:.06, envMapIntensity:1.15, sheen:0});
+  var tooth = new THREE.Group();
+
+  // crown: sphere pushed into a molar with four cusps
+  var cg = new THREE.SphereGeometry(1, small ? 72 : 128, small ? 54 : 96), pos = cg.attributes.position, v = new THREE.Vector3();
+  for(var i=0;i<pos.count;i++){
+    v.fromBufferAttribute(pos,i);
+    var x = v.x*1.28, y = v.y*.95, z = v.z*1.12;
+    if(y > 0){ var k = Math.pow(y/.95, 1.2); y -= .16*k; y += .22*k*(Math.pow(Math.abs(Math.cos(x*2.3)),1.4)*Math.pow(Math.abs(Math.cos(z*2.6)),1.4)); }
+    else { var t = -y/.95; x *= 1 - .22*t*t; z *= 1 - .22*t*t; y -= .05*t; }
+    pos.setXYZ(i,x,y,z);
+  }
+  cg.computeVertexNormals();
+  tooth.add(new THREE.Mesh(cg, mat));
+
+  function root(dx, tilt){
+    var rg = new THREE.CylinderGeometry(.36,.05,1.7,48,24,true), p = rg.attributes.position, q = new THREE.Vector3();
+    for(var i=0;i<p.count;i++){ q.fromBufferAttribute(p,i); var t = (.85-q.y)/1.7; p.setX(i, q.x + Math.sin(t*2.2)*tilt*.35); p.setZ(i, q.z*(1 - .1*t)); }
+    rg.computeVertexNormals();
+    var m = new THREE.Mesh(rg, mat.clone()); m.material.color.set(0xe4f3f1); m.material.side = THREE.DoubleSide;
+    m.position.set(dx,-1.45,0); m.rotation.z = tilt*.25;
+    var cap = new THREE.Mesh(new THREE.SphereGeometry(.05,16,16), m.material); cap.position.set(dx+tilt*.5, -2.3, 0);
+    tooth.add(m); tooth.add(cap);
+  }
+  root(-.5,-.7); root(.5,.7);
+  tooth.position.y = .45; tooth.rotation.x = .12; tooth.scale.setScalar(1.05);
+  scene.add(tooth);
+
+  // orbit rings
+  var rings = new THREE.Group();
+  [[3.1,.012,0x2de2d0,1.15],[3.7,.008,0x6cb8ff,.7]].forEach(function(r,i){
+    var m = new THREE.Mesh(new THREE.TorusGeometry(r[0],r[1],8,220), new THREE.MeshBasicMaterial({color:r[2], transparent:true, opacity:.75}));
+    m.rotation.x = 1.2 + i*.35; m.rotation.y = i*.6; m.userData.s = r[3]; rings.add(m);
+    var dot = new THREE.Mesh(new THREE.SphereGeometry(.09,20,20), new THREE.MeshBasicMaterial({color:r[2]}));
+    dot.position.set(r[0],0,0); m.add(dot);
+  });
+  scene.add(rings);
+
+  // particles
+  var N = small ? 70 : 160, pp = new Float32Array(N*3), sd = [];
+  for(var n=0;n<N;n++){ var a = Math.random()*6.283, r = 2.6 + Math.random()*3.2, h = (Math.random()-.5)*6; pp[n*3]=Math.cos(a)*r; pp[n*3+1]=h; pp[n*3+2]=Math.sin(a)*r*.6-1; sd.push(Math.random()*6.283); }
+  var pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pp,3));
+  var sc = document.createElement('canvas'); sc.width = sc.height = 64; var sg = sc.getContext('2d'), rg2 = sg.createRadialGradient(32,32,0,32,32,32);
+  rg2.addColorStop(0,'rgba(255,255,255,1)'); rg2.addColorStop(.35,'rgba(160,255,240,.6)'); rg2.addColorStop(1,'rgba(160,255,240,0)'); sg.fillStyle = rg2; sg.fillRect(0,0,64,64);
+  var pts = new THREE.Points(pg, new THREE.PointsMaterial({size:.16, map:new THREE.CanvasTexture(sc), transparent:true, depthWrite:false, blending:THREE.AdditiveBlending, opacity:.9}));
+  scene.add(pts);
+
+  scene.add(new THREE.HemisphereLight(0xdffcff, 0x0a2a33, .5));
+  var key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(4,6,6); scene.add(key);
+  var rimA = new THREE.PointLight(0x2de2d0, 30, 20); rimA.position.set(-5,1,-2); scene.add(rimA);
+  var rimB = new THREE.PointLight(0x6cb8ff, 24, 20); rimB.position.set(5,-2,-1); scene.add(rimB);
+
+  var mx = 0, my = 0, tx = 0, ty = 0, vis = true, t0 = performance.now(), extra = 0, spinV = 0, pop = 0, lastT = 0;
+  window.addEventListener('toothspin', function(){ spinV = 26; pop = .18; });
+  window.addEventListener('pointermove', function(e){ mx = (e.clientX/innerWidth - .5)*2; my = (e.clientY/innerHeight - .5)*2; }, {passive:true});
+  function size(){ var w = canvas.clientWidth, h = canvas.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); camera.aspect = w/h; camera.updateProjectionMatrix(); }
+  new ResizeObserver(function(){ size(); if(reduce) draw(0); }).observe(canvas);
+
+  function draw(t){
+    tx += (mx - tx)*.06; ty += (my - ty)*.06;
+    var dt = t - lastT; if(dt < 0 || dt > .2) dt = .016; lastT = t;
+    extra += spinV*dt; spinV *= .94; pop *= .92;
+    tooth.scale.setScalar(1.05 + pop);
+    tooth.rotation.y = t*.35 + tx*.6 + extra;
+    tooth.rotation.x = .12 + ty*.25;
+    tooth.position.y = .45 + Math.sin(t*1.1)*.14;
+    rings.children.forEach(function(m,i){ m.rotation.z = t*m.userData.s*(i?-1:1); });
+    rings.rotation.y = t*.15;
+    pts.rotation.y = t*.05;
+    var a = pg.attributes.position.array; for(var i=0;i<N;i++){ a[i*3+1] += Math.sin(t*.8 + sd[i])*.0025; } pg.attributes.position.needsUpdate = true;
+    rimA.position.x = -5 + Math.sin(t*.6)*1.5; rimB.position.y = -2 + Math.cos(t*.5)*1.5;
+    renderer.render(scene, camera);
+  }
+  function loop(){ if(vis) draw((performance.now()-t0)/1000); requestAnimationFrame(loop); }
+  size(); draw(1.2); stage.classList.add('gl-on');
+  if(!reduce){
+    new IntersectionObserver(function(es){ vis = es[0].isIntersecting; }).observe(stage);
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
+<script>
+(function(){
+  // scroll progress + parallax blobs + stage tilt
+  var bar = document.getElementById('progress'), amb = document.querySelectorAll('.ambient i');
+  var ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var h = document.documentElement.scrollHeight - innerHeight, y = scrollY;
+      bar.style.transform = 'scaleX(' + (h>0 ? y/h : 0) + ')';
+      ticking = false;
+    });
+  }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // ---- translations: [English, Hindi, Punjabi] ----
+  var TR = [
+    ['Chandigarh Multispeciality Dental Clinic','चंडीगढ़ मल्टीस्पेशियलिटी डेंटल क्लिनिक','ਚੰਡੀਗੜ੍ਹ ਮਲਟੀਸਪੈਸ਼ਲਿਟੀ ਡੈਂਟਲ ਕਲੀਨਿਕ'],
+    ['Smile like you mean it.','दिल से मुस्कुराइए।','ਦਿਲੋਂ ਮੁਸਕਰਾਓ।'],
+    ['Chandigarh Dental','चंडीगढ़ डेंटल','ਚੰਡੀਗੜ੍ਹ ਡੈਂਟਲ'],
+    ['Chamkaur Sahib','चमकौर साहिब','ਚਮਕੌਰ ਸਾਹਿਬ'],
+    ['Treatments','इलाज','ਇਲਾਜ'],
+    ['Tooth chart','दाँतों का चार्ट','ਦੰਦਾਂ ਦਾ ਚਾਰਟ'],
+    ['Your visit','आपकी विज़िट','ਤੁਹਾਡੀ ਫੇਰੀ'],
+    ['Questions','सवाल','ਸਵਾਲ'],
+    ['Book a visit','विज़िट बुक करें','ਵਿਜ਼ਿਟ ਬੁੱਕ ਕਰੋ'],
+    ['Switch light or dark theme','लाइट या डार्क थीम बदलें','ਲਾਈਟ ਜਾਂ ਡਾਰਕ ਥੀਮ ਬਦਲੋ'],
+    ['Experienced dentistry','अनुभवी दंत चिकित्सा','ਤਜਰਬੇਕਾਰ ਦੰਦਾਂ ਦਾ ਇਲਾਜ'],
+    ['in Chamkaur Sahib.','चमकौर साहिब में।','ਚਮਕੌਰ ਸਾਹਿਬ ਵਿੱਚ।'],
+    ['Root canals, laser dentistry, braces, tooth reshaping and oral surgery under one roof, opposite the bus stand on Morinda Road.','रूट कैनाल, लेज़र दंत चिकित्सा, ब्रेसेज़, दाँतों की रीशेपिंग और ओरल सर्जरी, सब एक ही छत के नीचे, मोरिंडा रोड पर बस स्टैंड के सामने।','ਰੂਟ ਕੈਨਾਲ, ਲੇਜ਼ਰ ਡੈਂਟਿਸਟਰੀ, ਬ੍ਰੇਸਿਜ਼, ਦੰਦਾਂ ਦੀ ਰੀਸ਼ੇਪਿੰਗ ਅਤੇ ਓਰਲ ਸਰਜਰੀ, ਸਭ ਇੱਕੋ ਛੱਤ ਹੇਠ, ਮੋਰਿੰਡਾ ਰੋਡ \'ਤੇ ਬੱਸ ਅੱਡੇ ਦੇ ਸਾਹਮਣੇ।'],
+    ['Book an appointment','अपॉइंटमेंट बुक करें','ਅਪਾਇੰਟਮੈਂਟ ਬੁੱਕ ਕਰੋ'],
+    ['Find your tooth','अपना दाँत चुनें','ਆਪਣਾ ਦੰਦ ਚੁਣੋ'],
+    ['Tap the tooth ✦','दाँत पर टैप करें ✦','ਦੰਦ \'ਤੇ ਟੈਪ ਕਰੋ ✦'],
+    ['Laser','लेज़र','ਲੇਜ਼ਰ'],
+    ['Gentle gum care','मसूड़ों की कोमल देखभाल','ਮਸੂੜਿਆਂ ਦੀ ਨਰਮ ਦੇਖਭਾਲ'],
+    ['Mon–Sat','सोम–शनि','ਸੋਮ–ਸ਼ਨੀ'],
+    ['10 AM – 7 PM','10 AM – 7 PM','10 AM – 7 PM'],
+    ['Treatments under one roof','एक छत के नीचे इलाज','ਇੱਕ ਛੱਤ ਹੇਠ ਇਲਾਜ'],
+    ['Years of experience','वर्षों का अनुभव','ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ'],
+    ['Your local doctor','आपके अपने डॉक्टर','ਤੁਹਾਡੇ ਆਪਣੇ ਡਾਕਟਰ'],
+    ['Opposite the bus stand, Morinda Road','बस स्टैंड के सामने, मोरिंडा रोड','ਬੱਸ ਅੱਡੇ ਦੇ ਸਾਹਮਣੇ, ਮੋਰਿੰਡਾ ਰੋਡ'],
+    ['Root canal','रूट कैनाल','ਰੂਟ ਕੈਨਾਲ'],
+    ['Laser dentistry','लेज़र दंत चिकित्सा','ਲੇਜ਼ਰ ਡੈਂਟਿਸਟਰੀ'],
+    ['Straightening','दाँत सीधे करना','ਦੰਦ ਸਿੱਧੇ ਕਰਨਾ'],
+    ['Tooth reshaping','दाँतों की रीशेपिंग','ਦੰਦਾਂ ਦੀ ਰੀਸ਼ੇਪਿੰਗ'],
+    ['Oral surgery','ओरल सर्जरी','ਓਰਲ ਸਰਜਰੀ'],
+    ['Check-ups','जाँच','ਜਾਂਚ'],
+    ['Check-up','जाँच','ਜਾਂਚ'],
+    ['Brush twice a day','दिन में दो बार ब्रश करें','ਦਿਨ ਵਿੱਚ ਦੋ ਵਾਰ ਬੁਰਸ਼ ਕਰੋ'],
+    ['Floss like you mean it','फ़्लॉस करें, पूरे मन से','ਫ਼ਲੌਸ ਕਰੋ, ਪੂਰੇ ਦਿਲ ਨਾਲ'],
+    ['See us every six months','हर छह महीने में मिलें','ਹਰ ਛੇ ਮਹੀਨੇ ਮਿਲੋ'],
+    ['Chamkaur\'s smile clinic','चमकौर का स्माइल क्लिनिक','ਚਮਕੌਰ ਦਾ ਸਮਾਈਲ ਕਲੀਨਿਕ'],
+    ['Everything for your smile,','आपकी मुस्कान के लिए सब कुछ,','ਤੁਹਾਡੀ ਮੁਸਕਾਨ ਲਈ ਸਭ ਕੁਝ,'],
+    ['one clinic.','एक ही क्लिनिक में।','ਇੱਕੋ ਕਲੀਨਿਕ ਵਿੱਚ।'],
+    ['No second trip to Ropar or Chandigarh for a specialist. Each tile shows the treatment in motion.','विशेषज्ञ के लिए रोपड़ या चंडीगढ़ के दूसरे चक्कर नहीं। हर टाइल इलाज को चलते हुए दिखाती है।','ਮਾਹਿਰ ਲਈ ਰੋਪੜ ਜਾਂ ਚੰਡੀਗੜ੍ਹ ਦਾ ਦੂਜਾ ਗੇੜਾ ਨਹੀਂ। ਹਰ ਟਾਈਲ ਇਲਾਜ ਨੂੰ ਚਲਦੇ ਦਿਖਾਉਂਦੀ ਹੈ।'],
+    ['Swipe','स्वाइप करें','ਸਵਾਈਪ ਕਰੋ'],
+    ['Teeth 4 – 8','दाँत 4 – 8','ਦੰਦ 4 – 8'],
+    ['Gums · all teeth','मसूड़े · सभी दाँत','ਮਸੂੜੇ · ਸਾਰੇ ਦੰਦ'],
+    ['Teeth 1 – 3','दाँत 1 – 3','ਦੰਦ 1 – 3'],
+    ['Teeth 6 – 8 · jaw','दाँत 6 – 8 · जबड़ा','ਦੰਦ 6 – 8 · ਜਬਾੜਾ'],
+    ['Root canal (RCT)','रूट कैनाल (RCT)','ਰੂਟ ਕੈਨਾਲ (RCT)'],
+    ['Oral & maxillofacial surgery','ओरल और मैक्सिलोफेशियल सर्जरी','ਓਰਲ ਅਤੇ ਮੈਕਸੀਲੋਫੇਸ਼ੀਅਲ ਸਰਜਰੀ'],
+    ['Clears the infection inside the tooth, seals it, and lets you keep the tooth you have.','दाँत के अंदर का संक्रमण साफ़ करके उसे सील किया जाता है, ताकि आपका अपना दाँत बना रहे।','ਦੰਦ ਦੇ ਅੰਦਰਲੀ ਇਨਫੈਕਸ਼ਨ ਸਾਫ਼ ਕਰਕੇ ਉਸਨੂੰ ਸੀਲ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਜੋ ਤੁਹਾਡਾ ਆਪਣਾ ਦੰਦ ਬਣਿਆ ਰਹੇ।'],
+    ['Precise soft-tissue treatment with less bleeding and faster healing.','कम रक्तस्राव और तेज़ रिकवरी के साथ सटीक सॉफ़्ट-टिश्यू उपचार।','ਘੱਟ ਖੂਨ ਵਗਣ ਅਤੇ ਤੇਜ਼ ਰਿਕਵਰੀ ਨਾਲ ਸਟੀਕ ਸਾਫ਼ਟ-ਟਿਸ਼ੂ ਇਲਾਜ।'],
+    ['Braces and alignment for crowding, gaps and a bite that does not close.','भीड़भाड़ वाले दाँत, गैप और ठीक से न बंद होने वाले बाइट के लिए ब्रेसेज़ और अलाइनमेंट।','ਭੀੜੇ ਦੰਦਾਂ, ਖਾਲੀ ਥਾਵਾਂ ਅਤੇ ਠੀਕ ਤਰ੍ਹਾਂ ਨਾ ਬੰਦ ਹੋਣ ਵਾਲੇ ਬਾਈਟ ਲਈ ਬ੍ਰੇਸਿਜ਼ ਅਤੇ ਅਲਾਈਨਮੈਂਟ।'],
+    ['Smooths and rebuilds chipped or uneven teeth so they look natural.','टूटे या ऊबड़-खाबड़ दाँतों को चिकना और दुरुस्त किया जाता है ताकि वे प्राकृतिक दिखें।','ਟੁੱਟੇ ਜਾਂ ਉੱਚੇ-ਨੀਵੇਂ ਦੰਦਾਂ ਨੂੰ ਸਮਤਲ ਅਤੇ ਦੁਬਾਰਾ ਬਣਾਇਆ ਜਾਂਦਾ ਹੈ ਤਾਂ ਜੋ ਉਹ ਕੁਦਰਤੀ ਲੱਗਣ।'],
+    ['Extractions, wisdom teeth and surgical care of the mouth and jaw.','दाँत निकालना, अक़ल दाढ़ और मुँह व जबड़े की सर्जिकल देखभाल।','ਦੰਦ ਕੱਢਣਾ, ਅਕਲ ਦਾੜ੍ਹ ਅਤੇ ਮੂੰਹ ਤੇ ਜਬਾੜੇ ਦੀ ਸਰਜੀਕਲ ਦੇਖਭਾਲ।'],
+    ['Not sure what you need?','पक्का नहीं पता कि क्या चाहिए?','ਪੱਕਾ ਨਹੀਂ ਪਤਾ ਕਿ ਕੀ ਚਾਹੀਦਾ ਹੈ?'],
+    ['Start with a check-up.','जाँच से शुरुआत करें।','ਜਾਂਚ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ।'],
+    ['Book a check-up','जाँच बुक करें','ਜਾਂਚ ਬੁੱਕ ਕਰੋ'],
+    ['Days a week, Mon to Sat','हफ़्ते में दिन, सोम से शनि','ਹਫ਼ਤੇ ਵਿੱਚ ਦਿਨ, ਸੋਮ ਤੋਂ ਸ਼ਨੀ'],
+    ['Hours a day, 10 AM to 7 PM','रोज़ के घंटे, 10 AM से 7 PM','ਰੋਜ਼ ਦੇ ਘੰਟੇ, 10 AM ਤੋਂ 7 PM'],
+    ['Which tooth is','कौन सा दाँत','ਕਿਹੜਾ ਦੰਦ'],
+    ['bothering you?','परेशान कर रहा है?','ਤੰਗ ਕਰ ਰਿਹਾ ਹੈ?'],
+    ['Tap it on the chart. You see what that kind of tooth usually needs, then send it to us with your booking.','चार्ट पर उस पर टैप करें। आप देखेंगे कि ऐसे दाँत को आमतौर पर क्या चाहिए, फिर उसे अपनी बुकिंग के साथ हमें भेजें।','ਚਾਰਟ \'ਤੇ ਉਸ \'ਤੇ ਟੈਪ ਕਰੋ। ਤੁਸੀਂ ਵੇਖੋਗੇ ਕਿ ਅਜਿਹੇ ਦੰਦ ਨੂੰ ਆਮ ਤੌਰ \'ਤੇ ਕੀ ਚਾਹੀਦਾ ਹੈ, ਫਿਰ ਇਸਨੂੰ ਆਪਣੀ ਬੁਕਿੰਗ ਨਾਲ ਸਾਨੂੰ ਭੇਜੋ।'],
+    ['Patient\'s right','मरीज़ का दायाँ','ਮਰੀਜ਼ ਦਾ ਸੱਜਾ'],
+    ['Patient\'s left','मरीज़ का बायाँ','ਮਰੀਜ਼ ਦਾ ਖੱਬਾ'],
+    ['General guide only. The dentist decides after examining you.','यह केवल सामान्य जानकारी है। जाँच के बाद डेंटिस्ट ही निर्णय लेंगे।','ਇਹ ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ ਹੈ। ਜਾਂਚ ਤੋਂ ਬਾਅਦ ਡੈਂਟਿਸਟ ਹੀ ਫ਼ੈਸਲਾ ਕਰਨਗੇ।'],
+    ['Ask about this tooth','इस दाँत के बारे में पूछें','ਇਸ ਦੰਦ ਬਾਰੇ ਪੁੱਛੋ'],
+    ['Four steps,','चार कदम,','ਚਾਰ ਕਦਮ,'],
+    ['no surprises.','कोई हैरानी नहीं।','ਕੋਈ ਹੈਰਾਨੀ ਨਹੀਂ।'],
+    ['Tell us','हमें बताएँ','ਸਾਨੂੰ ਦੱਸੋ'],
+    ['Call, or send your tooth and preferred day from the form below.','कॉल करें, या नीचे फ़ॉर्म से अपना दाँत और पसंदीदा दिन भेजें।','ਕਾਲ ਕਰੋ, ਜਾਂ ਹੇਠਾਂ ਫ਼ਾਰਮ ਤੋਂ ਆਪਣਾ ਦੰਦ ਅਤੇ ਪਸੰਦੀਦਾ ਦਿਨ ਭੇਜੋ।'],
+    ['Examine','जाँच','ਜਾਂਚ'],
+    ['The dentist checks the tooth and explains it in plain words.','डेंटिस्ट दाँत की जाँच करते हैं और सरल शब्दों में समझाते हैं।','ਡੈਂਟਿਸਟ ਦੰਦ ਦੀ ਜਾਂਚ ਕਰਦੇ ਹਨ ਅਤੇ ਸੌਖੇ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਉਂਦੇ ਹਨ।'],
+    ['Agree a plan','योजना तय करें','ਯੋਜਨਾ ਤੈਅ ਕਰੋ'],
+    ['You hear the options and choose before anything starts.','कुछ भी शुरू होने से पहले आप विकल्प सुनते हैं और चुनते हैं।','ਕੁਝ ਵੀ ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਸੀਂ ਵਿਕਲਪ ਸੁਣਦੇ ਹੋ ਅਤੇ ਚੁਣਦੇ ਹੋ।'],
+    ['Treat','इलाज','ਇਲਾਜ'],
+    ['Treatment at the clinic, then follow-up advice for home.','क्लिनिक में इलाज, फिर घर के लिए आगे की सलाह।','ਕਲੀਨਿਕ ਵਿੱਚ ਇਲਾਜ, ਫਿਰ ਘਰ ਲਈ ਅੱਗੇ ਦੀ ਸਲਾਹ।'],
+    ['Book','बुकिंग','ਬੁਕਿੰਗ'],
+    ['Book now','बुक करें','ਬੁੱਕ ਕਰੋ'],
+    ['Come in, call, or','आइए, कॉल कीजिए, या','ਆਓ, ਕਾਲ ਕਰੋ, ਜਾਂ'],
+    ['message us.','मैसेज कीजिए।','ਸੁਨੇਹਾ ਭੇਜੋ।'],
+    ['Phone','फ़ोन','ਫ਼ੋਨ'],['Address','पता','ਪਤਾ'],['Hours','समय','ਸਮਾਂ'],['Map','नक्शा','ਨਕਸ਼ਾ'],
+    ['Morinda Road, Opposite Bus Stand','मोरिंडा रोड, बस स्टैंड के सामने','ਮੋਰਿੰਡਾ ਰੋਡ, ਬੱਸ ਅੱਡੇ ਦੇ ਸਾਹਮਣੇ'],
+    ['Chamkaur Sahib, Punjab 140112','चमकौर साहिब, पंजाब 140112','ਚਮਕੌਰ ਸਾਹਿਬ, ਪੰਜਾਬ 140112'],
+    ['Copy','कॉपी','ਕਾਪੀ'],['Copied','कॉपी हो गया','ਕਾਪੀ ਹੋ ਗਿਆ'],['Selected','चुना गया','ਚੁਣਿਆ ਗਿਆ'],
+    ['Monday','सोमवार','ਸੋਮਵਾਰ'],['Tuesday','मंगलवार','ਮੰਗਲਵਾਰ'],['Wednesday','बुधवार','ਬੁੱਧਵਾਰ'],['Thursday','गुरुवार','ਵੀਰਵਾਰ'],['Friday','शुक्रवार','ਸ਼ੁੱਕਰਵਾਰ'],['Saturday','शनिवार','ਸ਼ਨੀਵਾਰ'],['Sunday','रविवार','ਐਤਵਾਰ'],['Closed','बंद','ਬੰਦ'],
+    ['Open in Google Maps','Google Maps में खोलें','Google Maps ਵਿੱਚ ਖੋਲ੍ਹੋ'],
+    ['Opening hours','खुलने का समय','ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ'],
+    ['Any weekday','कोई भी कार्यदिवस','ਕੋਈ ਵੀ ਕੰਮ ਵਾਲਾ ਦਿਨ'],
+    ['Request an appointment','अपॉइंटमेंट का अनुरोध करें','ਅਪਾਇੰਟਮੈਂਟ ਦੀ ਬੇਨਤੀ ਕਰੋ'],
+    ['Your name','आपका नाम','ਤੁਹਾਡਾ ਨਾਮ'],['Preferred day','पसंदीदा दिन','ਪਸੰਦੀਦਾ ਦਿਨ'],
+    ['What do you need?','आपको क्या चाहिए?','ਤੁਹਾਨੂੰ ਕੀ ਚਾਹੀਦਾ ਹੈ?'],
+    ['Anything we should know?','कुछ और जो हमें पता होना चाहिए?','ਹੋਰ ਕੁਝ ਜੋ ਸਾਨੂੰ ਪਤਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?'],
+    ['Full name','पूरा नाम','ਪੂਰਾ ਨਾਮ'],
+    ['For example: pain for two days, swelling, sensitivity to cold','जैसे: दो दिन से दर्द, सूजन, ठंडे से झनझनाहट','ਜਿਵੇਂ: ਦੋ ਦਿਨਾਂ ਤੋਂ ਦਰਦ, ਸੋਜ, ਠੰਢੇ ਨਾਲ ਝਨਝਨਾਹਟ'],
+    ['General check-up','सामान्य जाँच','ਆਮ ਜਾਂਚ'],
+    ['Braces / straightening','ब्रेसेज़ / दाँत सीधे करना','ਬ੍ਰੇਸਿਜ਼ / ਦੰਦ ਸਿੱਧੇ ਕਰਨਾ'],
+    ['Oral surgery / extraction','ओरल सर्जरी / दाँत निकालना','ਓਰਲ ਸਰਜਰੀ / ਦੰਦ ਕੱਢਣਾ'],
+    ['Send on WhatsApp','व्हाट्सऐप पर भेजें','ਵਟਸਐਪ \'ਤੇ ਭੇਜੋ'],
+    ['This opens WhatsApp with your message written for you. You press send there. Prefer to talk? Call the number on this page.','यह आपके लिए लिखे संदेश के साथ WhatsApp खोलता है। भेजें का बटन आप वहीं दबाते हैं। बात करना पसंद है? इस पेज पर दिया नंबर मिलाएँ।','ਇਹ ਤੁਹਾਡੇ ਲਈ ਲਿਖੇ ਸੁਨੇਹੇ ਨਾਲ WhatsApp ਖੋਲ੍ਹਦਾ ਹੈ। ਭੇਜਣ ਦਾ ਬਟਨ ਤੁਸੀਂ ਉੱਥੇ ਦਬਾਉਂਦੇ ਹੋ। ਗੱਲ ਕਰਨੀ ਪਸੰਦ ਹੈ? ਇਸ ਪੰਨੇ \'ਤੇ ਦਿੱਤਾ ਨੰਬਰ ਮਿਲਾਓ।'],
+    ['Average of 12 patient reviews on Justdial','Justdial पर 12 मरीज़ रिव्यू का औसत','Justdial \'ਤੇ 12 ਮਰੀਜ਼ ਰਿਵਿਊਆਂ ਦੀ ਔਸਤ'],
+    ['Read the reviews','रिव्यू पढ़ें','ਰਿਵਿਊ ਪੜ੍ਹੋ'],
+    ['4.3 out of 5 stars','5 में से 4.3 स्टार','5 ਵਿੱਚੋਂ 4.3 ਸਟਾਰ'],
+    ['Before you','आने से पहले','ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ'],['come in.','जान लें।','ਜਾਣ ਲਓ।'],
+    ['Where is the clinic?','क्लिनिक कहाँ है?','ਕਲੀਨਿਕ ਕਿੱਥੇ ਹੈ?'],
+    ['On Morinda Road in Chamkaur Sahib, directly opposite the bus stand. Postcode 140112.','चमकौर साहिब में मोरिंडा रोड पर, बस स्टैंड के ठीक सामने। पिन कोड 140112।','ਚਮਕੌਰ ਸਾਹਿਬ ਵਿੱਚ ਮੋਰਿੰਡਾ ਰੋਡ \'ਤੇ, ਬੱਸ ਅੱਡੇ ਦੇ ਬਿਲਕੁਲ ਸਾਹਮਣੇ। ਪਿੰਨ ਕੋਡ 140112।'],
+    ['When are you open?','आप कब खुले रहते हैं?','ਤੁਸੀਂ ਕਦੋਂ ਖੁੱਲ੍ਹੇ ਹੁੰਦੇ ਹੋ?'],
+    ['Monday to Saturday, 10 AM to 7 PM. The clinic is closed on Sundays.','सोमवार से शनिवार, 10 AM से 7 PM तक। रविवार को क्लिनिक बंद रहता है।','ਸੋਮਵਾਰ ਤੋਂ ਸ਼ਨੀਵਾਰ, 10 AM ਤੋਂ 7 PM ਤੱਕ। ਐਤਵਾਰ ਨੂੰ ਕਲੀਨਿਕ ਬੰਦ ਰਹਿੰਦਾ ਹੈ।'],
+    ['Which treatments do you offer?','आप कौन से इलाज करते हैं?','ਤੁਸੀਂ ਕਿਹੜੇ ਇਲਾਜ ਕਰਦੇ ਹੋ?'],
+    ['Root canal treatment, laser dentistry, teeth straightening, tooth reshaping, and oral and maxillofacial surgery. Call to ask about anything not listed.','रूट कैनाल, लेज़र दंत चिकित्सा, दाँत सीधे करना, दाँतों की रीशेपिंग, और ओरल व मैक्सिलोफेशियल सर्जरी। सूची में न हो तो कॉल करके पूछें।','ਰੂਟ ਕੈਨਾਲ, ਲੇਜ਼ਰ ਡੈਂਟਿਸਟਰੀ, ਦੰਦ ਸਿੱਧੇ ਕਰਨਾ, ਦੰਦਾਂ ਦੀ ਰੀਸ਼ੇਪਿੰਗ, ਅਤੇ ਓਰਲ ਤੇ ਮੈਕਸੀਲੋਫੇਸ਼ੀਅਲ ਸਰਜਰੀ। ਸੂਚੀ ਵਿੱਚ ਨਾ ਹੋਵੇ ਤਾਂ ਕਾਲ ਕਰਕੇ ਪੁੱਛੋ।'],
+    ['How do I book?','बुकिंग कैसे करें?','ਬੁਕਿੰਗ ਕਿਵੇਂ ਕਰੀਏ?'],
+    ['Call +91 99155 10261, or fill in the form on this page. It opens WhatsApp with your details ready to send.','+91 99155 10261 पर कॉल करें, या इस पेज का फ़ॉर्म भरें। इससे WhatsApp में आपकी जानकारी भेजने के लिए तैयार खुलती है।','+91 99155 10261 \'ਤੇ ਕਾਲ ਕਰੋ, ਜਾਂ ਇਸ ਪੰਨੇ ਦਾ ਫ਼ਾਰਮ ਭਰੋ। ਇਸ ਨਾਲ WhatsApp ਵਿੱਚ ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਭੇਜਣ ਲਈ ਤਿਆਰ ਖੁੱਲ੍ਹਦੀ ਹੈ।'],
+    ['Smile better','और बेहतर मुस्कुराइए','ਹੋਰ ਵਧੀਆ ਮੁਸਕਰਾਓ'],
+    ['Mon–Sat · 10 AM – 7 PM','सोम–शनि · 10 AM – 7 PM','ਸੋਮ–ਸ਼ਨੀ · 10 AM – 7 PM'],
+    ['Call','कॉल','ਕਾਲ'],
+    ['WhatsApp','व्हाट्सऐप','ਵਟਸਐਪ'],
+    ['Open now · until 7 PM','अभी खुला है · शाम 7 बजे तक','ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ · ਸ਼ਾਮ 7 ਵਜੇ ਤੱਕ'],
+    ['Tooth','दाँत','ਦੰਦ'],
+    ['Central incisor','सामने का बीच का दाँत','ਸਾਹਮਣੇ ਦਾ ਵਿਚਲਾ ਦੰਦ'],
+    ['Lateral incisor','सामने का बगल वाला दाँत','ਸਾਹਮਣੇ ਦਾ ਨਾਲ ਵਾਲਾ ਦੰਦ'],
+    ['Canine','कैनाइन (नुकीला दाँत)','ਕੈਨਾਇਨ (ਨੁਕੀਲਾ ਦੰਦ)'],
+    ['First premolar','पहला प्रीमोलर','ਪਹਿਲਾ ਪ੍ਰੀਮੋਲਰ'],['Second premolar','दूसरा प्रीमोलर','ਦੂਜਾ ਪ੍ਰੀਮੋਲਰ'],
+    ['First molar','पहली दाढ़','ਪਹਿਲੀ ਦਾੜ੍ਹ'],['Second molar','दूसरी दाढ़','ਦੂਜੀ ਦਾੜ੍ਹ'],['Wisdom tooth','अक़ल दाढ़','ਅਕਲ ਦਾੜ੍ਹ'],
+    ['Upper right','ऊपर दायाँ','ਉੱਪਰ ਸੱਜਾ'],['Upper left','ऊपर बायाँ','ਉੱਪਰ ਖੱਬਾ'],['Lower left','नीचे बायाँ','ਹੇਠਾਂ ਖੱਬਾ'],['Lower right','नीचे दायाँ','ਹੇਠਾਂ ਸੱਜਾ'],
+    ['Front teeth show chips, stains and gaps first, and they are the ones people see when you smile.','सामने के दाँतों में चिप, दाग़ और गैप सबसे पहले दिखते हैं, और मुस्कुराते समय लोग यही दाँत देखते हैं।','ਸਾਹਮਣੇ ਦੇ ਦੰਦਾਂ ਵਿੱਚ ਚਿੱਪ, ਦਾਗ਼ ਅਤੇ ਖਾਲੀ ਥਾਂ ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਦਿਸਦੇ ਹਨ, ਅਤੇ ਮੁਸਕਰਾਉਣ ਵੇਲੇ ਲੋਕ ਇਹੀ ਦੰਦ ਵੇਖਦੇ ਹਨ।'],
+    ['Canines guide your bite and hold the shape of the dental arch, so alignment matters most here.','कैनाइन आपके बाइट को दिशा देते हैं और दाँतों की कतार का आकार बनाए रखते हैं, इसलिए यहाँ अलाइनमेंट सबसे ज़रूरी है।','ਕੈਨਾਇਨ ਤੁਹਾਡੇ ਬਾਈਟ ਨੂੰ ਦਿਸ਼ਾ ਦਿੰਦੇ ਹਨ ਅਤੇ ਦੰਦਾਂ ਦੀ ਕਤਾਰ ਦਾ ਆਕਾਰ ਬਣਾਈ ਰੱਖਦੇ ਹਨ, ਇਸ ਲਈ ਇੱਥੇ ਅਲਾਈਨਮੈਂਟ ਸਭ ਤੋਂ ਜ਼ਰੂਰੀ ਹੈ।'],
+    ['Premolars carry a lot of chewing load. Cavities and cracks here are worth checking early.','प्रीमोलर पर चबाने का काफ़ी दबाव पड़ता है। यहाँ कैविटी और दरारें जल्दी जँचवाना अच्छा है।','ਪ੍ਰੀਮੋਲਰ \'ਤੇ ਚਬਾਉਣ ਦਾ ਕਾਫ਼ੀ ਦਬਾਅ ਪੈਂਦਾ ਹੈ। ਇੱਥੇ ਕੈਵਿਟੀ ਅਤੇ ਤਰੇੜਾਂ ਜਲਦੀ ਦਿਖਾਉਣੀਆਂ ਚੰਗੀਆਂ ਹਨ।'],
+    ['Back molars have deep grooves where decay can hide. A painful molar may need a root canal or an extraction.','पीछे की दाढ़ों में गहरी खाँचें होती हैं जहाँ सड़न छिप सकती है। दर्द करती दाढ़ को रूट कैनाल या निकालने की ज़रूरत पड़ सकती है।','ਪਿਛਲੀਆਂ ਦਾੜ੍ਹਾਂ ਵਿੱਚ ਡੂੰਘੀਆਂ ਲਕੀਰਾਂ ਹੁੰਦੀਆਂ ਹਨ ਜਿੱਥੇ ਸੜਨ ਲੁਕ ਸਕਦੀ ਹੈ। ਦਰਦ ਕਰਦੀ ਦਾੜ੍ਹ ਨੂੰ ਰੂਟ ਕੈਨਾਲ ਜਾਂ ਕੱਢਣ ਦੀ ਲੋੜ ਪੈ ਸਕਦੀ ਹੈ।'],
+    ['Wisdom teeth often come in at an angle or stay trapped under the gum. Oral surgery covers removal.','अक़ल दाढ़ अक्सर तिरछी निकलती है या मसूड़े के नीचे फँसी रहती है। इसे निकालना ओरल सर्जरी में आता है।','ਅਕਲ ਦਾੜ੍ਹ ਅਕਸਰ ਟੇਢੀ ਨਿਕਲਦੀ ਹੈ ਜਾਂ ਮਸੂੜੇ ਹੇਠ ਫਸੀ ਰਹਿੰਦੀ ਹੈ। ਇਸਨੂੰ ਕੱਢਣਾ ਓਰਲ ਸਰਜਰੀ ਵਿੱਚ ਆਉਂਦਾ ਹੈ।']
+  ];
+  var DICT = {}, LANG = 'en', openKey = 'Mon–Sat · 10 AM – 7 PM';
+  TR.forEach(function(r){ DICT[r[0]] = {hi:r[1], pa:r[2]}; });
+  function T(s){ var d = DICT[s]; return (LANG !== 'en' && d && d[LANG]) || s; }
+  function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+  var SMSVG = '<svg class="sm-svg" viewBox="0 0 200 44" aria-hidden="true"><path class="lip" d="M8 8Q100 46 192 8" fill="none" stroke="url(#lipg)" stroke-width="5" stroke-linecap="round"/>' +
+    [38.8,57.2,75.6,94,112.4,130.8,149.2].map(function(x,k){ var ys=[18.5,22,24.3,25,24.3,22,18.5]; return '<rect class="tt" style="--k:'+k+'" x="'+x+'" y="'+ys[k]+'" width="12" height="13" rx="4"/>'; }).join('') + '</svg>';
+  var H1 = {
+    en:'<span class="w smile" style="--i:0" aria-hidden="true"><span class="sm-t">Smile</span>' + SMSVG + '</span> <span class="w" style="--i:1" aria-hidden="true">like</span> <span class="w" style="--i:2" aria-hidden="true">you</span> <span class="w roll" style="--i:3" aria-hidden="true"><span class="rollbox"><span class="gt">mean it.</span><span class="gt">own it.</span><span class="gt">share it.</span><span class="gt">keep it.</span><span class="gt">mean it.</span></span></span>',
+    hi:'<span class="w smile" style="--i:0" aria-hidden="true"><span class="sm-t">मुस्कुराइए</span>' + SMSVG + '</span><span class="w roll" style="--i:1" aria-hidden="true"><span class="rollbox"><span class="gt">दिल से।</span><span class="gt">बेफ़िक्र।</span><span class="gt">खुलकर।</span><span class="gt">हमेशा।</span><span class="gt">दिल से।</span></span></span>',
+    pa:'<span class="w smile" style="--i:0" aria-hidden="true"><span class="sm-t">ਮੁਸਕਰਾਓ</span>' + SMSVG + '</span><span class="w roll" style="--i:1" aria-hidden="true"><span class="rollbox"><span class="gt">ਦਿਲੋਂ।</span><span class="gt">ਬੇਫ਼ਿਕਰ।</span><span class="gt">ਖੁੱਲ੍ਹ ਕੇ।</span><span class="gt">ਹਮੇਸ਼ਾ।</span><span class="gt">ਦਿਲੋਂ।</span></span></span>'
+  };
+
+  var SVG = {
+    root1:'<path class="rootp" d="M14 28 L17 4 Q20 -1 23 4 L26 28Z"/>',
+    root2:'<path class="rootp" d="M7 28 L9 6 Q11 1 14 6 L18 28Z"/><path class="rootp" d="M22 28 L26 6 Q29 1 31 6 L33 28Z"/>',
+    incisor:'<path class="crown" d="M10 26H30Q31 46 27 50Q20 53 13 50Q9 46 10 26Z"/>',
+    canine:'<path class="crown" d="M9 26H31Q32 42 20 55Q8 42 9 26Z"/>',
+    premolar:'<path class="crown" d="M7 26H33Q35 46 28 50Q20 46 12 50Q5 46 7 26Z"/>',
+    molar:'<path class="crown" d="M3 26H37Q40 48 31 51Q26 47 20 51Q14 47 9 51Q0 48 3 26Z"/>'
+  };
+  var TYPE = {1:'incisor',2:'incisor',3:'canine',4:'premolar',5:'premolar',6:'molar',7:'molar',8:'molar'};
+  var NAMES = {1:'central incisor',2:'lateral incisor',3:'canine',4:'first premolar',5:'second premolar',6:'first molar',7:'second molar',8:'wisdom tooth'};
+  var QN = {1:'Upper right',2:'Upper left',3:'Lower left',4:'Lower right'};
+  var INFO = {
+    incisor:{note:'Front teeth show chips, stains and gaps first, and they are the ones people see when you smile.',tags:['Tooth reshaping','Braces / straightening','Check-up'],svc:'Tooth reshaping'},
+    canine:{note:'Canines guide your bite and hold the shape of the dental arch, so alignment matters most here.',tags:['Braces / straightening','Root canal (RCT)','Check-up'],svc:'Braces / straightening'},
+    premolar:{note:'Premolars carry a lot of chewing load. Cavities and cracks here are worth checking early.',tags:['Root canal (RCT)','Laser dentistry','Check-up'],svc:'Root canal (RCT)'},
+    molar:{note:'Back molars have deep grooves where decay can hide. A painful molar may need a root canal or an extraction.',tags:['Root canal (RCT)','Oral surgery / extraction','Check-up'],svc:'Root canal (RCT)'},
+    wisdom:{note:'Wisdom teeth often come in at an angle or stay trapped under the gum. Oral surgery covers removal.',tags:['Oral surgery / extraction','Check-up'],svc:'Oral surgery / extraction'}
+  };
+  var $ = function(id){return document.getElementById(id)};
+  var quads = [
+    {q:1,cls:'r',low:false,order:[8,7,6,5,4,3,2,1]},
+    {q:2,cls:'l',low:false,order:[1,2,3,4,5,6,7,8]},
+    {q:4,cls:'r',low:true,order:[8,7,6,5,4,3,2,1]},
+    {q:3,cls:'l',low:true,order:[1,2,3,4,5,6,7,8]}
+  ];
+  var mouth = $('mouth'), sel = '46', touched = false;
+
+  quads.forEach(function(Q){
+    var d = document.createElement('div'); d.className = 'quad ' + Q.cls; d.dataset.label = QN[Q.q];
+    Q.order.forEach(function(p){
+      var num = String(Q.q) + p, t = TYPE[p];
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'tooth' + (Q.low ? ' low' : '');
+      b.dataset.n = num; b.dataset.p = p;
+      b.setAttribute('aria-label','Tooth ' + num + ', ' + QN[Q.q].toLowerCase() + ' ' + NAMES[p]);
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML = '<svg viewBox="0 0 40 56" aria-hidden="true">' + (t==='molar'?SVG.root2:SVG.root1) + SVG[t] + '</svg><span class="n">' + num + '</span>';
+      d.appendChild(b);
+    });
+    mouth.appendChild(d);
+  });
+
+  function infoFor(n){ var p=+n.charAt(1); return INFO[p===8 ? 'wisdom' : TYPE[p]]; }
+  function toothLabel(){ var p=+sel.charAt(1); return 'Tooth ' + sel + ' (' + QN[+sel.charAt(0)].toLowerCase() + ' ' + NAMES[p] + ')'; }
+  function select(n){
+    sel = n;
+    var p = +n.charAt(1), q = +n.charAt(0), info = infoFor(n);
+    document.querySelectorAll('.tooth').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.n === n ? 'true' : 'false');
+      b.classList.toggle('same', b.dataset.n !== n && b.dataset.p === String(p));
+    });
+    $('r-who').textContent = T('Tooth') + ' ' + n + ' · ' + T(QN[q]);
+    $('r-title').textContent = T(cap(NAMES[p]));
+    $('r-note').textContent = T(info.note);
+    $('r-tags').innerHTML = info.tags.map(function(t){return '<span>'+T(t)+'</span>'}).join('');
+    updateWA();
+  }
+  mouth.addEventListener('click', function(e){
+    var b = e.target.closest('.tooth'); if(!b) return;
+    select(b.dataset.n);
+    // bring the description into view if it is off screen (on phones it sits below the chart)
+    var box = document.querySelector('.readout'), r = box.getBoundingClientRect(), navH = 80;
+    var visible = r.top >= navH && r.bottom <= innerHeight - 8;
+    if(!visible) box.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: r.height < innerHeight - navH - 24 ? 'start' : 'nearest'});
+    box.classList.remove('flash'); void box.offsetWidth; box.classList.add('flash');
+  });
+
+  function updateWA(){
+    var name = $('name').value.trim(), svc = $('svc').value, day = $('day').value, msg = $('msg').value.trim();
+    var lines = ['Hello, I would like to book an appointment.'];
+    if(name) lines.push('Name: ' + name);
+    lines.push('Treatment: ' + svc);
+    if(touched) lines.push('Tooth: ' + toothLabel());
+    lines.push('Preferred day: ' + day);
+    if(msg) lines.push('Notes: ' + msg);
+    $('wa').href = 'https://wa.me/919915510261?text=' + encodeURIComponent(lines.join('\n'));
+    $('tooth-note').textContent = touched ? T('Tooth') + ' ' + sel + ' (' + T(QN[+sel.charAt(0)]) + ' ' + T(cap(NAMES[+sel.charAt(1)])) + ')' : '';
+  }
+  $('r-book').addEventListener('click', function(){
+    touched = true; $('svc').value = infoFor(sel).svc; updateWA();
+    $('book').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    setTimeout(function(){ $('name').focus({preventScroll:true}); }, 500);
+  });
+  ['name','svc','day','msg'].forEach(function(id){ $(id).addEventListener('input', updateWA); });
+  $('form').addEventListener('submit', function(e){ e.preventDefault(); });
+
+  $('copy').addEventListener('click', function(){
+    var btn = this, txt = '+91 99155 10261';
+    function done(){ btn.textContent = T('Copied'); setTimeout(function(){ btn.textContent = T('Copy'); }, 1600); }
+    function fallback(){ var r = document.createRange(); r.selectNodeContents($('phone')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = T('Selected'); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fallback); } else fallback();
+  });
+
+  // theme toggle
+  $('theme').addEventListener('click', function(){
+    var root = document.documentElement;
+    var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  });
+
+  // ---- opening hours, in clinic time (IST) ----
+  // Weekly schedule in minutes since midnight, one list of [open, close] per day (0 = Sunday).
+  // To read the hours from the Google Business Profile instead, fill in both values below.
+  var GOOGLE = {placeId: '', apiKey: ''};
+  var sched = [null, [[600,1140]], [[600,1140]], [[600,1140]], [[600,1140]], [[600,1140]], [[600,1140]]];
+  var googleOpenNow = null, googleAt = 0;
+  var DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var ST = {
+    en:{openNow:'Open now', openUntil:'Open now · until {t}', closesIn:'Open · closes in {n}', opensIn:'Closed · opens in {n}', opensToday:'Closed · opens today {t}', opensTomorrow:'Closed · opens tomorrow {t}', opensDay:'Closed · opens {day} {t}', closed:'Closed', mins:function(n){ return n === 1 ? '1 min' : n + ' mins'; }},
+    hi:{openNow:'अभी खुला है', openUntil:'अभी खुला है · {t} तक', closesIn:'खुला है · {n} में बंद होगा', opensIn:'बंद · {n} में खुलेगा', opensToday:'बंद · आज {t} खुलेगा', opensTomorrow:'बंद · कल {t} खुलेगा', opensDay:'बंद · {day} {t} खुलेगा', closed:'बंद', mins:function(n){ return n + ' मिनट'; }},
+    pa:{openNow:'ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ', openUntil:'ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ · {t} ਤੱਕ', closesIn:'ਖੁੱਲ੍ਹਾ ਹੈ · {n} ਵਿੱਚ ਬੰਦ ਹੋਵੇਗਾ', opensIn:'ਬੰਦ · {n} ਵਿੱਚ ਖੁੱਲ੍ਹੇਗਾ', opensToday:'ਬੰਦ · ਅੱਜ {t} ਖੁੱਲ੍ਹੇਗਾ', opensTomorrow:'ਬੰਦ · ਕੱਲ੍ਹ {t} ਖੁੱਲ੍ਹੇਗਾ', opensDay:'ਬੰਦ · {day} {t} ਖੁੱਲ੍ਹੇਗਾ', closed:'ਬੰਦ', mins:function(n){ return n + ' ਮਿੰਟ'; }}
+  };
+  function clinicNow(){
+    var parts = new Intl.DateTimeFormat('en-GB', {timeZone:'Asia/Kolkata', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false}).formatToParts(new Date());
+    var o = {}; parts.forEach(function(p){ o[p.type] = p.value; });
+    return {d: {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday], m: (+o.hour % 24) * 60 + +o.minute};
+  }
+  function fmtT(min){
+    var h = Math.floor(min / 60) % 24, mm = min % 60, h12 = h % 12 || 12, tm = h12 + (mm ? ':' + (mm < 10 ? '0' : '') + mm : '');
+    return tm + (h < 12 ? ' AM' : ' PM');
+  }
+  function hhmm(min){ var h = Math.floor(min / 60) % 24, m = min % 60; return (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + (h < 12 ? ' AM' : ' PM'); }
+  function computeStatus(){
+    var n = clinicNow(), d = n.d, m = n.m, today = sched[d] || [], st = null, i, j, k;
+    for(i = 0; i < today.length && !st; i++){
+      if(m >= today[i][0] && m < today[i][1]){ var left = today[i][1] - m; st = left < 60 ? {open:true, soon:true, key:'closesIn', mins:left} : {open:true, key:'openUntil', t:today[i][1]}; }
+    }
+    for(j = 0; j < today.length && !st; j++){
+      if(today[j][0] > m){ var wait = today[j][0] - m; st = wait < 60 ? {open:false, soon:true, key:'opensIn', mins:wait} : {open:false, key:'opensToday', t:today[j][0]}; }
+    }
+    for(k = 1; k <= 7 && !st; k++){
+      var dd = (d + k) % 7, s = sched[dd];
+      if(s && s.length) st = {open:false, key:k === 1 ? 'opensTomorrow' : 'opensDay', t:s[0][0], day:DAYS[dd]};
+    }
+    st = st || {open:false, key:'closed'};
+    if(googleOpenNow !== null && Date.now() - googleAt < 120000 && googleOpenNow !== st.open){
+      st = googleOpenNow ? {open:true, key:'openNow'} : {open:false, key:'closed'};
+    }
+    return st;
+  }
+  function renderStatus(){
+    var st = computeStatus(), L = ST[LANG] || ST.en, s = L[st.key];
+    s = s.replace('{t}', st.t != null ? fmtT(st.t) : '').replace('{n}', st.mins != null ? L.mins(st.mins) : '').replace('{day}', st.day ? T(st.day) : '');
+    var cut = s.indexOf(' · '), box = $('opentext');
+    box.textContent = '';
+    var word = document.createElement('span'); word.className = 'stw'; word.textContent = cut < 0 ? s : s.slice(0, cut);
+    box.appendChild(word);
+    if(cut >= 0) box.appendChild(document.createTextNode(s.slice(cut)));
+    var p = $('openpill'); p.classList.toggle('open', !!st.open); p.classList.toggle('soon', !!st.soon);
+  }
+  function renderHours(){
+    var today = clinicNow().d;
+    document.querySelectorAll('#hours tr').forEach(function(r){
+      var s = sched[+r.dataset.d];
+      r.cells[1].textContent = s && s.length ? s.map(function(x){ return hhmm(x[0]) + ' – ' + hhmm(x[1]); }).join(', ') : T('Closed');
+      r.classList.toggle('today', +r.dataset.d === today);
+    });
+  }
+  renderStatus(); renderHours();
+  setInterval(function(){ renderStatus(); renderHours(); }, 30000);
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden){ renderStatus(); renderHours(); } });
+  if(GOOGLE.placeId && GOOGLE.apiKey && window.fetch){
+    fetch('https://places.googleapis.com/v1/places/' + encodeURIComponent(GOOGLE.placeId) + '?fields=regularOpeningHours,currentOpeningHours.openNow&key=' + encodeURIComponent(GOOGLE.apiKey))
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+      .then(function(j){
+        var ps = j.regularOpeningHours && j.regularOpeningHours.periods;
+        if(ps && ps.length){
+          var s = [[],[],[],[],[],[],[]];
+          ps.forEach(function(p){
+            if(!p.open) return;
+            var o = p.open.hour * 60 + (p.open.minute || 0), c = p.close && p.close.day === p.open.day ? p.close.hour * 60 + (p.close.minute || 0) : 1440;
+            s[p.open.day].push([o, c]);
+          });
+          sched = s.map(function(a){ return a.length ? a.sort(function(x, y){ return x[0] - y[0]; }) : null; });
+        }
+        if(j.currentOpeningHours && typeof j.currentOpeningHours.openNow === 'boolean'){ googleOpenNow = j.currentOpeningHours.openNow; googleAt = Date.now(); }
+        renderStatus(); renderHours();
+      }).catch(function(){});
+  }
+
+  // stars 4.3
+  var st = '';
+  for(var i=0;i<5;i++){
+    var f = Math.max(0, Math.min(1, 4.3 - i)) * 100;
+    st += '<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g'+i+'"><stop offset="'+f+'%" stop-color="#ffb52e"/><stop offset="'+f+'%" stop-color="#ffb52e" stop-opacity=".22"/></linearGradient></defs><path fill="url(#g'+i+')" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
+  }
+  $('stars').innerHTML = st;
+  $('yr').textContent = new Date().getFullYear();
+
+  // spotlight on tiles
+  document.querySelectorAll('.tile').forEach(function(t){
+    t.addEventListener('pointermove', function(e){ var r = t.getBoundingClientRect(); t.style.setProperty('--mx', (e.clientX-r.left)+'px'); t.style.setProperty('--my', (e.clientY-r.top)+'px'); });
+  });
+
+  // reveal + count up (content is visible at rest; only a slide-in and a count animate)
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var end = +el.dataset.count, dec = +(el.dataset.d||0), t0 = null;
+    function step(t){ if(!t0) t0 = t; var k = Math.min(1,(t-t0)/1100), e = 1-Math.pow(1-k,3); el.textContent = (end*e).toFixed(dec) + (k === 1 ? (el.dataset.suffix || '') : ''); if(k<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); var c = x.target.querySelector('[data-count]'); if(c) count(c); io.unobserve(x.target); } }); },{threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+
+  // ---- language engine ----
+  var nodes = [], attrEls = [], SKIP = '#opentext,#r-who,#r-title,#r-note,#r-tags,#copy,#tooth-note,#h1,#hours td:last-child,script,style,svg,.star';
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), nd;
+  while((nd = walker.nextNode())){
+    var raw = nd.nodeValue, tr = raw.trim();
+    if(!tr || !DICT[tr]) continue;
+    if(nd.parentElement && nd.parentElement.closest(SKIP)) continue;
+    nodes.push({n:nd, en:tr, lead:raw.match(/^\s*/)[0], trail:raw.match(/\s*$/)[0]});
+  }
+  document.querySelectorAll('[placeholder],[aria-label]').forEach(function(el){
+    ['placeholder','aria-label'].forEach(function(a){ var v = el.getAttribute(a); if(v && DICT[v]) attrEls.push({el:el, a:a, en:v}); });
+  });
+  document.querySelectorAll('#svc option,#day option').forEach(function(o){ o.setAttribute('value', o.textContent); });
+
+  function applyLang(l){
+    LANG = l;
+    document.documentElement.lang = l;
+    nodes.forEach(function(o){ o.n.nodeValue = o.lead + T(o.en) + o.trail; });
+    attrEls.forEach(function(o){ o.el.setAttribute(o.a, T(o.en)); });
+    $('h1').innerHTML = H1[l];
+    document.title = T('Chandigarh Multispeciality Dental Clinic');
+    renderStatus(); renderHours();
+    $('copy').textContent = T('Copy');
+    document.querySelectorAll('.quad').forEach(function(q,i){ q.dataset.label = T(QN[quads[i].q]); });
+    document.querySelectorAll('.tooth').forEach(function(b){
+      var n = b.dataset.n;
+      b.setAttribute('aria-label', T('Tooth') + ' ' + n + ', ' + T(QN[+n.charAt(0)]) + ' ' + T(cap(NAMES[+b.dataset.p])));
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.l === l ? 'true' : 'false'); });
+    select(sel);
+    try{ localStorage.setItem('cd-lang', l); }catch(e){}
+  }
+  document.querySelector('.lang').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-l]'); if(b) applyLang(b.dataset.l);
+  });
+
+  // ---- Call button: if no dialer opens (desktop, or a frame that blocks tel: links), show the number with a copy button ----
+  var toast = $('toast'), toastT = null;
+  function showToast(){ toast.hidden = false; $('toastcopy').textContent = T('Copy'); clearTimeout(toastT); toastT = setTimeout(function(){ toast.hidden = true; }, 9000); }
+  $('callbtn').addEventListener('click', function(){
+    setTimeout(function(){ if(document.visibilityState === 'visible' && document.hasFocus()) showToast(); }, 1200);
+  });
+  $('toastcopy').addEventListener('click', function(){
+    var btn = this, txt = '+91 99155 10261';
+    function done(){ btn.textContent = T('Copied'); setTimeout(function(){ toast.hidden = true; }, 1400); }
+    function fallback(){ var r = document.createRange(); r.selectNodeContents(toast.querySelector('b')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = T('Selected'); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fallback); } else fallback();
+  });
+
+  // ---- treatments carousel (phones and tablets): auto-advance, pauses when touched or off-screen ----
+  var bento = document.querySelector('.bento'), tiles = bento.children, dots = document.createElement('div');
+  dots.className = 'dots'; dots.setAttribute('aria-hidden', 'true');
+  for(var di = 0; di < tiles.length; di++){ var dt = document.createElement('button'); dt.type = 'button'; dt.tabIndex = -1; dt.dataset.i = di; dots.appendChild(dt); }
+  bento.insertAdjacentElement('afterend', dots);
+  var carouselOn = function(){ return matchMedia('(max-width: 900px)').matches; };
+  var padL = function(){ return parseFloat(getComputedStyle(bento).paddingLeft) || 0; };
+  function tileLeft(i){ return bento.scrollLeft + (tiles[i].getBoundingClientRect().left - bento.getBoundingClientRect().left) - padL(); }
+  function nearest(){ var best = 0, bd = 1e9; for(var i = 0; i < tiles.length; i++){ var d = Math.abs(tileLeft(i) - bento.scrollLeft); if(d < bd){ bd = d; best = i; } } return best; }
+  function markDots(){ var n = nearest(); [].forEach.call(dots.children, function(b, i){ b.classList.toggle('on', i === n); }); }
+  function goTo(i){ bento.scrollTo({left: tileLeft(i), behavior: 'smooth'}); setTimeout(markDots, 700); }
+  bento.addEventListener('scroll', function(){ if(carouselOn()) markDots(); }, {passive: true});
+  dots.addEventListener('click', function(e){ var b = e.target.closest('button'); if(b){ holdAuto(); goTo(+b.dataset.i); } });
+  var autoHold = false, autoSeen = true, holdT = null;
+  function holdAuto(){ autoHold = true; clearTimeout(holdT); holdT = setTimeout(function(){ autoHold = false; }, 7000); }
+  ['pointerdown','touchstart','wheel','focusin'].forEach(function(ev){ bento.addEventListener(ev, holdAuto, {passive: true}); });
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ autoSeen = es[0].isIntersecting; }, {threshold: .35}).observe(bento); }
+  markDots();
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    setInterval(function(){
+      if(!carouselOn() || autoHold || !autoSeen || document.hidden) return;
+      goTo((nearest() + 1) % tiles.length);
+    }, 3600);
+  }
+
+  // ---- hero delight: sparkle burst, cursor trail, magnetic buttons ----
+  var stageEl = $('stage');
+  function star(x, y, size, color){
+    var s = document.createElement('span'); s.className = 'star';
+    s.style.left = x + 'px'; s.style.top = y + 'px'; s.style.setProperty('--s', size + 'rem'); s.style.setProperty('--c', color);
+    document.body.appendChild(s); return s;
+  }
+  var COLORS = ['#ffffff','#2de2d0','#6cb8ff','#ffb52e'];
+  function burst(x, y){
+    for(var i = 0; i < 18; i++){
+      var s = star(x, y, .5 + Math.random()*.9, COLORS[i % 4]), a = Math.random()*6.283, dist = 60 + Math.random()*110;
+      var an = s.animate([
+        {transform:'translate(-50%,-50%) scale(.2) rotate(0deg)', opacity:1},
+        {transform:'translate(calc(-50% + ' + Math.cos(a)*dist + 'px), calc(-50% + ' + Math.sin(a)*dist + 'px)) scale(1) rotate(200deg)', opacity:0}
+      ], {duration:800 + Math.random()*500, easing:'cubic-bezier(.2,.7,.2,1)'});
+      an.onfinish = (function(el){ return function(){ el.remove(); }; })(s);
+    }
+  }
+  stageEl.addEventListener('click', function(e){
+    if(reduce) return;
+    burst(e.clientX, e.clientY);
+    window.dispatchEvent(new CustomEvent('toothspin'));
+    var h = stageEl.querySelector('.hint'); if(h) h.style.display = 'none';
+  });
+  if(!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var lastStar = 0;
+    document.querySelector('.hero').addEventListener('pointermove', function(e){
+      var now = performance.now(); if(now - lastStar < 50) return; lastStar = now;
+      var s = star(e.clientX, e.clientY, .4 + Math.random()*.5, COLORS[(Math.random()*4)|0]);
+      var an = s.animate([
+        {transform:'translate(-50%,-50%) scale(.3)', opacity:.9},
+        {transform:'translate(calc(-50% + ' + ((Math.random()-.5)*30) + 'px), calc(-50% + 34px)) scale(1) rotate(90deg)', opacity:0}
+      ], {duration:800, easing:'ease-out'});
+      an.onfinish = function(){ s.remove(); };
+    });
+    document.querySelectorAll('.hero-cta .btn').forEach(function(b){
+      b.addEventListener('pointermove', function(e){
+        var r = b.getBoundingClientRect();
+        b.style.transform = 'translate(' + ((e.clientX - r.left - r.width/2)*.22) + 'px,' + ((e.clientY - r.top - r.height/2)*.35) + 'px)';
+      });
+      b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
+    });
+  }
+
+  select('46');
+  var saved = null; try{ saved = localStorage.getItem('cd-lang'); }catch(e){}
+  if(!saved){ var nl = (navigator.language || '').slice(0,2).toLowerCase(); if(nl === 'hi' || nl === 'pa') saved = nl; }
+  if(saved === 'hi' || saved === 'pa') applyLang(saved);
+})();
+</script>
+
+</body>
+</html>
