@@ -36,6 +36,14 @@ var GOOGLE = {placeId: '', apiKey: ''};
 
 Fill in the clinic's Google Place ID and a Google Maps Places API key to read the hours (including holidays) from Google. The key is visible to anyone who views the page, so restrict it to your website address in Google Cloud. Do not commit a key that is not restricted.
 
+## Seeing old content after an update?
+
+- `vercel.json` tells Vercel (and browsers) to check for a new version on every visit instead of reusing an old copy. Keep it in the repository.
+- `index.html` contains a `build` stamp and a small script. When a visitor opens the site, the script asks the server for the latest page, and if it is newer than the copy in the browser it reloads once. Each new version of the file carries a new stamp.
+- A phone or computer that already saved the old page, from before these files were added, may still show it once. Reload without the cache (Ctrl+Shift+R, or clear the site's data in the phone browser's settings). After that it stays current.
+- On Vercel every push creates a new deployment. Check the **Deployments** tab to make sure the latest one finished and is marked as production.
+- GitHub Pages keeps pages in its own cache for up to about ten minutes. That cannot be changed from the site's files.
+
 ## Notes
 
 - Hindi and Punjabi wording was written by an AI assistant and should be checked by a native speaker.
