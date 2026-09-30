@@ -20,11 +20,11 @@ You can also open `index.html` by double-clicking it. It needs an internet conne
 | Phone number `+91 99155 10261` and WhatsApp link `919915510261` | search `9915510261` |
 | Opening hours (Monday to Saturday, 10 AM to 7 PM) | search `var sched =` |
 | Address (Morinda Road, opposite the bus stand, Chamkaur Sahib 140112) | search `Morinda Road` |
-| Rating (4.2, 13 ratings on Justdial, as of when it was checked) and the review link | search `justdial` |
+| Rating (4.1 from 9 Google reviews, as of when it was checked) and the review link | search `Average of 9 reviews` |
 | "15+ years of experience" | search `Years of experience` |
 | Hindi and Punjabi wording | the `var TR = [` translation table |
 
-The phone number, address and hours came from public listings (Justdial and Mappls) and should be confirmed with the clinic before publishing.
+The phone number, address, hours and rating match the clinic's public Google listing at the time they were checked. Keep them in step with your Google Business Profile if they change.
 
 ## Optional: read opening hours from the Google Business Profile
 
