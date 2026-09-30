@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Chandigarh Multispeciality Dental Clinic</title>
@@ -71,7 +71,11 @@ html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
 
 /* nav */
 /* The top bar is fixed to the screen so it never scrolls away, whatever wraps the page. The spacer keeps the layout where it was. */
-.navwrap{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + .7rem) .8rem 0;pointer-events:none}
+/* --navw is the screen width measured when the page opened (updated only if the width really changes, e.g. rotation),
+   so the bar keeps that width while scrolling even if the browser resizes the viewport. */
+.navwrap{position:fixed;top:0;left:0;right:auto;width:var(--navw,100%);max-width:100%;z-index:50;padding:calc(env(safe-area-inset-top,0px) + .7rem) .8rem 0;pointer-events:none;box-sizing:border-box}
+html{overflow-x:clip}
+.hero{overflow-x:clip}
 .navwrap .nav{pointer-events:auto}
 .navspace{height:calc(4.4rem + env(safe-area-inset-top,0px))}
 .nav{max-width:64rem;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.5rem .55rem .5rem 1.1rem;border-radius:99px;box-shadow:var(--shadow)}
@@ -482,6 +486,11 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
 /* small laptops and tablets in landscape: keep the 3D canvas inside the screen, and size the Hindi/Punjabi headline for the narrower column */
 @media(min-width:901px) and (max-width:1279px){.stage canvas.gl{inset:-2%;width:104%;height:104%}}
 @media(min-width:901px){html:is([lang="hi"],[lang="pa"]) .hero h1{font-size:clamp(2.2rem,4.4vw,4.6rem)}}
+/* foldable cover screens and other very narrow displays: four teeth per row so each one stays easy to tap */
+@media(max-width:350px){
+  .quad,.quad.r,.quad.l{flex-wrap:wrap;row-gap:.35rem}
+  .quad .tooth{flex:0 0 calc(25% - 3px);max-width:none}
+}
 /* very narrow phones: keep the 3D canvas inside the screen */
 @media(max-width:380px){.stage.gl-on canvas.gl,.stage canvas.gl{inset:-4%;width:108%;height:108%}}
 /* phones: one treatment at a time, the next one slides in */
@@ -840,6 +849,16 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
 </script>
 <script>
 (function(){
+  // lock the top bar to the width the page opened with; only rotation or a real width change updates it
+  // On touch screens, small width changes (the browser stretching the page a few pixels) are ignored; a real change such as rotation is followed.
+  var navW = 0;
+  function lockNav(){
+    var w = document.documentElement.clientWidth;
+    if(!w) return;
+    var coarse = matchMedia('(pointer: coarse)').matches;
+    if(!navW || (coarse ? Math.abs(w - navW) > 80 : w !== navW)){ navW = w; document.documentElement.style.setProperty('--navw', w + 'px'); }
+  }
+  lockNav(); addEventListener('resize', lockNav); addEventListener('orientationchange', function(){ setTimeout(lockNav, 250); });
   // mark the page when it is shown inside another page (Claude's viewer), so spacing can adapt
   try{ if(window.self !== window.top) document.documentElement.classList.add('framed'); }catch(e){ document.documentElement.classList.add('framed'); }
   // scroll progress + parallax blobs + stage tilt
@@ -848,6 +867,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
   function onScroll(){
     if(ticking) return; ticking = true;
     requestAnimationFrame(function(){
+      lockNav();
       var h = document.documentElement.scrollHeight - innerHeight, y = scrollY;
       bar.style.transform = 'scaleX(' + (h>0 ? y/h : 0) + ')';
       ticking = false;
