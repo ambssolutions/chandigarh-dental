@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-09-30T01:14:07Z">
+<meta name="build" content="2026-09-30T04:32:56Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Chandigarh Multispeciality Dental Clinic</title>
@@ -1051,6 +1051,8 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     wisdom:{note:'Wisdom teeth often come in at an angle or stay trapped under the gum. Oral surgery covers removal.',tags:['Oral surgery / extraction','Check-up'],svc:'Oral surgery / extraction'}
   };
   var $ = function(id){return document.getElementById(id)};
+  // Teeth are identified internally by the dentist's two-digit number (quarter + position, e.g. 46) but shown as 1 to 32 (Universal numbering).
+  function uni(n){ var q = +String(n).charAt(0), p = +String(n).charAt(1); return q === 1 ? 9 - p : q === 2 ? 8 + p : q === 3 ? 25 - p : 24 + p; }
   var quads = [
     {q:1,cls:'r',low:false,order:[8,7,6,5,4,3,2,1]},
     {q:2,cls:'l',low:false,order:[1,2,3,4,5,6,7,8]},
@@ -1066,16 +1068,16 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'tooth' + (Q.low ? ' low' : '');
       b.dataset.n = num; b.dataset.p = p;
-      b.setAttribute('aria-label','Tooth ' + num + ', ' + QN[Q.q].toLowerCase() + ' ' + NAMES[p]);
+      b.setAttribute('aria-label','Tooth ' + uni(num) + ', ' + QN[Q.q].toLowerCase() + ' ' + NAMES[p]);
       b.setAttribute('aria-pressed','false');
-      b.innerHTML = '<svg viewBox="0 0 40 56" aria-hidden="true">' + (t==='molar'?SVG.root2:SVG.root1) + SVG[t] + '</svg><span class="n">' + num + '</span>';
+      b.innerHTML = '<svg viewBox="0 0 40 56" aria-hidden="true">' + (t==='molar'?SVG.root2:SVG.root1) + SVG[t] + '</svg><span class="n">' + uni(num) + '</span>';
       d.appendChild(b);
     });
     mouth.appendChild(d);
   });
 
   function infoFor(n){ var p=+n.charAt(1); return INFO[p===8 ? 'wisdom' : TYPE[p]]; }
-  function toothLabel(){ var p=+sel.charAt(1); return 'Tooth ' + sel + ' (' + QN[+sel.charAt(0)].toLowerCase() + ' ' + NAMES[p] + ')'; }
+  function toothLabel(){ var p=+sel.charAt(1); return 'Tooth ' + uni(sel) + ' (' + QN[+sel.charAt(0)].toLowerCase() + ' ' + NAMES[p] + ')'; }
   function select(n){
     sel = n;
     var p = +n.charAt(1), q = +n.charAt(0), info = infoFor(n);
@@ -1083,7 +1085,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
       b.setAttribute('aria-pressed', b.dataset.n === n ? 'true' : 'false');
       b.classList.toggle('same', b.dataset.n !== n && b.dataset.p === String(p));
     });
-    $('r-who').textContent = T('Tooth') + ' ' + n + ' · ' + T(QN[q]);
+    $('r-who').textContent = T('Tooth') + ' ' + uni(n) + ' · ' + T(QN[q]);
     $('r-title').textContent = T(cap(NAMES[p]));
     $('r-note').textContent = T(info.note);
     $('r-tags').innerHTML = info.tags.map(function(t){return '<span>'+T(t)+'</span>'}).join('');
@@ -1114,7 +1116,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     } else {
       $('wa').href = 'https://wa.me/919915510261';
     }
-    $('tooth-note').textContent = touched ? T('Tooth') + ' ' + sel + ' (' + T(QN[+sel.charAt(0)]) + ' ' + T(cap(NAMES[+sel.charAt(1)])) + ')' : '';
+    $('tooth-note').textContent = touched ? T('Tooth') + ' ' + uni(sel) + ' (' + T(QN[+sel.charAt(0)]) + ' ' + T(cap(NAMES[+sel.charAt(1)])) + ')' : '';
   }
   $('r-book').addEventListener('click', function(){
     touched = true; $('svc').value = infoFor(sel).svc; updateWA();
@@ -1279,7 +1281,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     document.querySelectorAll('.quad').forEach(function(q,i){ q.dataset.label = T(QN[quads[i].q]); });
     document.querySelectorAll('.tooth').forEach(function(b){
       var n = b.dataset.n;
-      b.setAttribute('aria-label', T('Tooth') + ' ' + n + ', ' + T(QN[+n.charAt(0)]) + ' ' + T(cap(NAMES[+b.dataset.p])));
+      b.setAttribute('aria-label', T('Tooth') + ' ' + uni(n) + ', ' + T(QN[+n.charAt(0)]) + ' ' + T(cap(NAMES[+b.dataset.p])));
     });
     document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.l === l ? 'true' : 'false'); });
     select(sel);
