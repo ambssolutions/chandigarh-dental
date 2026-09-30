@@ -690,7 +690,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
       </label>
       <label for="msg">Anything we should know?<textarea id="msg" name="msg" rows="3" placeholder="For example: pain for two days, swelling, sensitivity to cold"></textarea></label>
       <a class="btn solid" id="wa" href="https://wa.me/919915510261" target="_blank" rel="noopener">Send on WhatsApp</a>
-      <p class="fine">This opens WhatsApp with your message written for you. You press send there. Prefer to talk? Call the number on this page.</p>
+      <p class="fine">This opens WhatsApp. Anything you fill in above is added to the message for you. You press send there. Prefer to talk? Call the number on this page.</p>
     </form>
   </div>
 </section>
@@ -721,7 +721,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
 </main>
 
 <footer><div class="wrap"><div class="word" aria-hidden="true">Smile better</div><div class="row"><span>© <span id="yr"></span> Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib</span><span>Mon–Sat · 10 AM – 7 PM</span></div></div></footer>
-<div class="callbar glass"><a class="btn" id="wabtn" href="https://wa.me/919915510261?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a><a class="btn solid" id="callbtn" href="tel:+919915510261">Call</a></div>
+<div class="callbar glass"><a class="btn" id="wabtn" href="https://wa.me/919915510261" target="_blank" rel="noopener">WhatsApp</a><a class="btn solid" id="callbtn" href="tel:+919915510261">Call</a></div>
 <div class="toast glass" id="toast" hidden role="status"><b>+91 99155 10261</b><button class="btn solid sm" type="button" id="toastcopy">Copy</button></div>
 
 <script>
@@ -967,7 +967,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     ['Braces / straightening','ब्रेसेज़ / दाँत सीधे करना','ਬ੍ਰੇਸਿਜ਼ / ਦੰਦ ਸਿੱਧੇ ਕਰਨਾ'],
     ['Oral surgery / extraction','ओरल सर्जरी / दाँत निकालना','ਓਰਲ ਸਰਜਰੀ / ਦੰਦ ਕੱਢਣਾ'],
     ['Send on WhatsApp','व्हाट्सऐप पर भेजें','ਵਟਸਐਪ \'ਤੇ ਭੇਜੋ'],
-    ['This opens WhatsApp with your message written for you. You press send there. Prefer to talk? Call the number on this page.','यह आपके लिए लिखे संदेश के साथ WhatsApp खोलता है। भेजें का बटन आप वहीं दबाते हैं। बात करना पसंद है? इस पेज पर दिया नंबर मिलाएँ।','ਇਹ ਤੁਹਾਡੇ ਲਈ ਲਿਖੇ ਸੁਨੇਹੇ ਨਾਲ WhatsApp ਖੋਲ੍ਹਦਾ ਹੈ। ਭੇਜਣ ਦਾ ਬਟਨ ਤੁਸੀਂ ਉੱਥੇ ਦਬਾਉਂਦੇ ਹੋ। ਗੱਲ ਕਰਨੀ ਪਸੰਦ ਹੈ? ਇਸ ਪੰਨੇ \'ਤੇ ਦਿੱਤਾ ਨੰਬਰ ਮਿਲਾਓ।'],
+    ['This opens WhatsApp. Anything you fill in above is added to the message for you. You press send there. Prefer to talk? Call the number on this page.','यह व्हाट्सऐप खोलता है। ऊपर जो भी आप भरेंगे, वह आपके लिए संदेश में जुड़ जाएगा। भेजें का बटन आप वहीं दबाते हैं। बात करना पसंद है? इस पेज पर दिया नंबर मिलाएँ।','ਇਹ ਵਟਸਐਪ ਖੋਲ੍ਹਦਾ ਹੈ। ਉੱਪਰ ਜੋ ਵੀ ਤੁਸੀਂ ਭਰੋਗੇ, ਉਹ ਤੁਹਾਡੇ ਲਈ ਸੁਨੇਹੇ ਵਿੱਚ ਜੁੜ ਜਾਵੇਗਾ। ਭੇਜਣ ਦਾ ਬਟਨ ਤੁਸੀਂ ਉੱਥੇ ਦਬਾਉਂਦੇ ਹੋ। ਗੱਲ ਕਰਨੀ ਪਸੰਦ ਹੈ? ਇਸ ਪੰਨੇ \'ਤੇ ਦਿੱਤਾ ਨੰਬਰ ਮਿਲਾਓ।'],
     ['Average of 12 patient reviews on Justdial','Justdial पर 12 मरीज़ रिव्यू का औसत','Justdial \'ਤੇ 12 ਮਰੀਜ਼ ਰਿਵਿਊਆਂ ਦੀ ਔਸਤ'],
     ['Read the reviews','रिव्यू पढ़ें','ਰਿਵਿਊ ਪੜ੍ਹੋ'],
     ['4.3 out of 5 stars','5 में से 4.3 स्टार','5 ਵਿੱਚੋਂ 4.3 ਸਟਾਰ'],
@@ -1078,13 +1078,19 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
 
   function updateWA(){
     var name = $('name').value.trim(), svc = $('svc').value, day = $('day').value, msg = $('msg').value.trim();
-    var lines = ['Hello, I would like to book an appointment.'];
-    if(name) lines.push('Name: ' + name);
-    lines.push('Treatment: ' + svc);
-    if(touched) lines.push('Tooth: ' + toothLabel());
-    lines.push('Preferred day: ' + day);
-    if(msg) lines.push('Notes: ' + msg);
-    $('wa').href = 'https://wa.me/919915510261?text=' + encodeURIComponent(lines.join('\n'));
+    // Untouched form: open the chat with nothing typed. Only what the visitor filled in is added to the message.
+    var edited = name || msg || touched || $('svc').selectedIndex > 0 || $('day').selectedIndex > 0;
+    if(edited){
+      var lines = ['Hello, I would like to book an appointment.'];
+      if(name) lines.push('Name: ' + name);
+      lines.push('Treatment: ' + svc);
+      if(touched) lines.push('Tooth: ' + toothLabel());
+      lines.push('Preferred day: ' + day);
+      if(msg) lines.push('Notes: ' + msg);
+      $('wa').href = 'https://wa.me/919915510261?text=' + encodeURIComponent(lines.join('\n'));
+    } else {
+      $('wa').href = 'https://wa.me/919915510261';
+    }
     $('tooth-note').textContent = touched ? T('Tooth') + ' ' + sel + ' (' + T(QN[+sel.charAt(0)]) + ' ' + T(cap(NAMES[+sel.charAt(1)])) + ')' : '';
   }
   $('r-book').addEventListener('click', function(){
