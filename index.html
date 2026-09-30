@@ -8,7 +8,7 @@
 <title>Chandigarh Multispeciality Dental Clinic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Sans+Gurmukhi:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Chandigarh Multispeciality Dental Clinic","telephone":"+919915510261","address":{"@type":"PostalAddress","streetAddress":"Morinda Road, Opposite Bus Stand","addressLocality":"Chamkaur Sahib","addressRegion":"Punjab","postalCode":"140112","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:00"}],"medicalSpecialty":"Dentistry"}
 </script>
@@ -422,6 +422,14 @@ section[id]{scroll-margin-top:5.5rem}
   summary{font-size:1.02rem}
   footer .word{font-size:clamp(2.4rem,13vw,4rem)}
 }
+/* Inside Claude's viewer on a phone: the page runs under the status bar/camera and the viewer draws its own scroll arrows at the bottom centre.
+   So when the page is framed, push the top bar down a little and leave a gap in the middle of the bottom bar. */
+@media(max-width:820px){
+  html.framed{scroll-padding-top:9.5rem}
+  html.framed .navwrap{padding-top:max(calc(env(safe-area-inset-top,0px) + .7rem),3.6rem)}
+  html.framed .navspace{height:max(calc(4.4rem + env(safe-area-inset-top,0px)),8.2rem)}
+  html.framed .callbar{gap:4.2rem}
+}
 /* phone number in the top bar (laptop) */
 .navphone{gap:.5rem;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:.01em}
 .navphone svg{width:1rem;height:1rem;flex:none}
@@ -707,11 +715,12 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
 <div class="callbar glass"><a class="btn" id="wabtn" href="https://wa.me/919915510261?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a><a class="btn solid" id="callbtn" href="tel:+919915510261">Call</a></div>
 <div class="toast glass" id="toast" hidden role="status"><b>+91 99155 10261</b><button class="btn solid sm" type="button" id="toastcopy">Copy</button></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 /* 3D hero tooth: displaced-sphere crown with cusps, two tapered roots, glossy clearcoat, softbox reflections,
-   orbit rings and floating particles. Falls back to the SVG tooth if WebGL or three.js is unavailable. */
+   orbit rings and floating particles. three.js (about 600 KB) is fetched only after the page has painted,
+   and not at all on data-saver connections; until then, or if WebGL is unavailable, the SVG tooth shows. */
 (function(){
+  function initGL(){
   var stage = document.querySelector('.stage'), canvas = document.getElementById('gl');
   if(!stage || !canvas || typeof THREE === 'undefined') return;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, renderer;
@@ -817,10 +826,22 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     new IntersectionObserver(function(es){ vis = es[0].isIntersecting; }).observe(stage);
     requestAnimationFrame(loop);
   }
+  }
+  var conn = navigator.connection;
+  if(conn && conn.saveData) return;
+  function fetchThree(){
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; s.async = true; s.onload = initGL;
+    document.head.appendChild(s);
+  }
+  function whenIdle(){ (window.requestIdleCallback || function(f){ setTimeout(f, 300); })(fetchThree, {timeout: 2500}); }
+  if(document.readyState === 'complete') whenIdle(); else addEventListener('load', whenIdle);
 })();
 </script>
 <script>
 (function(){
+  // mark the page when it is shown inside another page (Claude's viewer), so spacing can adapt
+  try{ if(window.self !== window.top) document.documentElement.classList.add('framed'); }catch(e){ document.documentElement.classList.add('framed'); }
   // scroll progress + parallax blobs + stage tilt
   var bar = document.getElementById('progress'), amb = document.querySelectorAll('.ambient i');
   var ticking = false;
@@ -844,7 +865,6 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     ['Tooth chart','दाँतों का चार्ट','ਦੰਦਾਂ ਦਾ ਚਾਰਟ'],
     ['Your visit','आपकी विज़िट','ਤੁਹਾਡੀ ਫੇਰੀ'],
     ['Questions','सवाल','ਸਵਾਲ'],
-    ['Book a visit','विज़िट बुक करें','ਵਿਜ਼ਿਟ ਬੁੱਕ ਕਰੋ'],
     ['Switch light or dark theme','लाइट या डार्क थीम बदलें','ਲਾਈਟ ਜਾਂ ਡਾਰਕ ਥੀਮ ਬਦਲੋ'],
     ['Experienced dentistry','अनुभवी दंत चिकित्सा','ਤਜਰਬੇਕਾਰ ਦੰਦਾਂ ਦਾ ਇਲਾਜ'],
     ['in Chamkaur Sahib.','चमकौर साहिब में।','ਚਮਕੌਰ ਸਾਹਿਬ ਵਿੱਚ।'],
@@ -858,8 +878,6 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     ['10 AM – 7 PM','10 AM – 7 PM','10 AM – 7 PM'],
     ['Treatments under one roof','एक छत के नीचे इलाज','ਇੱਕ ਛੱਤ ਹੇਠ ਇਲਾਜ'],
     ['Years of experience','वर्षों का अनुभव','ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ'],
-    ['Your local doctor','आपके अपने डॉक्टर','ਤੁਹਾਡੇ ਆਪਣੇ ਡਾਕਟਰ'],
-    ['Opposite the bus stand, Morinda Road','बस स्टैंड के सामने, मोरिंडा रोड','ਬੱਸ ਅੱਡੇ ਦੇ ਸਾਹਮਣੇ, ਮੋਰਿੰਡਾ ਰੋਡ'],
     ['Root canal','रूट कैनाल','ਰੂਟ ਕੈਨਾਲ'],
     ['Laser dentistry','लेज़र दंत चिकित्सा','ਲੇਜ਼ਰ ਡੈਂਟਿਸਟਰੀ'],
     ['Straightening','दाँत सीधे करना','ਦੰਦ ਸਿੱਧੇ ਕਰਨਾ'],
@@ -909,7 +927,6 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     ['Treat','इलाज','ਇਲਾਜ'],
     ['Treatment at the clinic, then follow-up advice for home.','क्लिनिक में इलाज, फिर घर के लिए आगे की सलाह।','ਕਲੀਨਿਕ ਵਿੱਚ ਇਲਾਜ, ਫਿਰ ਘਰ ਲਈ ਅੱਗੇ ਦੀ ਸਲਾਹ।'],
     ['Book','बुकिंग','ਬੁਕਿੰਗ'],
-    ['Book now','बुक करें','ਬੁੱਕ ਕਰੋ'],
     ['Come in, call, or','आइए, कॉल कीजिए, या','ਆਓ, ਕਾਲ ਕਰੋ, ਜਾਂ'],
     ['message us.','मैसेज कीजिए।','ਸੁਨੇਹਾ ਭੇਜੋ।'],
     ['Phone','फ़ोन','ਫ਼ੋਨ'],['Address','पता','ਪਤਾ'],['Hours','समय','ਸਮਾਂ'],['Map','नक्शा','ਨਕਸ਼ਾ'],
@@ -947,7 +964,6 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     ['Mon–Sat · 10 AM – 7 PM','सोम–शनि · 10 AM – 7 PM','ਸੋਮ–ਸ਼ਨੀ · 10 AM – 7 PM'],
     ['Call','कॉल','ਕਾਲ'],
     ['WhatsApp','व्हाट्सऐप','ਵਟਸਐਪ'],
-    ['Open now · until 7 PM','अभी खुला है · शाम 7 बजे तक','ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ · ਸ਼ਾਮ 7 ਵਜੇ ਤੱਕ'],
     ['Tooth','दाँत','ਦੰਦ'],
     ['Central incisor','सामने का बीच का दाँत','ਸਾਹਮਣੇ ਦਾ ਵਿਚਲਾ ਦੰਦ'],
     ['Lateral incisor','सामने का बगल वाला दाँत','ਸਾਹਮਣੇ ਦਾ ਨਾਲ ਵਾਲਾ ਦੰਦ'],
@@ -1193,7 +1209,16 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
   });
   document.querySelectorAll('#svc option,#day option').forEach(function(o){ o.setAttribute('value', o.textContent); });
 
+  // Hindi and Punjabi fonts are only fetched when one of those languages is chosen
+  var indicLoaded = {};
+  function loadIndicFont(l){
+    if(l === 'en' || indicLoaded[l]) return; indicLoaded[l] = true;
+    var lk = document.createElement('link'); lk.rel = 'stylesheet';
+    lk.href = 'https://fonts.googleapis.com/css2?family=' + (l === 'hi' ? 'Noto+Sans+Devanagari' : 'Noto+Sans+Gurmukhi') + ':wght@400;500;600&display=swap';
+    document.head.appendChild(lk);
+  }
   function applyLang(l){
+    loadIndicFont(l);
     LANG = l;
     document.documentElement.lang = l;
     nodes.forEach(function(o){ o.n.nodeValue = o.lead + T(o.en) + o.trail; });
