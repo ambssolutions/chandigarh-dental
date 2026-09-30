@@ -70,7 +70,10 @@ html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
 @keyframes drift{to{transform:translate(4rem,3rem) scale(1.15)}}
 
 /* nav */
-.navwrap{position:sticky;top:calc(env(safe-area-inset-top,0px) + .7rem);z-index:30;padding-inline:.8rem;margin-top:.7rem}
+/* The top bar is fixed to the screen so it never scrolls away, whatever wraps the page. The spacer keeps the layout where it was. */
+.navwrap{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + .7rem) .8rem 0;pointer-events:none}
+.navwrap .nav{pointer-events:auto}
+.navspace{height:calc(4.4rem + env(safe-area-inset-top,0px))}
 .nav{max-width:64rem;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.5rem .55rem .5rem 1.1rem;border-radius:99px;box-shadow:var(--shadow)}
 .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font:500 .95rem var(--f-display);letter-spacing:-.02em}
 .brand svg{width:1.9rem;height:1.9rem}
@@ -419,6 +422,9 @@ section[id]{scroll-margin-top:5.5rem}
   summary{font-size:1.02rem}
   footer .word{font-size:clamp(2.4rem,13vw,4rem)}
 }
+/* phone number in the top bar (laptop) */
+.navphone{gap:.5rem;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.navphone svg{width:1rem;height:1rem;flex:none}
 /* WhatsApp buttons in WhatsApp green (same in light and dark) */
 #wabtn,#wa{background:#25d366;border-color:#25d366;color:#052e16;font-weight:700;box-shadow:0 8px 22px rgba(37,211,102,.35)}
 #wabtn:hover,#wa:hover{background:#3ee07d;border-color:#3ee07d}
@@ -442,7 +448,7 @@ section[id]{scroll-margin-top:5.5rem}
 .tile p,.tile h3,.steps p,.head p{overflow-wrap:anywhere}
 .btn{text-align:center;line-height:1.3;padding-block:.7rem}
 .brand span,.lang button,.nav .acts,.nav ul a{white-space:nowrap}
-@media(max-width:980px){.nav ul{display:none}}
+@media(max-width:1060px){.nav ul{display:none}}
 .chip{max-width:12.5rem}
 .swipe{margin:-.8rem 0 1rem}
 html:is([lang="hi"],[lang="pa"]) .sm-t,
@@ -503,11 +509,12 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
     <div class="acts">
       <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true" lang="en">EN</button><button type="button" data-l="pa" aria-pressed="false" lang="pa" aria-label="ਪੰਜਾਬੀ">ਪੰ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi" aria-label="हिन्दी">हि</button></div>
       <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.800z"/></svg></button>
-      <a class="btn solid sm" href="#book">Book a visit</a>
+      <a class="btn solid sm navphone" id="navcall" href="tel:+919915510261" aria-label="Call +91 99155 10261"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.100 4.200 2 2 0 014.100 2h3a2 2 0 012 1.700c.1 1 .4 1.900.7 2.800a2 2 0 01-.5 2.100L8.100 9.900a16 16 0 006 6l1.300-1.300a2 2 0 012.100-.4c.9.3 1.800.6 2.800.7a2 2 0 011.700 2z"/></svg><span>+91 99155 10261</span></a>
     </div>
   </div>
 </div>
 
+<div class="navspace" aria-hidden="true"></div>
 <main id="top">
 <div class="wrap hero">
   <div class="hero-grid">
@@ -1211,8 +1218,10 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
   // ---- Call button: if no dialer opens (desktop, or a frame that blocks tel: links), show the number with a copy button ----
   var toast = $('toast'), toastT = null;
   function showToast(){ toast.hidden = false; $('toastcopy').textContent = T('Copy'); clearTimeout(toastT); toastT = setTimeout(function(){ toast.hidden = true; }, 9000); }
-  $('callbtn').addEventListener('click', function(){
-    setTimeout(function(){ if(document.visibilityState === 'visible' && document.hasFocus()) showToast(); }, 1200);
+  ['callbtn','navcall'].forEach(function(id){
+    $(id).addEventListener('click', function(){
+      setTimeout(function(){ if(document.visibilityState === 'visible' && document.hasFocus()) showToast(); }, 1200);
+    });
   });
   $('toastcopy').addEventListener('click', function(){
     var btn = this, txt = '+91 99155 10261';
