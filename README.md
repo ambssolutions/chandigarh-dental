@@ -50,6 +50,17 @@ Fill in the clinic's Google Place ID and a Google Maps Places API key to read th
 - The 3D tooth uses three.js from cdnjs. It loads only on laptops and desktops (mouse, wide screen, more than 4 CPU cores), after the first mouse move or scroll or after 4 seconds. Phones, tablets and data-saver connections keep the flat tooth, which keeps scrolling smooth.
 - Fonts (Unbounded for the hero headline, Plus Jakarta Sans for everything else, plus Noto Sans for Hindi and Punjabi when chosen) come from Google Fonts.
 
+## Phone menu and settings
+
+On phones and tablets the top bar shows the logo, the voice button and a menu button. The menu holds the page sections and the settings, each remembered on that device:
+
+- **Language:** English, ਪੰਜਾਬੀ, हिन्दी
+- **Theme:** Auto (follows the phone), Light or Dark
+- **Text size:** Normal or Large
+- **Voice replies:** whether the voice assistant answers out loud
+
+It also has Call and WhatsApp buttons.
+
 ## Voice assistant
 
 The microphone button in the top bar listens in the language chosen on the page (English, Hindi or Punjabi) and answers out loud. It uses the browser's own speech recognition, so it works in Chrome, Edge, Samsung Internet and Safari. In browsers without it (for example Firefox) the button does not appear. Speech is turned into text by the browser's service (Google in Chrome); the clinic does not record anything.
