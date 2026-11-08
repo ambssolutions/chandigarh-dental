@@ -2,7 +2,7 @@
 
 Single-page website for the clinic. Everything is in one file, `index.html`. There is no build step.
 
-**Features:** interactive tooth chart, treatments carousel, live open/closed status in clinic time (IST) with a countdown, English / Hindi / Punjabi, WhatsApp booking, light and dark themes, works on phones, tablets and laptops.
+**Features:** interactive tooth chart, treatments carousel, live open/closed status in clinic time (IST) with a countdown, English / Hindi / Punjabi, WhatsApp booking, a voice assistant (English, Hindi and Punjabi), light and dark themes, works on phones, tablets and laptops.
 
 ## Put it online with GitHub Pages
 
@@ -47,5 +47,22 @@ Fill in the clinic's Google Place ID and a Google Maps Places API key to read th
 ## Notes
 
 - Hindi and Punjabi wording was written by an AI assistant and should be checked by a native speaker.
-- The 3D tooth uses three.js, loaded from cdnjs after the page appears. The flat tooth shows first and is the fallback.
-- Fonts (Plus Jakarta Sans, Unbounded, Figtree, JetBrains Mono, plus Noto Sans for Hindi and Punjabi) come from Google Fonts.
+- The 3D tooth uses three.js from cdnjs. It loads only on laptops and desktops (mouse, wide screen, more than 4 CPU cores), after the first mouse move or scroll or after 4 seconds. Phones, tablets and data-saver connections keep the flat tooth, which keeps scrolling smooth.
+- Fonts (Unbounded for the hero headline, Plus Jakarta Sans for everything else, plus Noto Sans for Hindi and Punjabi when chosen) come from Google Fonts.
+
+## Voice assistant
+
+The microphone button in the top bar listens in the language chosen on the page (English, Hindi or Punjabi) and answers out loud. It uses the browser's own speech recognition, so it works in Chrome, Edge, Samsung Internet and Safari. In browsers without it (for example Firefox) the button does not appear. Speech is turned into text by the browser's service (Google in Chrome); the clinic does not record anything.
+
+Things it understands, for example:
+
+| Say | What happens |
+|---|---|
+| "Are you open now?" / "ਕੀ ਕਲੀਨਿਕ ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ?" | Reads the live open/closed status and hours |
+| "Book a root canal on Monday, my name is Raj" / "सोमवार को रूट कैनाल बुक करो" | Fills in the booking form and offers a "Send on WhatsApp" button |
+| "Show tooth 14" / "upper left wisdom tooth" | Picks the tooth on the chart and reads what it usually needs |
+| "Do you treat children?" / "मुझे दाँत में दर्द है" | Opens the matching question and reads the answer |
+| "Call the clinic", "WhatsApp", "Where is the clinic?" | Offers a Call, WhatsApp or map button (browsers only open these from a tap) |
+| "Switch to Punjabi", "dark mode" | Changes the language or theme |
+
+The words it listens for are in the `var W = {` and `var SVC = [` lists near the end of `index.html`. Spoken replies are in `var VT = {`.
