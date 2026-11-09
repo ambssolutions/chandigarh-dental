@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T04:35:20Z">
+<meta name="build" content="2026-11-09T05:04:47Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -773,7 +773,7 @@ html:is([lang="hi"],[lang="pa"]) .hero h1,html:is([lang="hi"],[lang="pa"]) .head
 /* ---- rolling words: a soft cross-fade instead of a hard slide ---- */
 .roll{overflow:visible}
 .rollbox{display:grid;animation:none!important;transform:none!important}
-.rollbox>span{grid-area:1/1;opacity:0}
+.rollbox>span{grid-area:1/1;opacity:0;text-align:left;justify-self:start}
 .rollbox>span:nth-child(5){display:none}
 /* each word: 0.6 s in, 2.4 s held, 0.6 s out; the next word's fade-in runs exactly over this word's fade-out */
 @keyframes wordcycle{
@@ -793,6 +793,99 @@ html:is([lang="hi"],[lang="pa"]) .hero .rollbox>span:nth-child(4){animation-dela
 @media(prefers-reduced-motion:reduce){
   .hero .rollbox>span,html:is([lang="hi"],[lang="pa"]) .hero .rollbox>span{animation:none!important;opacity:0}
   .hero .rollbox>span:first-child{opacity:1}
+}
+/* ---- hero, next level: proof with real stars, premium tooth stage, quiet texture ---- */
+.hero{isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-2rem -10vw 0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 16%,transparent) 1px,transparent 1.3px);background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(60% 70% at 22% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(60% 70% at 22% 40%,#000 0%,transparent 70%);opacity:.55}
+.stage .ring:not(.b){display:none}
+.stage .ring.b{inset:2%;border:1px solid color-mix(in srgb,var(--aqua) 22%,transparent);opacity:1;animation:none}
+.stage .aura{position:absolute;inset:-1%;border-radius:50%;pointer-events:none;
+  background:conic-gradient(from 0deg,transparent 0 55%,color-mix(in srgb,var(--aqua) 55%,transparent) 72%,color-mix(in srgb,var(--sky) 45%,transparent) 82%,transparent 92%);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
+  animation:spin 14s linear infinite}
+.stage .floor{position:absolute;left:28%;right:28%;bottom:9%;height:7%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--ink) 22%,transparent),transparent);filter:blur(6px);animation:floorpulse 8s ease-in-out infinite}
+@keyframes floorpulse{50%{transform:scaleX(.86);opacity:.7}}
+.stage.gl-on .floor{display:none}
+@media(prefers-reduced-motion:reduce){.stage .aura,.stage .floor{animation:none}}
+.proof{gap:.35rem 1.6rem;align-items:center}
+.proof li{display:flex;align-items:center}
+.proof .pyears{gap:.45rem;min-height:2.75rem}
+.proof svg.stars5,.stars5{width:5.6rem;height:1.12rem;flex:none;margin-right:.15rem}
+.stars5 .off{fill:color-mix(in srgb,var(--ink) 16%,transparent)}
+.stars5 .on{fill:#e3a008}
+@media(max-width:700px){
+  .proof{flex-direction:row;flex-wrap:wrap;gap:0 1.1rem}
+  .proof li:last-child{flex-basis:100%}
+  .proof svg.stars5,.stars5{width:4.4rem;height:.88rem}
+  .proof li:first-child span{display:none}
+  .proof li:first-child b::after{content:" · Google";font-weight:500;color:var(--muted)}
+  .hero::before{inset:-1rem -2rem 0;background-size:18px 18px;-webkit-mask-image:radial-gradient(80% 50% at 30% 30%,#000,transparent 75%);mask-image:radial-gradient(80% 50% at 30% 30%,#000,transparent 75%)}
+}
+@media(min-width:901px) and (max-height:800px){.proof{padding-top:.7rem;margin-top:.9rem}.proof .pyears{min-height:2.4rem}.hero-cta{margin-top:1.1rem}}
+@media(max-width:700px) and (max-height:780px){.proof .pyears{min-height:2.2rem}.proof{padding-top:.6rem;margin-top:.8rem}}
+/* ================= hero layouts (html[data-hero]) ================= */
+.hero-side{position:relative;min-width:0}
+.hcard{display:none}
+.hcard{border-radius:1.25rem;background:color-mix(in srgb,var(--bg2) 92%,transparent);border:1px solid var(--line);box-shadow:0 18px 40px rgba(6,40,48,.12);padding:.85rem 1.05rem;text-decoration:none;color:var(--ink);font-size:var(--fs-sm)}
+.hcard b{font-weight:700}
+.hcard .hk{display:block;font-size:var(--fs-xs);color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.hc-status b{display:block;font-size:1rem;color:var(--bad)}
+.hc-status.open b{color:var(--good)}.hc-status.soon b{color:var(--warn)}
+.hc-status>span:last-child{color:var(--muted)}
+.hc-rate{align-items:center;gap:.5rem;flex-wrap:wrap}
+.hc-rate .stars5{width:5.2rem;height:1.04rem}
+.hc-rate b{font-size:1.15rem}.hc-rate>span{color:var(--muted)}
+.hc-wa{align-items:center;gap:.75rem}
+.hc-wa>svg{width:2.4rem;height:2.4rem;padding:.5rem;border-radius:50%;background:#25d366;color:#052e16;flex:none}
+.hc-wa b{display:block}.hc-wa span span{color:var(--muted)}
+@media(hover:hover){a.hcard{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}a.hcard:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(6,40,48,.16)}}
+
+/* A: split panel — the tooth sits in a large soft panel with floating live cards */
+@media(min-width:901px){
+  html[data-hero="a"] .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,4.5rem)}
+  html[data-hero="a"] .hero-side{align-self:stretch;display:grid;place-items:center;border-radius:2rem;margin-block:.4rem;
+    background:radial-gradient(120% 90% at 70% 20%,color-mix(in srgb,var(--aqua) 26%,transparent),transparent 60%),linear-gradient(160deg,color-mix(in srgb,var(--bg2) 70%,#fff),color-mix(in srgb,var(--sky) 14%,var(--bg2)));
+    border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+  html[data-hero="a"] .stage{width:min(78%,60vh);max-width:none}
+  html[data-hero="a"] .hcard{display:block;position:absolute}
+  html[data-hero="a"] .hc-status{left:-1.6rem;bottom:12%}
+  html[data-hero="a"] .hc-rate{display:flex;right:-1rem;top:9%}
+  html[data-hero="a"] #openpill{display:none}
+  html[data-hero="a"] .hc-wa{display:none}
+  html[data-hero="a"] .proof li:first-child,html[data-hero="c"] .proof li:first-child{display:none}
+}
+/* B: centred statement — everything centred, the tooth as an emblem above the headline */
+@media(min-width:901px){
+  html[data-hero="b"] .hero-grid{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:0}
+  html[data-hero="b"] .hero-grid>div:first-child{order:2;display:flex;flex-direction:column;align-items:center;max-width:52rem}
+  html[data-hero="b"] .hero-side{order:1;width:clamp(5.5rem,11vh,8rem);margin-bottom:-.2rem}
+  html[data-hero="b"] .hero h1{font-size:clamp(2.4rem,min(5.4vw,8.6vh),5.6rem);margin-block:.8rem 1rem}
+  html[data-hero="b"] .hero .lede{max-width:44rem}
+  html[data-hero="b"] .hero-cta{margin-top:1.1rem}
+  html[data-hero="b"] .proof{flex-wrap:nowrap;padding-top:.8rem;margin-top:1rem}
+  html[data-hero="b"] .proof li{white-space:nowrap}
+  html[data-hero="b"] .stage{max-width:none;width:100%}
+  html[data-hero="b"] .stage .glow{opacity:.18}
+  html[data-hero="b"] .hero h1{max-width:none}
+  html[data-hero="b"] .hero .lede{margin-inline:auto}
+  html[data-hero="b"] .hero-cta,html[data-hero="b"] .proof{justify-content:center}
+  html[data-hero="b"] .proof{margin-inline:auto;max-width:44rem}
+}
+/* C: bento — headline left, a grid of tiles right: tooth, live status, rating, WhatsApp */
+@media(min-width:901px){
+  html[data-hero="c"] .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+  html[data-hero="c"] .hero-side{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto auto;gap:.8rem;align-self:center;height:min(calc(100svh - 12rem),34rem)}
+  html[data-hero="c"] .stage{grid-column:1/-1;max-width:none;width:100%;height:100%;aspect-ratio:auto;border-radius:1.6rem;overflow:hidden;
+    background:radial-gradient(90% 90% at 50% 30%,color-mix(in srgb,var(--aqua) 24%,transparent),transparent 65%),linear-gradient(160deg,color-mix(in srgb,var(--bg2) 70%,#fff),color-mix(in srgb,var(--sky) 12%,var(--bg2)));border:1px solid var(--line)}
+  html[data-hero="c"] .stage svg.big{inset:8% 30%;width:40%;height:84%}
+  html[data-hero="c"] .stage .aura,html[data-hero="c"] .stage .ring{inset:4% 24%;border-radius:50%;aspect-ratio:1;height:auto;margin:auto}
+  html[data-hero="c"] .stage canvas.gl{inset:-10% 0;width:100%;height:120%}
+  html[data-hero="c"] .hcard{display:block}
+  html[data-hero="c"] .hc-rate{display:flex}
+  html[data-hero="c"] .hc-wa{display:flex;grid-column:1/-1}
+  html[data-hero="c"] #openpill{display:none}
 }
 /* ---- smoothness ---- */
 :root{interpolate-size:allow-keywords}
@@ -888,12 +981,14 @@ html.lenis,html.lenis body{height:auto}
         <a class="btn" href="#chart">Find your tooth</a>
       </div>
       <ul class="proof">
-        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener"><span class="pstar"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><b>4.1</b> <span>Rated on Google</span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener" aria-label="Rated 4.1 out of 5 from 9 Google reviews"><svg class="stars5" viewBox="0 0 120 24" aria-hidden="true"><defs><clipPath id="hrate"><rect width="98.4" height="24"/></clipPath></defs><g class="off"><path transform="translate(0 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></g><g class="on" clip-path="url(#hrate)"><path transform="translate(0 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></g></svg><b>4.1</b> <span>from 9 Google reviews</span></a></li>
+        <li class="pyears"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.3 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z" style="display:none"/><circle cx="12" cy="8" r="5"/><path d="M8.2 12.2L7 21l5-2.5 5 2.5-1.2-8.8"/></svg><b>15+</b> <span>years of experience</span></li>
         <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Opposite the bus stand, Morinda Road</span></a></li>
       </ul>
     </div>
+    <div class="hero-side">
     <div class="stage" id="stage" aria-hidden="true">
-      <div class="ring b"></div><div class="ring"></div><div class="glow"></div>
+      <div class="aura"></div><div class="ring b"></div><div class="glow"></div><div class="floor"></div>
       <canvas id="gl" class="gl" width="900" height="900"></canvas>
       <svg class="big" viewBox="0 0 200 240">
         <defs>
@@ -905,6 +1000,10 @@ html.lenis,html.lenis body{height:auto}
         <path d="M50 62c0-20 22-30 38-20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
         <ellipse cx="146" cy="96" rx="4" ry="12" fill="#fff" opacity=".6"/>
       </svg>
+    </div>
+    <div class="hcard hc-status"><span class="hk">Today</span><b id="hcstat">Mon–Sat · 10 AM – 7 PM</b><span>Mon–Sat · 10 AM – 7 PM</span></div>
+    <a class="hcard hc-rate" href="https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener" aria-label="Rated 4.1 out of 5 from 9 Google reviews"><svg class="stars5" viewBox="0 0 120 24" aria-hidden="true"><defs><clipPath id="hrate2"><rect width="98.4" height="24"/></clipPath></defs><g class="off"><path transform="translate(0 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></g><g class="on" clip-path="url(#hrate2)"><path transform="translate(0 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></g></svg><b>4.1</b><span>from 9 Google reviews</span></a>
+    <a class="hcard hc-wa" href="https://wa.me/919915510261" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span><b>Book on WhatsApp</b><span>+91 99155 10261</span></span></a>
     </div>
   </div>
   <div class="marquee" aria-hidden="true"><div class="track">
@@ -1484,6 +1583,7 @@ html.lenis,html.lenis body{height:auto}
     box.appendChild(word);
     if(cut >= 0) box.appendChild(document.createTextNode(s.slice(cut)));
     var p = $('openpill'); p.classList.toggle('open', !!st.open); p.classList.toggle('soon', !!st.soon);
+    var hc = $('hcstat'); if(hc){ hc.textContent = box.textContent; hc.parentNode.classList.toggle('open', !!st.open); hc.parentNode.classList.toggle('soon', !!st.soon); }
   }
   function renderHours(){
     var today = clinicNow().d;
