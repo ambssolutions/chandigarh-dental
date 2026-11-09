@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T17:49:58Z">
+<meta name="build" content="2026-11-09T18:47:28Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1274,6 +1274,22 @@ html.anim .photos.in .ph img{transform:none}
 /* reading-progress bar follows the scroll on the browser's own timeline where supported (no scroll handler) */
 #progress.sd{animation:progfill linear both;animation-timeline:scroll(root)}
 @keyframes progfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ==== stats: centred both ways, numbers on one shared row height, tidy labels ==== */
+.stats{align-items:stretch}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.55rem;padding:1.5rem 1rem;min-height:9.5rem}
+.stat b,.stat b.txt{display:flex;align-items:center;justify-content:center;height:3.3rem;margin:0;padding:0;line-height:1;white-space:nowrap;font-size:clamp(2.2rem,4.2vw,3.1rem)}
+.stat b.txt{font-size:clamp(1.65rem,3vw,2.2rem)}
+.stat span{display:block;max-width:12rem;min-height:2.8em;margin:0 auto;font-size:clamp(.9rem,.85rem + .3vw,1rem);line-height:1.4;text-wrap:balance}
+@media(max-width:760px){
+  .stats{gap:.85rem}
+  .stat{min-height:8.6rem;padding:1.2rem .8rem;gap:.45rem}
+  .stat b,.stat b.txt{height:2.8rem;font-size:clamp(2rem,9vw,2.6rem)}
+  .stat b.txt{font-size:clamp(1.5rem,6.6vw,1.95rem)}
+  .stat span{font-size:.88rem;max-width:none;padding-inline:.15rem}
+}
+/* stacked treatment cards: a small lift shadow only, so their shadows do not pile into a smudge below the stack */
+@media(max-width:900px){.bento .tile.glass{box-shadow:inset 1px 1px 0 rgba(255,255,255,.1),0 -6px 14px -8px rgba(0,0,0,.25)!important}}
 </style>
 </head>
 <body>
@@ -1417,7 +1433,7 @@ html.anim .photos.in .ph img{transform:none}
   <div class="wrap stats">
     <div class="stat glass rv"><b>15+</b><span>Years of experience</span></div>
     <div class="stat glass rv"><b>9</b><span>Treatments under one roof</span></div>
-    <div class="stat glass rv"><b>4.1</b><span>Average of 9 reviews on Google</span></div>
+    <div class="stat glass rv"><b>4.1</b><span>Google rating, 9 reviews</span></div>
     <div class="stat glass rv"><b class="txt">Mon–Sat</b><span>10 AM – 7 PM</span></div>
   </div>
 </section>
