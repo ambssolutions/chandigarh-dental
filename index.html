@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T06:02:19Z">
+<meta name="build" content="2026-11-09T06:10:49Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1078,6 +1078,49 @@ section .glass:not(.pill){background:linear-gradient(180deg,color-mix(in srgb,va
 :root:not([data-theme="dark"]) .btn:not(.solid){box-shadow:inset 0 1px 0 #fff,0 2px 6px -2px rgba(6,60,70,.18)}
 }
 
+
+/* ==== deeper emboss + refined text (dark defaults) ==== */
+section .glass:not(.pill){background:linear-gradient(145deg,color-mix(in srgb,var(--bg2) 100%,#fff 7%),color-mix(in srgb,var(--bg2) 100%,#000 14%));border-color:rgba(255,255,255,.07);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.12),inset -1px -1px 0 rgba(0,0,0,.45),-8px -8px 20px rgba(255,255,255,.03),12px 14px 30px rgba(0,0,0,.6)}
+section .glass:not(.pill):hover{box-shadow:inset 1px 1px 0 rgba(255,255,255,.11),inset -1px -1px 0 rgba(0,0,0,.45),-10px -10px 24px rgba(255,255,255,.035),16px 18px 36px rgba(0,0,0,.65)}
+input,select,textarea{box-shadow:inset 2px 2px 6px rgba(0,0,0,.5),inset -1px -1px 0 rgba(255,255,255,.05)}
+.tags span{box-shadow:inset 1px 1px 0 rgba(255,255,255,.07),2px 3px 8px rgba(0,0,0,.35)}
+.steps li::before{background:linear-gradient(145deg,color-mix(in srgb,var(--bg2) 100%,#fff 10%),color-mix(in srgb,var(--bg2) 100%,#000 20%));box-shadow:-3px -3px 7px rgba(255,255,255,.05),4px 5px 10px rgba(0,0,0,.55),inset 1px 1px 0 rgba(255,255,255,.1)}
+:is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 4px rgba(0,0,0,.6)}
+:is(.tile h3,.readout h3,.steps b,summary,#form h3){text-shadow:0 1px 2px rgba(0,0,0,.45)}
+/* text: balanced headings, tidy paragraphs, comfortable measure */
+h1,h2,h3,summary,.steps b{text-wrap:balance}
+p,dd,li{text-wrap:pretty}
+body{line-height:1.65;font-optical-sizing:auto}
+.head p{max-width:40rem;margin-inline:auto;line-height:1.6}
+.tile p,.steps p,.readout p,details p{line-height:1.6}
+.head h2{letter-spacing:-.012em}
+.tile .tag,.readout .who,.kicker,.info dt{letter-spacing:.12em;font-weight:700}
+
+:root[data-theme="light"]{--ink:#0b2228;--muted:#2c4a50;--aqua-text:#04665d;--line:rgba(6,60,70,.14)}
+:root[data-theme="light"] section .glass:not(.pill){background:linear-gradient(145deg,#ffffff,#edf5f5);border-color:rgba(255,255,255,.8);
+  box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(6,60,70,.07),-10px -10px 22px rgba(255,255,255,.85),12px 14px 28px rgba(6,60,70,.18)}
+:root[data-theme="light"] section .glass:not(.pill):hover{box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(6,60,70,.07),-12px -12px 26px rgba(255,255,255,.9),16px 18px 34px rgba(6,60,70,.22)}
+:root[data-theme="light"] input,:root[data-theme="light"] select,:root[data-theme="light"] textarea{background:#eef5f5;box-shadow:inset 2px 2px 5px rgba(6,60,70,.13),inset -2px -2px 5px #fff}
+:root[data-theme="light"] .tags span{background:#fff;box-shadow:inset 1px 1px 0 #fff,2px 3px 7px rgba(6,60,70,.14)}
+:root[data-theme="light"] .steps li::before{background:linear-gradient(145deg,#ffffff,#e2eded);box-shadow:-3px -3px 7px #fff,4px 5px 10px rgba(6,60,70,.2),inset 1px 1px 0 #fff}
+:root[data-theme="light"] :is(.head h2,.card h2,.stat b,.rate .num){color:#0b2228;text-shadow:0 1px 0 #fff,0 2px 3px rgba(6,60,70,.14)}
+:root[data-theme="light"] :is(.tile h3,.readout h3,.steps b,summary,#form h3){color:#0b2228;text-shadow:0 1px 0 #fff}
+:root[data-theme="light"] :is(.tile p,.steps p,.readout p,details p,.head p,.stat span,.rate p,.fine,.info dd,label){color:#2c4a50}
+:root[data-theme="light"] footer{color:#2c4a50}
+@media (prefers-color-scheme:light){
+:root:not([data-theme="dark"]){--ink:#0b2228;--muted:#2c4a50;--aqua-text:#04665d;--line:rgba(6,60,70,.14)}
+:root:not([data-theme="dark"]) section .glass:not(.pill){background:linear-gradient(145deg,#ffffff,#edf5f5);border-color:rgba(255,255,255,.8);
+  box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(6,60,70,.07),-10px -10px 22px rgba(255,255,255,.85),12px 14px 28px rgba(6,60,70,.18)}
+:root:not([data-theme="dark"]) section .glass:not(.pill):hover{box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(6,60,70,.07),-12px -12px 26px rgba(255,255,255,.9),16px 18px 34px rgba(6,60,70,.22)}
+:root:not([data-theme="dark"]) input,:root:not([data-theme="dark"]) select,:root:not([data-theme="dark"]) textarea{background:#eef5f5;box-shadow:inset 2px 2px 5px rgba(6,60,70,.13),inset -2px -2px 5px #fff}
+:root:not([data-theme="dark"]) .tags span{background:#fff;box-shadow:inset 1px 1px 0 #fff,2px 3px 7px rgba(6,60,70,.14)}
+:root:not([data-theme="dark"]) .steps li::before{background:linear-gradient(145deg,#ffffff,#e2eded);box-shadow:-3px -3px 7px #fff,4px 5px 10px rgba(6,60,70,.2),inset 1px 1px 0 #fff}
+:root:not([data-theme="dark"]) :is(.head h2,.card h2,.stat b,.rate .num){color:#0b2228;text-shadow:0 1px 0 #fff,0 2px 3px rgba(6,60,70,.14)}
+:root:not([data-theme="dark"]) :is(.tile h3,.readout h3,.steps b,summary,#form h3){color:#0b2228;text-shadow:0 1px 0 #fff}
+:root:not([data-theme="dark"]) :is(.tile p,.steps p,.readout p,details p,.head p,.stat span,.rate p,.fine,.info dd,label){color:#2c4a50}
+:root:not([data-theme="dark"]) footer{color:#2c4a50}
+}
 </style>
 </head>
 <body>
