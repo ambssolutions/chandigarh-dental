@@ -94,3 +94,11 @@ Things it understands, for example:
 | "Switch to Punjabi", "dark mode" | Changes the language or theme |
 
 The words it listens for are in the `var W = {` and `var SVC = [` lists near the end of `index.html`. Spoken replies are in `var VT = {`.
+
+## Photos
+
+The three photos in "Your visit" (`img/visit-*.webp`) are free stock photos from Pexels (Pexels licence: free to use, no attribution required), labelled on the page as "Illustrative photos". They are not photos of this clinic. Replace them with the clinic's own photos when available: keep the same file names, or update the `srcset` in `index.html`.
+
+- `visit-chair`: pexels.com/photo/3845625
+- `visit-consult`: pexels.com/photo/3845810
+- `visit-smile`: pexels.com/photo/3762453
