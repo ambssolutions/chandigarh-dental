@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T08:48:31Z">
+<meta name="build" content="2026-11-09T17:49:58Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1227,11 +1227,20 @@ html.anim main>section::before{animation:glowdrift 24s ease-in-out infinite alte
 @media(max-width:900px){
   .bento{display:flex;flex-direction:column;gap:1.1rem;overflow:visible;margin-inline:0;padding:0 0 .5rem;scroll-snap-type:none}
   .bento .tile{flex:none;width:100%;min-height:20.5rem;scroll-snap-align:none;position:sticky;
-    top:calc(5.4rem + env(safe-area-inset-top,0px) + var(--k,0) * .7rem);
-    scale:calc(1 - var(--p,0) * .07);transform-origin:50% 0;
-    box-shadow:0 -10px 30px -12px rgba(0,0,0,.35),0 18px 34px -16px rgba(0,0,0,.45)}
-  .bento .t6{position:relative;top:auto;scale:none;min-height:0}
+    top:calc(5.4rem + env(safe-area-inset-top,0px) + var(--k,0) * .6rem);
+    will-change:transform;backface-visibility:hidden;
+    box-shadow:0 -6px 16px -8px rgba(0,0,0,.28),0 10px 22px -12px rgba(0,0,0,.35)}
+  .bento .t6{position:relative;top:auto;min-height:0;will-change:auto}
   .swipe,.dots{display:none!important}
+  html.anim main>section::before{animation:none}
+}
+/* each card grows into place as it scrolls up; runs on the browser's scroll timeline, so it never lags the finger */
+@supports (animation-timeline: view()){
+  @media(max-width:900px) and (prefers-reduced-motion:no-preference){
+    .bento .tile:not(.t6){animation:cardin linear both;animation-timeline:view();animation-range:entry 0% entry 90%;transform-origin:50% 0}
+    @keyframes cardin{from{transform:scale(.9) translateY(24px);opacity:.55}to{transform:none;opacity:1}}
+  }
+}
 }
 
 /* ==== photos in "Your visit": embossed frames that unveil as they scroll in ==== */
@@ -1261,6 +1270,10 @@ html.anim .photos.in .ph img{transform:none}
 :root[data-theme="light"] .ph{box-shadow:-8px -8px 18px rgba(255,255,255,.45),12px 14px 28px rgba(6,60,70,.22)}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .ph{box-shadow:-8px -8px 18px rgba(255,255,255,.45),12px 14px 28px rgba(6,60,70,.22)}
 }
+
+/* reading-progress bar follows the scroll on the browser's own timeline where supported (no scroll handler) */
+#progress.sd{animation:progfill linear both;animation-timeline:scroll(root)}
+@keyframes progfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 </style>
 </head>
 <body>
@@ -1709,7 +1722,7 @@ html.anim .photos.in .ph img{transform:none}
       ticking = false;
     });
   }
-  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  if(window.CSS && CSS.supports('animation-timeline: scroll()')) bar.classList.add('sd'); else { addEventListener('scroll', onScroll, {passive:true}); onScroll(); }
 
   // ---- translations: [English, Hindi, Punjabi] ----
   var TR = []; // Hindi and Punjabi text lives in i18n.json and loads only when one of those languages is chosen
@@ -2047,20 +2060,8 @@ html.anim .photos.in .ph img{transform:none}
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fallback); } else fallback();
   });
 
-  // ---- treatments (phones and tablets): stacking cards; each card eases back as the next one slides over it ----
-  (function(){
-    var bento = document.querySelector('.bento'), tiles = [].slice.call(bento.children), on = matchMedia('(max-width: 900px)'), raf = 0;
-    tiles.forEach(function(t, i){ t.style.setProperty('--k', i); });
-    function paint(){ raf = 0;
-      for(var i = 0; i < tiles.length; i++){
-        var t = tiles[i], n = tiles[i+1], p = 0;
-        if(on.matches && n){ var a = t.getBoundingClientRect(), b = n.getBoundingClientRect(); p = Math.max(0, Math.min(1, (a.bottom - b.top) / a.height)); }
-        t.style.setProperty('--p', p.toFixed(3));
-      }
-    }
-    function req(){ if(!raf) raf = requestAnimationFrame(paint); }
-    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){ addEventListener('scroll', req, {passive: true}); addEventListener('resize', req); paint(); }
-  })();
+  // ---- treatments (phones and tablets): stacking cards are pure CSS (sticky + a scroll-driven entrance), no scroll handler ----
+  [].forEach.call(document.querySelector('.bento').children, function(t, i){ t.style.setProperty('--k', i); });
 
   // ---- hero: tap the tooth to give it a spin ----
   var stageEl = $('stage');
