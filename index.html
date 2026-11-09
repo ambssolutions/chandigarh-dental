@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T05:48:22Z">
+<meta name="build" content="2026-11-09T06:02:19Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1008,6 +1008,76 @@ html.lenis,html.lenis body{height:auto}
 .fgrid ul{padding:0}
 .fcontact{justify-items:center}.fcontact li,.fcontact a{text-align:left}.fbrand b{margin-inline:auto}
 footer .row{flex-direction:column;align-items:center;text-align:center}
+/* ==== embossed surfaces (dark mode defaults; light versions above) ==== */
+section .glass:not(.pill){background:linear-gradient(180deg,color-mix(in srgb,var(--bg2) 100%,#fff 4%),var(--bg2));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),inset 0 -1px 0 rgba(0,0,0,.35),0 16px 34px -16px rgba(0,0,0,.7)}
+:is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 -1px 0 rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.08)}
+.hero h1{filter:drop-shadow(0 -1px 0 rgba(0,0,0,.55)) drop-shadow(0 1px 0 rgba(255,255,255,.14)) drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+.btn.solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.14),0 8px 22px -8px rgba(7,154,140,.5)}
+.hero .btn.solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.14),0 10px 34px rgba(45,226,208,.28)}
+.btn:not(.solid){box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 2px 8px -2px rgba(0,0,0,.4)}
+
+/* ==== hero follows the theme: dark cinematic in dark mode, bright stage in light mode ==== */
+
+:root[data-theme="light"] .hero{--ink:#04191f;--muted:#34545a;--line:rgba(6,60,70,.16);--aqua-text:#05736a;--good:#1f8a4c;--bad:#c62828;--warn:#a85a00;--glass:rgba(255,255,255,.72);--bg2:#d4e4e4}
+:root[data-theme="light"] .hero::before{background:
+    radial-gradient(38% 46% at 50% 64%,rgba(45,226,208,.22),transparent 70%),
+    radial-gradient(30% 34% at 50% 0%,rgba(108,184,255,.22),transparent 75%),
+    radial-gradient(60% 50% at 15% 100%,rgba(45,226,208,.10),transparent 70%),
+    linear-gradient(180deg,#f4fafa 0%,#e6f1f1 60%,#dcebeb 100%)}
+:root[data-theme="light"] .hero::after{background-image:radial-gradient(rgba(6,60,70,.10) 1px,transparent 1.2px)}
+:root[data-theme="light"] .hero .pill.glass{background:rgba(255,255,255,.85)!important;border-color:rgba(6,60,70,.14);box-shadow:inset 0 1px 0 #fff,0 4px 12px -4px rgba(6,60,70,.18)}
+:root[data-theme="light"] .hero .btn:not(.solid){background:#fff;border-color:rgba(6,60,70,.18);color:var(--ink)}
+:root[data-theme="light"] .hero .btn:not(.solid):hover{background:#f3f9f9}
+:root[data-theme="light"] .hero .btn.solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(0,0,0,.12),0 10px 26px rgba(7,154,140,.28)}
+:root[data-theme="light"] .hero h1{color:var(--ink);filter:drop-shadow(0 1px 0 #fff) drop-shadow(0 6px 10px rgba(6,60,70,.14))}
+:root[data-theme="light"] .hero .proof{border-top-color:rgba(6,60,70,.14)}
+:root[data-theme="light"] .hero .stars5 .off{fill:rgba(6,60,70,.2)}
+:root[data-theme="light"] .hero .marquee{border-color:rgba(6,60,70,.12)}
+:root[data-theme="light"] .hero .marquee .track span{color:rgba(4,25,31,.55)}
+:root[data-theme="light"] .hero .stage .glow{background:radial-gradient(closest-side,rgba(45,226,208,.30),rgba(108,184,255,.12) 55%,transparent 75%)}
+:root[data-theme="light"] .hero .stage .ring.b{border-color:rgba(7,154,140,.25)}
+:root[data-theme="light"] .hero .stage .floor{background:radial-gradient(closest-side,rgba(7,154,140,.35),rgba(7,154,140,.08) 55%,transparent)}
+:root[data-theme="light"] .hero .stage::before{top:-6%;background:linear-gradient(180deg,rgba(7,154,140,0) 0%,rgba(7,154,140,.10) 50%,rgba(7,154,140,0) 100%)}
+:root[data-theme="light"] .hero{--smile-top:#3cc4b4;--smile-bot:#05736a}
+:root[data-theme="light"] .hero .stage .ring.b{background:radial-gradient(circle at 50% 42%,rgba(7,154,140,.26),rgba(42,127,216,.12) 58%,transparent 72%)}
+:root[data-theme="light"] .hero .stage::after{border-color:rgba(7,154,140,.35);box-shadow:0 0 24px rgba(7,154,140,.18),inset 0 0 14px rgba(7,154,140,.14)}
+:root[data-theme="light"] .hero .stage svg.big{filter:drop-shadow(0 0 1px rgba(6,60,70,.35)) drop-shadow(0 18px 22px rgba(6,60,70,.32))}
+:root[data-theme="light"] section .glass:not(.pill){background:linear-gradient(180deg,#ffffff,#f3f9f9);border-color:rgba(6,60,70,.10);
+  box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 rgba(6,60,70,.06),0 1px 2px rgba(6,60,70,.06),0 14px 30px -14px rgba(6,60,70,.28)}
+:root[data-theme="light"] :is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 1px 0 #fff,0 -1px 0 rgba(6,60,70,.10)}
+:root[data-theme="light"] .btn:not(.solid){box-shadow:inset 0 1px 0 #fff,0 2px 6px -2px rgba(6,60,70,.18)}
+@media (prefers-color-scheme:light){
+:root:not([data-theme="dark"]) .hero{--ink:#04191f;--muted:#34545a;--line:rgba(6,60,70,.16);--aqua-text:#05736a;--good:#1f8a4c;--bad:#c62828;--warn:#a85a00;--glass:rgba(255,255,255,.72);--bg2:#d4e4e4}
+:root:not([data-theme="dark"]) .hero::before{background:
+    radial-gradient(38% 46% at 50% 64%,rgba(45,226,208,.22),transparent 70%),
+    radial-gradient(30% 34% at 50% 0%,rgba(108,184,255,.22),transparent 75%),
+    radial-gradient(60% 50% at 15% 100%,rgba(45,226,208,.10),transparent 70%),
+    linear-gradient(180deg,#f4fafa 0%,#e6f1f1 60%,#dcebeb 100%)}
+:root:not([data-theme="dark"]) .hero::after{background-image:radial-gradient(rgba(6,60,70,.10) 1px,transparent 1.2px)}
+:root:not([data-theme="dark"]) .hero .pill.glass{background:rgba(255,255,255,.85)!important;border-color:rgba(6,60,70,.14);box-shadow:inset 0 1px 0 #fff,0 4px 12px -4px rgba(6,60,70,.18)}
+:root:not([data-theme="dark"]) .hero .btn:not(.solid){background:#fff;border-color:rgba(6,60,70,.18);color:var(--ink)}
+:root:not([data-theme="dark"]) .hero .btn:not(.solid):hover{background:#f3f9f9}
+:root:not([data-theme="dark"]) .hero .btn.solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(0,0,0,.12),0 10px 26px rgba(7,154,140,.28)}
+:root:not([data-theme="dark"]) .hero h1{color:var(--ink);filter:drop-shadow(0 1px 0 #fff) drop-shadow(0 6px 10px rgba(6,60,70,.14))}
+:root:not([data-theme="dark"]) .hero .proof{border-top-color:rgba(6,60,70,.14)}
+:root:not([data-theme="dark"]) .hero .stars5 .off{fill:rgba(6,60,70,.2)}
+:root:not([data-theme="dark"]) .hero .marquee{border-color:rgba(6,60,70,.12)}
+:root:not([data-theme="dark"]) .hero .marquee .track span{color:rgba(4,25,31,.55)}
+:root:not([data-theme="dark"]) .hero .stage .glow{background:radial-gradient(closest-side,rgba(45,226,208,.30),rgba(108,184,255,.12) 55%,transparent 75%)}
+:root:not([data-theme="dark"]) .hero .stage .ring.b{border-color:rgba(7,154,140,.25)}
+:root:not([data-theme="dark"]) .hero .stage .floor{background:radial-gradient(closest-side,rgba(7,154,140,.35),rgba(7,154,140,.08) 55%,transparent)}
+:root:not([data-theme="dark"]) .hero .stage::before{top:-6%;background:linear-gradient(180deg,rgba(7,154,140,0) 0%,rgba(7,154,140,.10) 50%,rgba(7,154,140,0) 100%)}
+:root:not([data-theme="dark"]) .hero{--smile-top:#3cc4b4;--smile-bot:#05736a}
+:root:not([data-theme="dark"]) .hero .stage .ring.b{background:radial-gradient(circle at 50% 42%,rgba(7,154,140,.26),rgba(42,127,216,.12) 58%,transparent 72%)}
+:root:not([data-theme="dark"]) .hero .stage::after{border-color:rgba(7,154,140,.35);box-shadow:0 0 24px rgba(7,154,140,.18),inset 0 0 14px rgba(7,154,140,.14)}
+:root:not([data-theme="dark"]) .hero .stage svg.big{filter:drop-shadow(0 0 1px rgba(6,60,70,.35)) drop-shadow(0 18px 22px rgba(6,60,70,.32))}
+:root:not([data-theme="dark"]) section .glass:not(.pill){background:linear-gradient(180deg,#ffffff,#f3f9f9);border-color:rgba(6,60,70,.10);
+  box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 rgba(6,60,70,.06),0 1px 2px rgba(6,60,70,.06),0 14px 30px -14px rgba(6,60,70,.28)}
+:root:not([data-theme="dark"]) :is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 1px 0 #fff,0 -1px 0 rgba(6,60,70,.10)}
+:root:not([data-theme="dark"]) .btn:not(.solid){box-shadow:inset 0 1px 0 #fff,0 2px 6px -2px rgba(6,60,70,.18)}
+}
+
 </style>
 </head>
 <body>
