@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T06:23:45Z">
+<meta name="build" content="2026-11-09T06:38:30Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
 <title>Chandigarh Multispeciality Dental Clinic | Dentist in Chamkaur Sahib</title>
-<meta name="theme-color" content="#e2eded" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#d6e5e5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#051218" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
@@ -1146,6 +1146,81 @@ footer{background:linear-gradient(180deg,transparent,rgba(45,226,208,.06) 40%,rg
 :root:not([data-theme="dark"]) #chart::before,:root:not([data-theme="dark"]) #book::before{--g1:rgba(108,184,255,.20);--g2:rgba(45,226,208,.18)}
 :root:not([data-theme="dark"]) section .t6.glass,:root:not([data-theme="dark"]) section .rate.glass{background:linear-gradient(120deg,#e0faf5,#ffffff 50%,#e4effd)}
 :root:not([data-theme="dark"]) footer{background:linear-gradient(180deg,transparent,rgba(45,226,208,.10) 40%,rgba(108,184,255,.12))}
+}
+
+/* ==== premium motion (only when html.anim is set: JS on, motion allowed) ==== */
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+html.anim .rv{opacity:0;transform:translateY(34px) scale(.985);transition:opacity .9s cubic-bezier(.16,1,.3,1) var(--d,0ms),transform 1.2s cubic-bezier(.16,1,.3,1) var(--d,0ms)}
+html.anim .rv.in{opacity:1;transform:none}
+html.anim .fx{transition:opacity .9s cubic-bezier(.16,1,.3,1) var(--d,0ms),transform 1.2s cubic-bezier(.16,1,.3,1) var(--d,0ms),rotate .6s cubic-bezier(.2,.7,.2,1),translate .6s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+html.anim .fx:hover{translate:0 -5px}
+.fx{position:relative}
+.fx::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;
+  background:radial-gradient(26rem circle at var(--sx,50%) var(--sy,0%),rgba(98,230,214,.11),transparent 45%);opacity:0;transition:opacity .5s}
+.fx:hover::after{opacity:1}
+/* section headings draw a gradient rule */
+.head h2::after{content:"";display:block;width:3.4rem;height:3px;border-radius:3px;margin:.75rem auto 0;background:var(--grad)}
+html.anim .head h2::after{transform:scaleX(0);transition:transform 1.1s cubic-bezier(.16,1,.3,1) .3s}
+html.anim .head.in h2::after{transform:none}
+/* a glowing edge that circles the check-up strip and the rating band */
+section .t6.glass,section .rate.glass{--sa:color-mix(in srgb,#2de2d0 16%,var(--bg2));--sb:color-mix(in srgb,#6cb8ff 16%,var(--bg2))}
+html.anim section .t6.glass.glass,html.anim section .rate.glass.glass{border:1.5px solid transparent;
+  background:linear-gradient(120deg,var(--sa),var(--sb)) padding-box,conic-gradient(from var(--ang),transparent 0 58%,var(--aqua) 74%,var(--sky) 86%,transparent 96%) border-box;animation:angspin 7s linear infinite}
+@keyframes angspin{to{--ang:360deg}}
+/* background glows drift slowly */
+html.anim main>section::before{animation:glowdrift 24s ease-in-out infinite alternate}
+@keyframes glowdrift{to{transform:translate3d(3%,-4%,0) scale(1.07)}}
+/* hero buttons ease back after the pointer leaves */
+.hero-cta .btn{transition:translate .5s cubic-bezier(.2,.7,.2,1),background-color .3s,box-shadow .3s}
+:root[data-theme="light"] .fx::after{background:radial-gradient(26rem circle at var(--sx,50%) var(--sy,0%),rgba(7,154,140,.09),transparent 45%)}
+:root[data-theme="light"] section .t6.glass,:root[data-theme="light"] section .rate.glass{--sa:#e0faf5;--sb:#e4effd}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .fx::after{background:radial-gradient(26rem circle at var(--sx,50%) var(--sy,0%),rgba(7,154,140,.09),transparent 45%)}
+:root:not([data-theme="dark"]) section .t6.glass,:root:not([data-theme="dark"]) section .rate.glass{--sa:#e0faf5;--sb:#e4effd}
+}
+
+/* ==== light mode, softer: no pure-white glare ==== */
+:root[data-theme="light"]{--bg:#d6e5e5;--bg2:#cadcdc;--glass:rgba(240,247,246,.8);--glass2:rgba(240,247,246,.95)}
+:root[data-theme="light"] body{background:linear-gradient(180deg,#d8e7e7 0%,#cfe1e1 22%,#d3dfe9 45%,#cde0dd 68%,#d4e4e4 100%)}
+:root[data-theme="light"] :is(.nav,.callbar,.toast).glass,:root[data-theme="light"] .msheet{background:#eaf2f2}
+:root[data-theme="light"] .hero::before{background:
+    radial-gradient(38% 46% at 50% 64%,rgba(45,226,208,.20),transparent 70%),
+    radial-gradient(30% 34% at 50% 0%,rgba(108,184,255,.20),transparent 75%),
+    radial-gradient(60% 50% at 15% 100%,rgba(45,226,208,.10),transparent 70%),
+    linear-gradient(180deg,#e4efef 0%,#d7e7e7 60%,#cfe1e1 100%)}
+:root[data-theme="light"] .hero .btn:not(.solid){background:#eef5f5}
+:root[data-theme="light"] .hero .btn:not(.solid):hover{background:#e4eeee}
+:root[data-theme="light"] .hero .pill.glass{background:rgba(238,245,245,.9)!important}
+:root[data-theme="light"] section .glass:not(.pill){background:linear-gradient(145deg,#eff6f5,#e1ecec);border-color:rgba(255,255,255,.55);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.75),inset -1px -1px 0 rgba(6,60,70,.07),-8px -8px 18px rgba(255,255,255,.45),12px 14px 28px rgba(6,60,70,.2)}
+:root[data-theme="light"] section .glass:not(.pill):hover{box-shadow:inset 1px 1px 0 rgba(255,255,255,.8),inset -1px -1px 0 rgba(6,60,70,.07),-10px -10px 22px rgba(255,255,255,.5),16px 18px 34px rgba(6,60,70,.24)}
+:root[data-theme="light"] input,:root[data-theme="light"] select,:root[data-theme="light"] textarea{background:#dfeaea;box-shadow:inset 2px 2px 5px rgba(6,60,70,.14),inset -2px -2px 5px rgba(255,255,255,.6)}
+:root[data-theme="light"] .tags span{background:#eef5f5}
+:root[data-theme="light"] .steps li::before{background:linear-gradient(145deg,#eef5f5,#d3e2e2);box-shadow:-3px -3px 7px rgba(255,255,255,.6),4px 5px 10px rgba(6,60,70,.2),inset 1px 1px 0 rgba(255,255,255,.8)}
+:root[data-theme="light"] section .t6.glass,:root[data-theme="light"] section .rate.glass{--sa:#d4efe9;--sb:#d9e4f3}
+:root[data-theme="light"] section .t6.glass,:root[data-theme="light"] section .rate.glass{background:linear-gradient(120deg,#d4efe9,#e6efef 50%,#d9e4f3)}
+:root[data-theme="light"] :is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 1px 0 rgba(255,255,255,.7),0 2px 3px rgba(6,60,70,.14)}
+:root[data-theme="light"] :is(.tile h3,.readout h3,.steps b,summary,#form h3){text-shadow:0 1px 0 rgba(255,255,255,.6)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#d6e5e5;--bg2:#cadcdc;--glass:rgba(240,247,246,.8);--glass2:rgba(240,247,246,.95)}
+:root:not([data-theme="dark"]) body{background:linear-gradient(180deg,#d8e7e7 0%,#cfe1e1 22%,#d3dfe9 45%,#cde0dd 68%,#d4e4e4 100%)}
+:root:not([data-theme="dark"]) :is(.nav,.callbar,.toast).glass,:root:not([data-theme="dark"]) .msheet{background:#eaf2f2}
+:root:not([data-theme="dark"]) .hero::before{background:
+    radial-gradient(38% 46% at 50% 64%,rgba(45,226,208,.20),transparent 70%),
+    radial-gradient(30% 34% at 50% 0%,rgba(108,184,255,.20),transparent 75%),
+    radial-gradient(60% 50% at 15% 100%,rgba(45,226,208,.10),transparent 70%),
+    linear-gradient(180deg,#e4efef 0%,#d7e7e7 60%,#cfe1e1 100%)}
+:root:not([data-theme="dark"]) .hero .btn:not(.solid){background:#eef5f5}
+:root:not([data-theme="dark"]) .hero .btn:not(.solid):hover{background:#e4eeee}
+:root:not([data-theme="dark"]) .hero .pill.glass{background:rgba(238,245,245,.9)!important}
+:root:not([data-theme="dark"]) section .glass:not(.pill){background:linear-gradient(145deg,#eff6f5,#e1ecec);border-color:rgba(255,255,255,.55);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.75),inset -1px -1px 0 rgba(6,60,70,.07),-8px -8px 18px rgba(255,255,255,.45),12px 14px 28px rgba(6,60,70,.2)}
+:root:not([data-theme="dark"]) section .glass:not(.pill):hover{box-shadow:inset 1px 1px 0 rgba(255,255,255,.8),inset -1px -1px 0 rgba(6,60,70,.07),-10px -10px 22px rgba(255,255,255,.5),16px 18px 34px rgba(6,60,70,.24)}
+:root:not([data-theme="dark"]) input,:root:not([data-theme="dark"]) select,:root:not([data-theme="dark"]) textarea{background:#dfeaea;box-shadow:inset 2px 2px 5px rgba(6,60,70,.14),inset -2px -2px 5px rgba(255,255,255,.6)}
+:root:not([data-theme="dark"]) .tags span{background:#eef5f5}
+:root:not([data-theme="dark"]) .steps li::before{background:linear-gradient(145deg,#eef5f5,#d3e2e2);box-shadow:-3px -3px 7px rgba(255,255,255,.6),4px 5px 10px rgba(6,60,70,.2),inset 1px 1px 0 rgba(255,255,255,.8)}
+:root:not([data-theme="dark"]) section .t6.glass,:root:not([data-theme="dark"]) section .rate.glass{--sa:#d4efe9;--sb:#d9e4f3}
+:root:not([data-theme="dark"]) section .t6.glass,:root:not([data-theme="dark"]) section .rate.glass{background:linear-gradient(120deg,#d4efe9,#e6efef 50%,#d9e4f3)}
+:root:not([data-theme="dark"]) :is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 1px 0 rgba(255,255,255,.7),0 2px 3px rgba(6,60,70,.14)}
+:root:not([data-theme="dark"]) :is(.tile h3,.readout h3,.steps b,summary,#form h3){text-shadow:0 1px 0 rgba(255,255,255,.6)}
 }
 </style>
 </head>
@@ -2329,6 +2404,45 @@ footer{background:linear-gradient(180deg,transparent,rgba(45,226,208,.06) 40%,rg
   var s = document.createElement('script');
   s.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js'; s.defer = true; s.onload = start;
   if(document.readyState === 'complete') document.head.appendChild(s); else addEventListener('load', function(){ document.head.appendChild(s); });
+})();
+</script>
+<script>
+/* premium motion: staggered reveals, card tilt with a light that follows the pointer, magnetic hero buttons, counting stats.
+   Skipped entirely when the visitor asks for reduced motion. */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var root=document.documentElement; root.classList.add('anim');
+  document.querySelectorAll('main .rv').forEach(function(el){
+    var sib=[].filter.call(el.parentElement.children,function(c){return c.classList.contains('rv');});
+    el.style.setProperty('--d',(Math.min(sib.indexOf(el),6)*90)+'ms');
+  });
+  var fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(fine && innerWidth>900){
+    document.querySelectorAll('main section .glass:not(.pill)').forEach(function(c){
+      c.classList.add('fx'); var still=c.matches('.lab,.book .card,#form,details'), raf=0;
+      if(!still) c.parentElement.style.perspective='1200px';
+      c.addEventListener('pointermove',function(e){
+        var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+        cancelAnimationFrame(raf); raf=requestAnimationFrame(function(){
+          c.style.setProperty('--sx',(x*100).toFixed(1)+'%'); c.style.setProperty('--sy',(y*100).toFixed(1)+'%');
+          if(!still){ var dx=x-.5, dy=.5-y, a=Math.min(1,Math.hypot(dx,dy)*2)*5; c.style.rotate=dy.toFixed(3)+' '+dx.toFixed(3)+' 0 '+a.toFixed(2)+'deg'; }
+        });
+      });
+      c.addEventListener('pointerleave',function(){ cancelAnimationFrame(raf); c.style.rotate=''; });
+    });
+    document.querySelectorAll('.hero-cta .btn').forEach(function(b){
+      b.addEventListener('pointermove',function(e){ var r=b.getBoundingClientRect(); b.style.translate=((e.clientX-r.left-r.width/2)*.16).toFixed(1)+'px '+((e.clientY-r.top-r.height/2)*.3).toFixed(1)+'px'; });
+      b.addEventListener('pointerleave',function(){ b.style.translate=''; });
+    });
+  }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(x){
+    if(!x.isIntersecting) return; io.unobserve(x.target);
+    var el=x.target, txt=el.textContent, m=txt.match(/^([\d.]+)(.*)$/); if(!m) return;
+    var end=parseFloat(m[1]), dec=(m[1].split('.')[1]||'').length, suf=m[2], t0=performance.now();
+    el.setAttribute('aria-label',txt);
+    (function step(t){ var k=Math.min(1,(t-t0)/1500), e=1-Math.pow(1-k,3); el.textContent=(end*e).toFixed(dec)+suf; if(k<1) requestAnimationFrame(step); else { el.textContent=txt; el.removeAttribute('aria-label'); } })(t0);
+  }); },{threshold:.6});
+  document.querySelectorAll('.stat b:not(.txt)').forEach(function(b){ io.observe(b); });
 })();
 </script>
 </body>
