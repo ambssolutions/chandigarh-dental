@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T02:57:21Z">
+<meta name="build" content="2026-11-09T03:21:30Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232de2d0'/%3E%3Cstop offset='1' stop-color='%236cb8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' rx='13' fill='url(%23g)'/%3E%3Cpath fill='%23fff' d='M20 12.5c-3-2.4-8-1.6-8.6 3.2-.4 3.6 1.6 5.6 2.1 9 .3 2 .6 3.8 1.8 3.8 1.5 0 1.4-4.3 4.7-4.3s3.2 4.3 4.7 4.3c1.2 0 1.5-1.8 1.8-3.8.5-3.4 2.5-5.4 2.1-9-.6-4.8-5.6-5.6-8.6-3.2z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Chandigarh Multispeciality Dental Clinic","telephone":"+919915510261","address":{"@type":"PostalAddress","streetAddress":"Morinda Road, Opposite Bus Stand","addressLocality":"Chamkaur Sahib","addressRegion":"Punjab","postalCode":"140112","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:00"}],"medicalSpecialty":"Dentistry"}
 </script>
@@ -24,11 +24,11 @@
   --grad:linear-gradient(115deg,var(--aqua),var(--sky));
   --blob1:rgba(45,226,208,.30); --blob2:rgba(108,184,255,.26);
   --enamel:#f4fbfb; --root:#3a5d63; --tooth-line:#6f9a9f; --good:#4cc784; --shadow:0 30px 80px rgba(0,0,0,.45);
-  --f-display:"Plus Jakarta Sans","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
-  --f-hero:"Unbounded","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
-  --f-body:"Plus Jakarta Sans","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
+  --f-display:"Manrope","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
+  --f-hero:"Manrope","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
+  --f-body:"Inter","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;
   --rh:1.12em; --bad:#ff6b6b; --warn:#ffb52e; --smile-top:#ffffff; --smile-bot:color-mix(in srgb,var(--aqua) 50%,#ffffff);
-  --f-mono:"Plus Jakarta Sans",system-ui,sans-serif;
+  --f-mono:"Inter",system-ui,sans-serif;
   color-scheme:dark;
 }
 @media (prefers-color-scheme:light){
@@ -48,7 +48,7 @@
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:clip}
 h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:balance;margin:0}
-/* Plus Jakarta Sans for headings and labels; Unbounded stays only on the hero headline and the footer word */
+/* Manrope for headings and labels, Inter for text */
 .hero h1{font-family:var(--f-hero);font-weight:500}
 p{margin:0}
 a{color:inherit}
@@ -452,7 +452,7 @@ section[id]{scroll-margin-top:5.5rem}
 .toast[hidden]{display:none}
 .toast b{font:700 1.05rem var(--f-display);letter-spacing:-.01em}
 @media(min-width:821px){.toast{bottom:1.4rem}}
-/* ---- Plus Jakarta Sans weights (kept here so they win over the earlier component rules) ---- */
+/* ---- heading weights (kept here so they win over the earlier component rules) ---- */
 .stat b,.rate .num{font-weight:800;letter-spacing:-.03em}
 .steps b,summary,.chip b,.hero .sub,.brand,.copyrow b,.steps li::before{font-weight:700;letter-spacing:-.015em}
 .track span{font-weight:700;letter-spacing:-.02em}
@@ -513,7 +513,7 @@ html:is([lang="hi"],[lang="pa"]) footer .word{line-height:1.25;font-size:clamp(2
   .brand{font-size:.88rem}
 }
 /* ==== refinement pass: calmer, more modern ==== */
-:root{--f-display:"Plus Jakarta Sans","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;--rad:1.5rem}
+:root{--f-display:"Manrope","Noto Sans Devanagari","Noto Sans Gurmukhi","Segoe UI",system-ui,sans-serif;--rad:1.5rem}
 body{font-size:1.0625rem;line-height:1.65}
 .skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--bg);padding:.7rem 1rem;border-radius:.6rem;text-decoration:none;font-weight:600}
 .skip:focus{top:1rem}
@@ -579,6 +579,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.
 footer a{text-decoration:none}
 footer a:hover{text-decoration:underline;text-underline-offset:.25em}
 footer .row a{color:var(--ink)}
+.fgrid{grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr))}
 @media(max-width:820px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.fbrand{grid-column:1/-1}}
 @media(max-width:700px){footer{text-align:center}.fgrid{grid-template-columns:minmax(0,1fr)}.fbrand b{margin-inline:auto}footer .row{justify-content:center;text-align:center}}
 html:is([lang="hi"],[lang="pa"]) .head h2{font-size:clamp(1.7rem,4vw,2.7rem)}
@@ -739,6 +740,31 @@ html:is([lang="hi"],[lang="pa"]) .track span{font-weight:600}
 .maprow{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
 .mapbox{flex-basis:100%;border-radius:1rem;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;max-height:22rem}
 .mapbox iframe{width:100%;height:100%;border:0;display:block}
+/* ---- desktop WhatsApp button, footer contact list, supplied sections ---- */
+.navwa{color:#1fa855}
+@media(max-width:1060px){.nav .acts .navwa{display:none}}
+.fcontact{list-style:none;margin:.9rem 0 0;padding:0;display:grid;gap:.7rem;font-size:var(--fs-sm);color:var(--muted)}
+.fcontact li,.fcontact a{display:flex;gap:.6rem;align-items:flex-start;text-decoration:none}
+.fcontact svg{width:1.1rem;height:1.1rem;flex:none;margin-top:.2rem;color:var(--aqua-text)}
+.fcontact a:hover>span{color:var(--ink);text-decoration:underline;text-underline-offset:.25em}
+@media(max-width:700px){.fcontact{justify-items:center}.fcontact li,.fcontact a{text-align:left}}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;max-width:60rem;margin-inline:auto}
+.doc{border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column}
+.doc img{width:100%;aspect-ratio:6/7;object-fit:cover}
+.doc div{padding:1.2rem 1.3rem}.doc p{color:var(--muted)}.doc small{color:var(--aqua-text);font-weight:600}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.quote{margin:0;border-radius:var(--rad);padding:1.4rem 1.5rem}
+.quote blockquote{margin:0 0 .9rem;font-size:var(--fs-lede);line-height:1.5}
+.quote figcaption{color:var(--muted);font-weight:600}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.8rem}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1rem}
+/* ---- type: Manrope headings, Inter text ---- */
+.hero h1{font-weight:800;letter-spacing:-.04em}
+.head h2,.card h2{font-weight:800;letter-spacing:-.035em}
+.tile h3,.readout h3,summary,.steps b{font-weight:700;letter-spacing:-.02em}
+.hero .sub{font-weight:600;letter-spacing:-.015em}
+body{font-feature-settings:"cv11","ss01"}
+html:is([lang="hi"],[lang="pa"]) .hero h1,html:is([lang="hi"],[lang="pa"]) .head h2{letter-spacing:normal}
 /* ---- smoothness ---- */
 :root{interpolate-size:allow-keywords}
 .msheet,.vpanel{transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
@@ -803,6 +829,7 @@ html.lenis,html.lenis body{height:auto}
       <button class="icon-btn mic" id="mic" type="button" aria-label="Ask by voice" aria-pressed="false" aria-controls="vpanel" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
       <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.800z"/></svg></button>
       <button class="icon-btn menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 8h16"/><path class="l2" d="M4 16h16"/></svg></button>
+      <a class="icon-btn navwa" href="https://wa.me/919915510261" target="_blank" rel="noopener" aria-label="WhatsApp +91 99155 10261"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a>
       <a class="btn solid sm navphone" id="navcall" href="tel:+919915510261" aria-label="Call +91 99155 10261"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.100 4.200 2 2 0 014.100 2h3a2 2 0 012 1.700c.1 1 .4 1.900.7 2.800a2 2 0 01-.5 2.100L8.100 9.900a16 16 0 006 6l1.300-1.300a2 2 0 012.100-.4c.9.3 1.800.6 2.800.7a2 2 0 011.700 2z"/></svg><span>+91 99155 10261</span></a>
     </div>
   </div>
@@ -1009,6 +1036,25 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
+<section id="team" class="supplied" hidden>
+  <div class="wrap">
+    <div class="head rv"><h2>Your dentists</h2></div>
+    <div class="docs" id="docs"></div>
+  </div>
+</section>
+<section id="reviews" class="supplied" hidden>
+  <div class="wrap">
+    <div class="head rv"><h2>What patients say</h2><p>From the clinic's Google reviews, shared with permission.</p></div>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+<section id="gallery" class="supplied" hidden>
+  <div class="wrap">
+    <div class="head rv"><h2>Inside the clinic</h2></div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
 <section id="faq" style="padding-top:0">
   <div class="wrap">
     <div class="head rv"><h2>Common questions</h2></div>
@@ -1029,10 +1075,15 @@ html.lenis,html.lenis body{height:auto}
 
 <footer><div class="wrap">
   <div class="fgrid">
-    <div class="fbrand"><b>Chandigarh Multispeciality Dental Clinic</b><p>Morinda Road, Opposite Bus Stand</p><p>Chamkaur Sahib, Punjab 140112</p><p><a href="tel:+919915510261">+91 99155 10261</a></p><p><a href="https://wa.me/919915510261" target="_blank" rel="noopener"><span>WhatsApp</span> +91 99155 10261</a></p></div>
+    <div class="fbrand"><b>Chandigarh Multispeciality Dental Clinic</b>
+      <ul class="fcontact">
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span>Morinda Road, Opposite Bus Stand</span><br><span>Chamkaur Sahib, Punjab 140112</span></span></a></li>
+        <li><a href="tel:+919915510261"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><span>+91 99155 10261</span></a></li>
+        <li><a href="https://wa.me/919915510261" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span><span>WhatsApp</span> +91 99155 10261</span></a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span>Mon–Sat · 10 AM – 7 PM</span><br><span>Sunday</span> · <span>Closed</span></span></li>
+      </ul></div>
     <div><h2>Treatments</h2><ul><li><a href="#treatments">Root canal</a></li><li><a href="#treatments">Laser dentistry</a></li><li><a href="#treatments">Straightening</a></li><li><a href="#treatments">Oral surgery</a></li></ul></div>
     <div><h2>Explore</h2><ul><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book</a></li></ul></div>
-    <div><h2>Hours</h2><ul><li>Mon–Sat · 10 AM – 7 PM</li><li><span>Sunday</span> · <span>Closed</span></li></ul></div>
   </div>
   <div class="row"><span>© <span id="yr"></span> Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib</span><span>Proudly designed by <a href="https://ambs.co.nz" target="_blank" rel="noopener">AMBS Solutions</a></span></div>
 </div></footer>
@@ -1336,6 +1387,11 @@ html.lenis,html.lenis body{height:auto}
     ['Chandigarh Dental home','चंडीगढ़ डेंटल होम','ਚੰਡੀਗੜ੍ਹ ਡੈਂਟਲ ਹੋਮ'],
     ['Call +91 99155 10261','कॉल करें +91 99155 10261','ਕਾਲ ਕਰੋ +91 99155 10261'],
     ['Language','भाषा','ਭਾਸ਼ਾ'],
+    ['Your dentists','आपके डेंटिस्ट','ਤੁਹਾਡੇ ਡੈਂਟਿਸਟ'],
+    ['What patients say','मरीज़ क्या कहते हैं','ਮਰੀਜ਼ ਕੀ ਕਹਿੰਦੇ ਹਨ'],
+    ['From the clinic\'s Google reviews, shared with permission.','क्लिनिक के Google रिव्यू से, अनुमति के साथ।','ਕਲੀਨਿਕ ਦੇ Google ਰਿਵਿਊਆਂ ਤੋਂ, ਇਜਾਜ਼ਤ ਨਾਲ।'],
+    ['Inside the clinic','क्लिनिक के अंदर','ਕਲੀਨਿਕ ਦੇ ਅੰਦਰ'],
+    ['WhatsApp +91 99155 10261','व्हाट्सऐप +91 99155 10261','ਵਟਸਐਪ +91 99155 10261'],
     ['Ask about this','इसके बारे में पूछें','ਇਸ ਬਾਰੇ ਪੁੱਛੋ'],
     ['Missing teeth','गुम दाँत','ਗੁਆਚੇ ਦੰਦ'],['Cavities','कैविटी','ਕੈਵਿਟੀ'],['Stains','दाग़','ਦਾਗ਼'],
     ['A fixed replacement for a missing tooth, set in the jaw.','गुम हुए दाँत की जगह एक पक्का दाँत, जो जबड़े में लगाया जाता है।','ਗੁਆਚੇ ਦੰਦ ਦੀ ਥਾਂ ਇੱਕ ਪੱਕਾ ਦੰਦ, ਜੋ ਜਬਾੜੇ ਵਿੱਚ ਲਗਾਇਆ ਜਾਂਦਾ ਹੈ।'],
@@ -1729,6 +1785,29 @@ html.lenis,html.lenis body{height:auto}
     }
     box.hidden = false; this.hidden = true;
   });
+
+  // ---- clinic details that only the clinic can supply ----
+  // Each section stays hidden until real entries are added here. Never put made-up names, reviews or photos.
+  // doctors: {name:'Dr …', role:'Dental surgeon', quals:'BDS, MDS', photo:'images/doctor.webp'}
+  // reviews: {name:'First name', text:'Their words, from Google, with permission'}
+  // photos:  {src:'images/clinic-1.webp', alt:'Describe the photo'}
+  var CLINIC = {doctors: [], reviews: [], photos: []};
+  function esc(t){ var d = document.createElement('div'); d.textContent = t || ''; return d.innerHTML; }
+  if(CLINIC.doctors.length){
+    $('docs').innerHTML = CLINIC.doctors.map(function(d){
+      return '<article class="doc glass">' + (d.photo ? '<img src="' + esc(d.photo) + '" alt="' + esc(d.name) + '" width="480" height="560" loading="lazy" decoding="async">' : '') +
+        '<div><h3>' + esc(d.name) + '</h3><p>' + esc(d.role) + '</p>' + (d.quals ? '<small>' + esc(d.quals) + '</small>' : '') + '</div></article>';
+    }).join(''); $('team').hidden = false;
+  }
+  if(CLINIC.reviews.length){
+    $('quotes').innerHTML = CLINIC.reviews.slice(0, 3).map(function(r){
+      return '<figure class="quote glass"><blockquote>' + esc(r.text) + '</blockquote><figcaption>' + esc(r.name) + '</figcaption></figure>';
+    }).join(''); $('reviews').hidden = false;
+  }
+  if(CLINIC.photos.length){
+    $('gal').innerHTML = CLINIC.photos.map(function(ph){ return '<img src="' + esc(ph.src) + '" alt="' + esc(ph.alt) + '" width="800" height="600" loading="lazy" decoding="async">'; }).join('');
+    $('gallery').hidden = false;
+  }
 
   // ---- small bridge used by the voice assistant ----
   window.CD = {
