@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T06:38:30Z">
+<meta name="build" content="2026-11-09T07:48:23Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1222,6 +1222,17 @@ html.anim main>section::before{animation:glowdrift 24s ease-in-out infinite alte
 :root:not([data-theme="dark"]) :is(.head h2,.card h2,.stat b,.rate .num){text-shadow:0 1px 0 rgba(255,255,255,.7),0 2px 3px rgba(6,60,70,.14)}
 :root:not([data-theme="dark"]) :is(.tile h3,.readout h3,.steps b,summary,#form h3){text-shadow:0 1px 0 rgba(255,255,255,.6)}
 }
+
+/* ==== treatments on phones and tablets: stacking cards instead of a sideways carousel ==== */
+@media(max-width:900px){
+  .bento{display:flex;flex-direction:column;gap:1.1rem;overflow:visible;margin-inline:0;padding:0 0 .5rem;scroll-snap-type:none}
+  .bento .tile{flex:none;width:100%;min-height:20.5rem;scroll-snap-align:none;position:sticky;
+    top:calc(5.4rem + env(safe-area-inset-top,0px) + var(--k,0) * .7rem);
+    scale:calc(1 - var(--p,0) * .07);transform-origin:50% 0;
+    box-shadow:0 -10px 30px -12px rgba(0,0,0,.35),0 18px 34px -16px rgba(0,0,0,.45)}
+  .bento .t6{position:relative;top:auto;scale:none;min-height:0}
+  .swipe,.dots{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -2006,30 +2017,20 @@ html.anim main>section::before{animation:glowdrift 24s ease-in-out infinite alte
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fallback); } else fallback();
   });
 
-  // ---- treatments carousel (phones and tablets): auto-advance, pauses when touched or off-screen ----
-  var bento = document.querySelector('.bento'), tiles = bento.children, dots = document.createElement('div');
-  dots.className = 'dots'; dots.setAttribute('aria-hidden', 'true');
-  for(var di = 0; di < tiles.length; di++){ var dt = document.createElement('button'); dt.type = 'button'; dt.tabIndex = -1; dt.dataset.i = di; dots.appendChild(dt); }
-  bento.insertAdjacentElement('afterend', dots);
-  var carouselOn = function(){ return matchMedia('(max-width: 900px)').matches; };
-  var padL = function(){ return parseFloat(getComputedStyle(bento).paddingLeft) || 0; };
-  function tileLeft(i){ return bento.scrollLeft + (tiles[i].getBoundingClientRect().left - bento.getBoundingClientRect().left) - padL(); }
-  function nearest(){ var best = 0, bd = 1e9; for(var i = 0; i < tiles.length; i++){ var d = Math.abs(tileLeft(i) - bento.scrollLeft); if(d < bd){ bd = d; best = i; } } return best; }
-  function markDots(){ var n = nearest(); [].forEach.call(dots.children, function(b, i){ b.classList.toggle('on', i === n); }); }
-  function goTo(i){ bento.scrollTo({left: tileLeft(i), behavior: 'smooth'}); setTimeout(markDots, 700); }
-  bento.addEventListener('scroll', function(){ if(carouselOn()) markDots(); }, {passive: true});
-  dots.addEventListener('click', function(e){ var b = e.target.closest('button'); if(b){ holdAuto(); goTo(+b.dataset.i); } });
-  var autoHold = false, autoSeen = true, holdT = null;
-  function holdAuto(){ autoHold = true; clearTimeout(holdT); holdT = setTimeout(function(){ autoHold = false; }, 7000); }
-  ['pointerdown','touchstart','wheel','focusin'].forEach(function(ev){ bento.addEventListener(ev, holdAuto, {passive: true}); });
-  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ autoSeen = es[0].isIntersecting; }, {threshold: .35}).observe(bento); }
-  markDots();
-  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    setInterval(function(){
-      if(!carouselOn() || autoHold || !autoSeen || document.hidden) return;
-      goTo((nearest() + 1) % tiles.length);
-    }, 5200);
-  }
+  // ---- treatments (phones and tablets): stacking cards; each card eases back as the next one slides over it ----
+  (function(){
+    var bento = document.querySelector('.bento'), tiles = [].slice.call(bento.children), on = matchMedia('(max-width: 900px)'), raf = 0;
+    tiles.forEach(function(t, i){ t.style.setProperty('--k', i); });
+    function paint(){ raf = 0;
+      for(var i = 0; i < tiles.length; i++){
+        var t = tiles[i], n = tiles[i+1], p = 0;
+        if(on.matches && n){ var a = t.getBoundingClientRect(), b = n.getBoundingClientRect(); p = Math.max(0, Math.min(1, (a.bottom - b.top) / a.height)); }
+        t.style.setProperty('--p', p.toFixed(3));
+      }
+    }
+    function req(){ if(!raf) raf = requestAnimationFrame(paint); }
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){ addEventListener('scroll', req, {passive: true}); addEventListener('resize', req); paint(); }
+  })();
 
   // ---- hero: tap the tooth to give it a spin ----
   var stageEl = $('stage');
