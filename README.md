@@ -6,7 +6,7 @@ Single-page website for the clinic. Everything is in one file, `index.html`. The
 
 ## Put it online with GitHub Pages
 
-1. Create a repository on GitHub and upload these files (`index.html`, `README.md`, `.nojekyll`).
+1. Create a repository on GitHub and upload these files (`index.html`, `i18n.json`, `robots.txt`, `llms.txt`, `vercel.json`, `README.md`, `.nojekyll`).
 2. Open the repository's **Settings > Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, pick `main` and `/ (root)`, then **Save**.
 4. After a minute the site is live at `https://<your-user>.github.io/<repository>/`.
@@ -22,7 +22,7 @@ You can also open `index.html` by double-clicking it. It needs an internet conne
 | Address (Morinda Road, opposite the bus stand, Chamkaur Sahib 140112) | search `Morinda Road` |
 | Rating (4.1 from 9 Google reviews, as of when it was checked) and the review link | search `Average of 9 reviews` |
 | "15+ years of experience" | search `Years of experience` |
-| Hindi and Punjabi wording | the `var TR = [` translation table |
+| Hindi and Punjabi wording | `i18n.json` (English text → Hindi and Punjabi). It loads only when a visitor picks one of those languages. |
 
 The phone number, address, hours and rating match the clinic's public Google listing at the time they were checked. Keep them in step with your Google Business Profile if they change.
 
@@ -35,6 +35,23 @@ var GOOGLE = {placeId: '', apiKey: ''};
 ```
 
 Fill in the clinic's Google Place ID and a Google Maps Places API key to read the hours (including holidays) from Google. The key is visible to anyone who views the page, so restrict it to your website address in Google Cloud. Do not commit a key that is not restricted.
+
+## Doctors, reviews and photos
+
+Near the end of `index.html` there is one line to fill in:
+
+```js
+var CLINIC = {doctors: [], reviews: [], photos: []};
+```
+
+Each section ("Your dentists", "What patients say", "Inside the clinic") stays hidden until it has real entries. Only add real names, reviews the patient agreed to share, and the clinic's own photos. Never add made-up ones.
+
+## Files
+
+- `index.html`: the whole site
+- `i18n.json`: Hindi and Punjabi text
+- `robots.txt` and `llms.txt`: for search engines and AI assistants
+- `vercel.json`: deploys `main` only, adds security headers, and allows the microphone for the voice assistant
 
 ## Seeing old content after an update?
 
