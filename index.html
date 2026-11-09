@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T02:02:51Z">
+<meta name="build" content="2026-11-09T02:43:19Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<script>try{var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
+<script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
 <title>Chandigarh Multispeciality Dental Clinic</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232de2d0'/%3E%3Cstop offset='1' stop-color='%236cb8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' rx='13' fill='url(%23g)'/%3E%3Cpath fill='%23fff' d='M20 12.5c-3-2.4-8-1.6-8.6 3.2-.4 3.6 1.6 5.6 2.1 9 .3 2 .6 3.8 1.8 3.8 1.5 0 1.4-4.3 4.7-4.3s3.2 4.3 4.7 4.3c1.2 0 1.5-1.8 1.8-3.8.5-3.4 2.5-5.4 2.1-9-.6-4.8-5.6-5.6-8.6-3.2z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -712,6 +712,18 @@ html:not([lang="hi"]):not([lang="pa"]) .hero h1{max-width:7.4em}
 .stage{max-width:min(36rem,62vh)}
 @media(max-width:900px){.stage{max-width:min(20rem,70vw)}}
 @media(max-width:700px){.proof{gap:0 1rem}.proof a{min-height:2.75rem}.stage{max-width:min(15rem,62vw)}}
+/* ---- Hindi and Punjabi: crisp, readable script ---- */
+html:is([lang="hi"],[lang="pa"]) body{text-rendering:optimizeLegibility;font-size:calc(var(--fs-body) * 1.04);line-height:1.8}
+html:is([lang="hi"],[lang="pa"]) .brand small{font-size:.74rem;letter-spacing:normal;text-transform:none}
+html:is([lang="hi"],[lang="pa"]) :is(.tile .tag,.kicker,.info dt,.readout .who,.mlabel,.pill,.proof,.links,.nav ul,label){font-size:calc(var(--fs-sm) * 1.04);letter-spacing:normal;text-transform:none}
+html:is([lang="hi"],[lang="pa"]) .hero h1{font-weight:700;line-height:1.3}
+/* the hero words: clean solid gradient, no glow, outline or shine (they smear thin Indic strokes) */
+html:is([lang="hi"],[lang="pa"]) .smile .sm-t,html:is([lang="hi"],[lang="pa"]) .hero .gt{filter:none!important;-webkit-text-stroke:0!important;animation:none!important;background-image:linear-gradient(115deg,var(--aqua-text),color-mix(in srgb,var(--sky) 80%,var(--aqua-text)))!important;background-size:100% 100%!important}
+html:is([lang="hi"],[lang="pa"]) .hero .sub{font-weight:700;line-height:1.5}
+html:is([lang="hi"],[lang="pa"]) :is(.head h2,.card h2){font-weight:700;line-height:1.35}
+html:is([lang="hi"],[lang="pa"]) :is(.tile h3,.readout h3,summary,.steps b){font-weight:700;line-height:1.45}
+html:is([lang="hi"],[lang="pa"]) .btn{font-weight:600;line-height:1.5}
+html:is([lang="hi"],[lang="pa"]) .track span{font-weight:600}
 /* ---- smoothness ---- */
 :root{interpolate-size:allow-keywords}
 .msheet,.vpanel{transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
@@ -1586,7 +1598,7 @@ html.lenis,html.lenis body{height:auto}
   function loadIndicFont(l){
     if(l === 'en' || indicLoaded[l]) return; indicLoaded[l] = true;
     var lk = document.createElement('link'); lk.rel = 'stylesheet';
-    lk.href = 'https://fonts.googleapis.com/css2?family=' + (l === 'hi' ? 'Noto+Sans+Devanagari' : 'Noto+Sans+Gurmukhi') + ':wght@400;500;600&display=swap';
+    lk.href = 'https://fonts.googleapis.com/css2?family=' + (l === 'hi' ? 'Noto+Sans+Devanagari' : 'Noto+Sans+Gurmukhi') + ':wght@400;500;600;700;800&display=swap';
     document.head.appendChild(lk);
   }
   function applyLang(l){
