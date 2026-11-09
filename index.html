@@ -774,6 +774,8 @@ html:is([lang="hi"],[lang="pa"]) .hero h1,html:is([lang="hi"],[lang="pa"]) .head
 .roll{overflow:visible}
 .rollbox{display:grid;animation:none!important;transform:none!important}
 .rollbox>span{grid-area:1/1;opacity:0;text-align:left;justify-self:start}
+.hero .roll{transition:width .6s cubic-bezier(.45,0,.55,1)}
+.hero .rollbox{justify-content:start}
 .rollbox>span:nth-child(5){display:none}
 /* each word: 0.6 s in, 2.4 s held, 0.6 s out; the next word's fade-in runs exactly over this word's fade-out */
 @keyframes wordcycle{
@@ -825,67 +827,85 @@ html:is([lang="hi"],[lang="pa"]) .hero .rollbox>span:nth-child(4){animation-dela
 }
 @media(min-width:901px) and (max-height:800px){.proof{padding-top:.7rem;margin-top:.9rem}.proof .pyears{min-height:2.4rem}.hero-cta{margin-top:1.1rem}}
 @media(max-width:700px) and (max-height:780px){.proof .pyears{min-height:2.2rem}.proof{padding-top:.6rem;margin-top:.8rem}}
-/* ================= hero layouts (html[data-hero]) ================= */
-.hero-side{position:relative;min-width:0}
-.hcard{display:none}
-.hcard{border-radius:1.25rem;background:color-mix(in srgb,var(--bg2) 92%,transparent);border:1px solid var(--line);box-shadow:0 18px 40px rgba(6,40,48,.12);padding:.85rem 1.05rem;text-decoration:none;color:var(--ink);font-size:var(--fs-sm)}
-.hcard b{font-weight:700}
-.hcard .hk{display:block;font-size:var(--fs-xs);color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.hc-status b{display:block;font-size:1rem;color:var(--bad)}
-.hc-status.open b{color:var(--good)}.hc-status.soon b{color:var(--warn)}
-.hc-status>span:last-child{color:var(--muted)}
-.hc-rate{align-items:center;gap:.5rem;flex-wrap:wrap}
-.hc-rate .stars5{width:5.2rem;height:1.04rem}
-.hc-rate b{font-size:1.15rem}.hc-rate>span{color:var(--muted)}
-.hc-wa{align-items:center;gap:.75rem}
-.hc-wa>svg{width:2.4rem;height:2.4rem;padding:.5rem;border-radius:50%;background:#25d366;color:#052e16;flex:none}
-.hc-wa b{display:block}.hc-wa span span{color:var(--muted)}
-@media(hover:hover){a.hcard{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}a.hcard:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(6,40,48,.16)}}
+/* ================= hero: dark cinematic stage ================= */
+.hero{--ink:#eef8f8;--muted:#a3c4c8;--line:rgba(255,255,255,.14);--aqua-text:#62e6d6;--good:#4fd389;--bad:#ff8a80;--warn:#ffc04d;
+  --glass:rgba(255,255,255,.06);--bg2:#0b2a31;color:var(--ink);overflow:visible;position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-2;pointer-events:none;top:calc(-4.4rem - env(safe-area-inset-top,0px) - 1px);bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);
+  background:
+    radial-gradient(38% 46% at 50% 64%,rgba(45,226,208,.20),transparent 70%),
+    radial-gradient(30% 34% at 50% 0%,rgba(108,184,255,.20),transparent 75%),
+    radial-gradient(60% 50% at 15% 100%,rgba(45,226,208,.07),transparent 70%),
+    linear-gradient(180deg,#03141a 0%,#06232a 55%,#041a20 100%);
+  -webkit-mask-image:none;mask-image:none;opacity:1;background-size:auto}
+.hero::after{content:"";position:absolute;z-index:-1;pointer-events:none;left:calc(50% - 50vw);right:calc(50% - 50vw);top:calc(-4.4rem - env(safe-area-inset-top,0px));bottom:0;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(55% 60% at 50% 35%,#000,transparent 75%);mask-image:radial-gradient(55% 60% at 50% 35%,#000,transparent 75%)}
+html .hero .pill.glass,html:not([data-theme="dark"]) .hero .pill.glass{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16);color:var(--ink);backdrop-filter:none}
+.hero .btn:not(.solid){background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#fff}
+.hero .btn:not(.solid):hover{background:rgba(255,255,255,.12)}
+.hero .btn.solid{box-shadow:0 10px 34px rgba(45,226,208,.28)}
+.hero .smile .sm-t{-webkit-text-stroke:0}
+.hero h1{color:#fff}
+.hero .proof{border-top-color:rgba(255,255,255,.14)}
+.hero .stars5 .off{fill:rgba(255,255,255,.22)}
+.hero .marquee{border-color:rgba(255,255,255,.12);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.hero .marquee .track span{color:rgba(238,248,248,.62)}
+/* the tooth on a lit pedestal under a soft beam */
+.hero .stage{overflow:visible}
+.hero .stage .glow{inset:4%;opacity:1;filter:none;background:radial-gradient(closest-side,rgba(45,226,208,.30),rgba(108,184,255,.10) 55%,transparent 75%)}
+.hero .stage .ring.b{inset:6%;border-color:rgba(98,230,214,.18)}
+.hero .stage .aura{inset:3%}
+.hero .stage .floor{left:16%;right:16%;bottom:2%;height:12%;background:radial-gradient(closest-side,rgba(98,230,214,.5),rgba(98,230,214,.12) 55%,transparent);filter:none}
+.hero .stage::before{content:"";position:absolute;left:22%;right:22%;top:-38%;bottom:12%;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(170,245,235,.0) 0%,rgba(170,245,235,.13) 45%,rgba(170,245,235,0) 100%);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}
+.hero .stage::after{content:"";position:absolute;left:12%;right:12%;bottom:-1%;height:9%;border-radius:50%;border:1px solid rgba(98,230,214,.35);box-shadow:0 0 30px rgba(98,230,214,.25),inset 0 0 18px rgba(98,230,214,.2)}
+.hero .stage svg.big{filter:drop-shadow(0 22px 26px rgba(0,0,0,.5))}
+@media(prefers-reduced-motion:reduce){.hero .stage::before{display:none}}
 
-/* A: split panel — the tooth sits in a large soft panel with floating live cards */
-@media(min-width:901px){
-  html[data-hero="a"] .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,4.5rem)}
-  html[data-hero="a"] .hero-side{align-self:stretch;display:grid;place-items:center;border-radius:2rem;margin-block:.4rem;
-    background:radial-gradient(120% 90% at 70% 20%,color-mix(in srgb,var(--aqua) 26%,transparent),transparent 60%),linear-gradient(160deg,color-mix(in srgb,var(--bg2) 70%,#fff),color-mix(in srgb,var(--sky) 14%,var(--bg2)));
-    border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
-  html[data-hero="a"] .stage{width:min(78%,60vh);max-width:none}
-  html[data-hero="a"] .hcard{display:block;position:absolute}
-  html[data-hero="a"] .hc-status{left:-1.6rem;bottom:12%}
-  html[data-hero="a"] .hc-rate{display:flex;right:-1rem;top:9%}
-  html[data-hero="a"] #openpill{display:none}
-  html[data-hero="a"] .hc-wa{display:none}
-  html[data-hero="a"] .proof li:first-child,html[data-hero="c"] .proof li:first-child{display:none}
+/* layout: headline across the top, copy left, tooth centre, actions right */
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,auto) minmax(0,1fr);grid-template-areas:"pill pill pill" "h1 h1 h1" "sub stage cta" "lede stage proof";column-gap:clamp(1.5rem,3.5vw,4rem);row-gap:0;align-items:center;flex:1;align-content:center}
+.hero-grid>div:first-child{display:contents}
+.hero-side{grid-area:stage;align-self:center}
+.hero-grid .pill{grid-area:pill;justify-self:center}
+.hero h1{grid-area:h1;justify-self:center;text-align:center;margin-inline:auto;margin-top:clamp(.8rem,2vh,1.3rem);margin-bottom:clamp(.6rem,2.2vh,1.6rem);font-size:clamp(2.6rem,min(6.2vw,9.6vh),6.6rem)}
+.hero .sub{grid-area:sub;align-self:end;margin:0 0 .6rem;max-width:21rem;font-size:clamp(1.1rem,.95rem + .6vw,1.5rem)}
+.hero .lede{grid-area:lede;align-self:start;max-width:21rem;font-size:var(--fs-body)}
+.hero-cta{grid-area:cta;align-self:end;justify-self:end;flex-direction:column;align-items:stretch;width:min(100%,17rem);margin:0 0 .4rem;gap:.7rem}
+.hero .proof{grid-area:proof;align-self:start;justify-self:end;width:min(100%,17rem);flex-direction:column;align-items:flex-start;gap:.15rem;margin-top:.9rem;padding-top:.7rem;max-width:none}
+.hero .proof li:last-child a span{white-space:normal}
+.hero .proof li:first-child a{white-space:nowrap}
+.hero-cta,.hero .proof{width:min(100%,19rem)}
+.hero .stage{width:clamp(16rem,min(34vw,52vh),31rem);max-width:none;margin:0 auto}
+html:not([lang="hi"]):not([lang="pa"]) .hero h1{max-width:none}
+/* tablets and phones: stacked, centred */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"pill" "h1" "stage" "sub" "lede" "cta" "proof";text-align:center;justify-items:center}
+  .hero-grid .stage,.hero-grid .hero-side .stage{position:relative;top:auto;right:auto;width:min(15rem,52vw);margin:.4rem auto 1.4rem;z-index:0}
+  .hero .sub,.hero .lede{max-width:34rem;align-self:auto;margin-inline:auto}
+  .hero .sub{margin-bottom:.5rem}
+  .hero-cta{justify-self:center;width:min(100%,24rem);margin-top:1.1rem}
+  .hero .proof{justify-self:center;align-items:center;width:auto;margin-top:1rem}
+  .hero h1{max-width:none}
 }
-/* B: centred statement — everything centred, the tooth as an emblem above the headline */
-@media(min-width:901px){
-  html[data-hero="b"] .hero-grid{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:0}
-  html[data-hero="b"] .hero-grid>div:first-child{order:2;display:flex;flex-direction:column;align-items:center;max-width:52rem}
-  html[data-hero="b"] .hero-side{order:1;width:clamp(5.5rem,11vh,8rem);margin-bottom:-.2rem}
-  html[data-hero="b"] .hero h1{font-size:clamp(2.4rem,min(5.4vw,8.6vh),5.6rem);margin-block:.8rem 1rem}
-  html[data-hero="b"] .hero .lede{max-width:44rem}
-  html[data-hero="b"] .hero-cta{margin-top:1.1rem}
-  html[data-hero="b"] .proof{flex-wrap:nowrap;padding-top:.8rem;margin-top:1rem}
-  html[data-hero="b"] .proof li{white-space:nowrap}
-  html[data-hero="b"] .stage{max-width:none;width:100%}
-  html[data-hero="b"] .stage .glow{opacity:.18}
-  html[data-hero="b"] .hero h1{max-width:none}
-  html[data-hero="b"] .hero .lede{margin-inline:auto}
-  html[data-hero="b"] .hero-cta,html[data-hero="b"] .proof{justify-content:center}
-  html[data-hero="b"] .proof{margin-inline:auto;max-width:44rem}
+@media(max-width:700px){
+  .hero-grid .stage,.hero-grid .hero-side .stage{width:min(9.2rem,40vw);margin:0 auto .9rem}
+  .hero h1{margin-block:.7rem .5rem}
+  .hero-cta{margin-top:.9rem;gap:.55rem}
+  .hero-cta .btn{min-height:3rem}
+  .hero .proof{margin-top:.8rem;padding-top:.5rem}
+  .hero .lede{font-size:.98rem;line-height:1.55}
+  .hero .proof{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:0 1rem}
+  .hero .proof li:last-child{flex-basis:100%;justify-content:center}
 }
-/* C: bento — headline left, a grid of tiles right: tooth, live status, rating, WhatsApp */
-@media(min-width:901px){
-  html[data-hero="c"] .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
-  html[data-hero="c"] .hero-side{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto auto;gap:.8rem;align-self:center;height:min(calc(100svh - 12rem),34rem)}
-  html[data-hero="c"] .stage{grid-column:1/-1;max-width:none;width:100%;height:100%;aspect-ratio:auto;border-radius:1.6rem;overflow:hidden;
-    background:radial-gradient(90% 90% at 50% 30%,color-mix(in srgb,var(--aqua) 24%,transparent),transparent 65%),linear-gradient(160deg,color-mix(in srgb,var(--bg2) 70%,#fff),color-mix(in srgb,var(--sky) 12%,var(--bg2)));border:1px solid var(--line)}
-  html[data-hero="c"] .stage svg.big{inset:8% 30%;width:40%;height:84%}
-  html[data-hero="c"] .stage .aura,html[data-hero="c"] .stage .ring{inset:4% 24%;border-radius:50%;aspect-ratio:1;height:auto;margin:auto}
-  html[data-hero="c"] .stage canvas.gl{inset:-10% 0;width:100%;height:120%}
-  html[data-hero="c"] .hcard{display:block}
-  html[data-hero="c"] .hc-rate{display:flex}
-  html[data-hero="c"] .hc-wa{display:flex;grid-column:1/-1}
-  html[data-hero="c"] #openpill{display:none}
+@media(max-width:700px) and (max-height:800px){
+  .hero .lede{display:none}
+  .hero-grid .stage,.hero-grid .hero-side .stage{width:min(8rem,36vw)}
+}
+@media(max-width:700px) and (max-height:760px){
+  .hero-grid .stage,.hero-grid .hero-side .stage{width:min(7rem,32vw);margin-bottom:.6rem}
+  .hero h1{font-size:clamp(2rem,9.6vw,2.6rem);margin-block:.5rem .3rem}
+  .hero .proof li:last-child{display:none}
+  .hero-cta .btn{min-height:2.85rem}
 }
 /* ---- smoothness ---- */
 :root{interpolate-size:allow-keywords}
@@ -1001,9 +1021,6 @@ html.lenis,html.lenis body{height:auto}
         <ellipse cx="146" cy="96" rx="4" ry="12" fill="#fff" opacity=".6"/>
       </svg>
     </div>
-    <div class="hcard hc-status"><span class="hk">Today</span><b id="hcstat">Mon–Sat · 10 AM – 7 PM</b><span>Mon–Sat · 10 AM – 7 PM</span></div>
-    <a class="hcard hc-rate" href="https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener"><svg class="stars5" viewBox="0 0 120 24" aria-hidden="true"><defs><clipPath id="hrate2"><rect width="98.4" height="24"/></clipPath></defs><g class="off"><path transform="translate(0 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></g><g class="on" clip-path="url(#hrate2)"><path transform="translate(0 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(24 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(48 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(72 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/><path transform="translate(96 0)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></g></svg><b>4.1</b><span>from 9 Google reviews</span></a>
-    <a class="hcard hc-wa" href="https://wa.me/919915510261" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span><b>Book on WhatsApp</b><span>+91 99155 10261</span></span></a>
     </div>
   </div>
   <div class="marquee" aria-hidden="true"><div class="track">
@@ -1787,6 +1804,17 @@ html.lenis,html.lenis body{height:auto}
     $('gal').innerHTML = CLINIC.photos.map(function(ph){ return '<img src="' + esc(ph.src) + '" alt="' + esc(ph.alt) + '" width="800" height="600" loading="lazy" decoding="async">'; }).join('');
     $('gallery').hidden = false;
   }
+
+  // ---- rolling headline word: the box eases to each word's width, so a centred line stays centred ----
+  (function(){
+    var h1 = $('h1'); if(!h1) return;
+    function fit(span){ var roll = span.closest('.roll'); if(roll && span.offsetWidth) roll.style.width = span.offsetWidth + 'px'; }
+    function onAnim(e){ if(e.animationName === 'wordcycle' && e.target.matches('.rollbox>span')) fit(e.target); }
+    h1.addEventListener('animationstart', onAnim); h1.addEventListener('animationiteration', onAnim);
+    function first(){ var sp = h1.querySelector('.rollbox>span'); if(sp) fit(sp); }
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(first); else first();
+    addEventListener('resize', function(){ var r = h1.querySelector('.roll'); if(r) r.style.width = ''; });
+  })();
 
   // ---- small bridge used by the voice assistant ----
   window.CD = {
