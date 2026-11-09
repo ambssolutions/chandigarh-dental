@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T06:10:49Z">
+<meta name="build" content="2026-11-09T06:23:45Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1120,6 +1120,32 @@ body{line-height:1.65;font-optical-sizing:auto}
 :root:not([data-theme="dark"]) :is(.tile h3,.readout h3,.steps b,summary,#form h3){color:#0b2228;text-shadow:0 1px 0 #fff}
 :root:not([data-theme="dark"]) :is(.tile p,.steps p,.readout p,details p,.head p,.stat span,.rate p,.fine,.info dd,label){color:#2c4a50}
 :root:not([data-theme="dark"]) footer{color:#2c4a50}
+}
+
+/* ==== gradient backgrounds (dark defaults) ==== */
+body{background:linear-gradient(180deg,#051218 0%,#06202a 22%,#051a22 45%,#072230 68%,#051218 100%)}
+main>section{position:relative;isolation:isolate}
+main>section::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);
+  background:radial-gradient(45% 55% at var(--gx,15%) var(--gy,30%),var(--g1,rgba(45,226,208,.17)),transparent 70%),radial-gradient(40% 50% at var(--hx,85%) var(--hy,75%),var(--g2,rgba(108,184,255,.15)),transparent 70%)}
+#treatments{--gx:12%;--gy:20%;--hx:90%;--hy:70%}
+#chart{--gx:88%;--gy:25%;--hx:10%;--hy:80%;--g1:rgba(108,184,255,.17);--g2:rgba(45,226,208,.15)}
+#visit{--gx:20%;--gy:40%;--hx:80%;--hy:60%}
+#book{--gx:85%;--gy:30%;--hx:15%;--hy:85%;--g1:rgba(108,184,255,.16);--g2:rgba(45,226,208,.16)}
+#faq{--gx:10%;--gy:50%;--hx:90%;--hy:30%}
+section .t6.glass,section .rate.glass{background:linear-gradient(120deg,color-mix(in srgb,#2de2d0 16%,var(--bg2)),color-mix(in srgb,#6cb8ff 16%,var(--bg2)))}
+footer{background:linear-gradient(180deg,transparent,rgba(45,226,208,.06) 40%,rgba(108,184,255,.08))}
+
+:root[data-theme="light"] body{background:linear-gradient(180deg,#e6f2f2 0%,#dcedee 22%,#e4eef6 45%,#dbecea 68%,#e2eded 100%)}
+:root[data-theme="light"] main>section::before{--g1:rgba(45,226,208,.20);--g2:rgba(108,184,255,.18)}
+:root[data-theme="light"] #chart::before,:root[data-theme="light"] #book::before{--g1:rgba(108,184,255,.20);--g2:rgba(45,226,208,.18)}
+:root[data-theme="light"] section .t6.glass,:root[data-theme="light"] section .rate.glass{background:linear-gradient(120deg,#e0faf5,#ffffff 50%,#e4effd)}
+:root[data-theme="light"] footer{background:linear-gradient(180deg,transparent,rgba(45,226,208,.10) 40%,rgba(108,184,255,.12))}
+@media (prefers-color-scheme:light){
+:root:not([data-theme="dark"]) body{background:linear-gradient(180deg,#e6f2f2 0%,#dcedee 22%,#e4eef6 45%,#dbecea 68%,#e2eded 100%)}
+:root:not([data-theme="dark"]) main>section::before{--g1:rgba(45,226,208,.20);--g2:rgba(108,184,255,.18)}
+:root:not([data-theme="dark"]) #chart::before,:root:not([data-theme="dark"]) #book::before{--g1:rgba(108,184,255,.20);--g2:rgba(45,226,208,.18)}
+:root:not([data-theme="dark"]) section .t6.glass,:root:not([data-theme="dark"]) section .rate.glass{background:linear-gradient(120deg,#e0faf5,#ffffff 50%,#e4effd)}
+:root:not([data-theme="dark"]) footer{background:linear-gradient(180deg,transparent,rgba(45,226,208,.10) 40%,rgba(108,184,255,.12))}
 }
 </style>
 </head>
