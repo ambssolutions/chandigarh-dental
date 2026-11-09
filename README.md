@@ -97,7 +97,7 @@ The words it listens for are in the `var W = {` and `var SVC = [` lists near the
 
 ## Photos
 
-The three photos in "Your visit" (`img/visit-*.webp`) are free stock photos from Pexels (Pexels licence: free to use, no attribution required), labelled on the page as "Illustrative photos". They are not photos of this clinic. Only photos of Indian people, or photos without people, are used. Replace them with the clinic's own photos when available: keep the same file names, or update the `srcset` in `index.html`.
+The three photos in "Your visit" (`img/visit-*.webp`) are free stock photos from Pexels (Pexels licence: free to use, no attribution required), labelled on the page as "Illustrative photos". They are not photos of this clinic. Only photos of Indian people, or photos without people, are used. Replace them with the clinic's own photos when available, using new file names and updating the `srcset` in `index.html`. Files in `img/` and `fonts/` are cached by browsers for a year, so a changed file must get a new name.
 
 - `visit-checkup`: pexels.com/photo/8224633 (Lakhinandan Borah, North Lakhimpur, Assam, India)
 - `visit-room`: pexels.com/photo/8224629 (same photographer and shoot)
