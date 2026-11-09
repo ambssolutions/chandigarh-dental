@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T02:43:19Z">
+<meta name="build" content="2026-11-09T02:57:21Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -724,6 +724,21 @@ html:is([lang="hi"],[lang="pa"]) :is(.head h2,.card h2){font-weight:700;line-hei
 html:is([lang="hi"],[lang="pa"]) :is(.tile h3,.readout h3,summary,.steps b){font-weight:700;line-height:1.45}
 html:is([lang="hi"],[lang="pa"]) .btn{font-weight:600;line-height:1.5}
 html:is([lang="hi"],[lang="pa"]) .track span{font-weight:600}
+/* ---- new treatment tiles, "Ask about this", map ---- */
+.t7,.t8,.t9{grid-column:span 2}
+@media(max-width:900px){.t7,.t8,.t9{grid-column:span 6}}
+.ask{position:relative;align-self:flex-start;margin-top:.5rem;background:none;border:0;padding:.55rem 0;min-height:2.75rem;color:var(--aqua-text);font:600 var(--fs-sm) var(--f-body);cursor:pointer;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--aqua-text) 40%,transparent);text-underline-offset:.3em;transition:text-decoration-color .3s}
+.ask:hover{text-decoration-color:currentColor}
+.screw{animation:screwin 3.6s cubic-bezier(.6,0,.3,1) infinite alternate}
+@keyframes screwin{from{transform:translateY(10px)}to{transform:translateY(-2px)}}
+.fillspot{fill:#7a5a3a;transform-box:fill-box;transform-origin:center;animation:fillin 4s ease-in-out infinite alternate}
+@keyframes fillin{0%,30%{fill:#7a5a3a}70%,100%{fill:var(--enamel);stroke:var(--tooth-line);stroke-width:1.5}}
+.whiten{animation:whiten 4.5s ease-in-out infinite alternate}
+@keyframes whiten{0%,20%{clip-path:inset(0 100% 0 0)}80%,100%{clip-path:inset(0 0 0 0)}}
+@media(prefers-reduced-motion:reduce){.screw,.fillspot,.whiten{animation:none}.whiten{clip-path:none}}
+.maprow{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
+.mapbox{flex-basis:100%;border-radius:1rem;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;max-height:22rem}
+.mapbox iframe{width:100%;height:100%;border:0;display:block}
 /* ---- smoothness ---- */
 :root{interpolate-size:allow-keywords}
 .msheet,.vpanel{transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
@@ -852,26 +867,47 @@ html.lenis,html.lenis body{height:auto}
           <path class="fill" d="M150 40C112 10 60 30 62 92c2 46 26 62 32 108 4 30 14 40 26 40 16 0 12-44 30-44s14 44 30 44c12 0 22-10 26-40 6-46 30-62 32-108C240 30 188 10 150 40z"/>
           <path class="canal" d="M110 70C118 110 118 150 116 200"/><path class="canal" d="M190 70C182 110 182 150 184 200" style="animation-delay:.4s"/>
         </svg>
-        <span class="tag">Teeth 4 – 8</span><h3>Root canal (RCT)</h3><p>Clears the infection inside the tooth, seals it, and lets you keep the tooth you have.</p>
+        <span class="tag">Teeth 4 – 8</span><h3>Root canal (RCT)</h3><p>Clears the infection inside the tooth, seals it, and lets you keep the tooth you have.</p><button type="button" class="ask" data-svc="Root canal (RCT)">Ask about this</button>
       </article>
       <article class="tile glass t2 rv">
         <svg class="art" viewBox="0 0 300 120" aria-hidden="true"><path class="stroke" d="M10 80Q80 30 150 70T290 60"/><g><rect class="beam" x="146" y="20" width="8" height="70" rx="4"/></g></svg>
-        <span class="tag">Gums · all teeth</span><h3>Laser dentistry</h3><p>Precise soft-tissue treatment with less bleeding and faster healing.</p>
+        <span class="tag">Gums · all teeth</span><h3>Laser dentistry</h3><p>Precise soft-tissue treatment with less bleeding and faster healing.</p><button type="button" class="ask" data-svc="Laser dentistry">Ask about this</button>
       </article>
       <article class="tile glass t3 rv">
         <svg class="art" viewBox="0 0 300 120" aria-hidden="true"><g class="align"><rect class="fill" x="30" y="30" width="36" height="60" rx="12"/><rect class="fill" x="84" y="30" width="36" height="60" rx="12"/><rect class="fill" x="138" y="30" width="36" height="60" rx="12"/><rect class="fill" x="192" y="30" width="36" height="60" rx="12"/><rect class="fill" x="246" y="30" width="36" height="60" rx="12"/></g></svg>
-        <span class="tag">Teeth 1 – 3</span><h3>Straightening</h3><p>Braces and alignment for crowding, gaps and a bite that does not close.</p>
+        <span class="tag">Teeth 1 – 3</span><h3>Straightening</h3><p>Braces and alignment for crowding, gaps and a bite that does not close.</p><button type="button" class="ask" data-svc="Braces / straightening">Ask about this</button>
       </article>
       <article class="tile glass t4 rv">
         <svg class="art" viewBox="0 0 300 120" aria-hidden="true">
           <path class="fill chipped" d="M120 20h60q6 40-4 76-10 10-26 0-16 10-26 0-10-36-4-76z M150 20l14 18-10 6z" opacity="1"/>
           <path class="fill whole" d="M120 20h60q6 40-4 76-10 10-26 0-16 10-26 0-10-36-4-76z"/>
         </svg>
-        <span class="tag">Teeth 1 – 3</span><h3>Tooth reshaping</h3><p>Smooths and rebuilds chipped or uneven teeth so they look natural.</p>
+        <span class="tag">Teeth 1 – 3</span><h3>Tooth reshaping</h3><p>Smooths and rebuilds chipped or uneven teeth so they look natural.</p><button type="button" class="ask" data-svc="Tooth reshaping">Ask about this</button>
       </article>
       <article class="tile glass t5 rv">
         <svg class="art" viewBox="0 0 300 120" aria-hidden="true"><path class="stroke" d="M20 100Q150-40 280 100"/><circle cx="60" cy="72" r="6" fill="var(--tooth-line)"/><circle cx="105" cy="46" r="6" fill="var(--tooth-line)"/><circle cx="150" cy="36" r="6" fill="var(--tooth-line)"/><circle cx="195" cy="46" r="6" fill="var(--tooth-line)"/><circle class="pulse" cx="240" cy="72" r="8" fill="var(--mark)"/></svg>
-        <span class="tag">Teeth 6 – 8 · jaw</span><h3>Oral &amp; maxillofacial surgery</h3><p>Extractions, wisdom teeth, surgical care of the mouth and jaw, and maxillofacial prosthetics.</p>
+        <span class="tag">Teeth 6 – 8 · jaw</span><h3>Oral &amp; maxillofacial surgery</h3><p>Extractions, wisdom teeth, surgical care of the mouth and jaw, and maxillofacial prosthetics.</p><button type="button" class="ask" data-svc="Oral surgery / extraction">Ask about this</button>
+      </article>
+      <article class="tile glass t7 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true">
+          <path class="fill" d="M112 20q38-16 76 0 10 14 4 28-6 6-14 4-10-6-28-6t-28 6q-8 2-14-4-6-14 4-28z"/>
+          <g class="screw"><rect class="fill" x="138" y="54" width="24" height="10" rx="2"/><path class="stroke" d="M140 70h20M138 80h24M140 90h20M142 100h16M146 110h8"/><path class="fill" d="M138 64h24l-4 48h-16z" style="fill:none"/></g>
+        </svg>
+        <span class="tag">Missing teeth</span><h3>Dental implants</h3><p>A fixed replacement for a missing tooth, set in the jaw.</p><button type="button" class="ask" data-svc="Dental implants">Ask about this</button>
+      </article>
+      <article class="tile glass t8 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true">
+          <path class="fill" d="M100 20q50-14 100 0 14 30 0 60-8 22-22 22-14-8-28-8t-28 8q-14 0-22-22-14-30 0-60z"/>
+          <circle class="fillspot" cx="168" cy="48" r="13"/>
+        </svg>
+        <span class="tag">Cavities</span><h3>Dental fillings</h3><p>Repairs a cavity early, before it reaches the nerve.</p><button type="button" class="ask" data-svc="Dental fillings">Ask about this</button>
+      </article>
+      <article class="tile glass t9 rv">
+        <svg class="art" viewBox="0 0 300 120" aria-hidden="true">
+          <path d="M120 16h60q6 40-4 80-10 10-26 0-16 10-26 0-10-40-4-80z" fill="#e9d9b0" stroke="var(--tooth-line)" stroke-width="2.5"/>
+          <path class="whiten" d="M120 16h60q6 40-4 80-10 10-26 0-16 10-26 0-10-40-4-80z" fill="var(--enamel)" stroke="var(--tooth-line)" stroke-width="2.5"/>
+        </svg>
+        <span class="tag">Stains</span><h3>Teeth whitening</h3><p>Lightens stains from tea, food and tobacco, under the dentist's care.</p><button type="button" class="ask" data-svc="Teeth whitening">Ask about this</button>
       </article>
       <article class="tile glass t6 rv">
         <div><span class="tag">Not sure what you need?</span><h3 style="margin-top:.6rem">Start with a check-up.</h3></div>
@@ -939,7 +975,7 @@ html.lenis,html.lenis body{height:auto}
             <tr data-d="6"><td>Saturday</td><td>10:00 – 19:00</td></tr>
             <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
           </table></dd></div>
-        <div><dt>Map</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener">Open in Google Maps</a></dd></div>
+        <div><dt>Map</dt><dd class="maprow"><button type="button" class="btn sm" id="showmap">Show map here</button><a href="https://www.google.com/maps/search/?api=1&query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib" target="_blank" rel="noopener">Open in Google Maps</a><div class="mapbox" id="mapbox" hidden></div></dd></div>
       </dl>
     </div>
     <form class="card glass rv" id="form" autocomplete="on">
@@ -993,7 +1029,7 @@ html.lenis,html.lenis body{height:auto}
 
 <footer><div class="wrap">
   <div class="fgrid">
-    <div class="fbrand"><b>Chandigarh Multispeciality Dental Clinic</b><p>Morinda Road, Opposite Bus Stand</p><p>Chamkaur Sahib, Punjab 140112</p><p><a href="tel:+919915510261">+91 99155 10261</a></p></div>
+    <div class="fbrand"><b>Chandigarh Multispeciality Dental Clinic</b><p>Morinda Road, Opposite Bus Stand</p><p>Chamkaur Sahib, Punjab 140112</p><p><a href="tel:+919915510261">+91 99155 10261</a></p><p><a href="https://wa.me/919915510261" target="_blank" rel="noopener"><span>WhatsApp</span> +91 99155 10261</a></p></div>
     <div><h2>Treatments</h2><ul><li><a href="#treatments">Root canal</a></li><li><a href="#treatments">Laser dentistry</a></li><li><a href="#treatments">Straightening</a></li><li><a href="#treatments">Oral surgery</a></li></ul></div>
     <div><h2>Explore</h2><ul><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book</a></li></ul></div>
     <div><h2>Hours</h2><ul><li>Mon–Sat · 10 AM – 7 PM</li><li><span>Sunday</span> · <span>Closed</span></li></ul></div>
@@ -1300,6 +1336,13 @@ html.lenis,html.lenis body{height:auto}
     ['Chandigarh Dental home','चंडीगढ़ डेंटल होम','ਚੰਡੀਗੜ੍ਹ ਡੈਂਟਲ ਹੋਮ'],
     ['Call +91 99155 10261','कॉल करें +91 99155 10261','ਕਾਲ ਕਰੋ +91 99155 10261'],
     ['Language','भाषा','ਭਾਸ਼ਾ'],
+    ['Ask about this','इसके बारे में पूछें','ਇਸ ਬਾਰੇ ਪੁੱਛੋ'],
+    ['Missing teeth','गुम दाँत','ਗੁਆਚੇ ਦੰਦ'],['Cavities','कैविटी','ਕੈਵਿਟੀ'],['Stains','दाग़','ਦਾਗ਼'],
+    ['A fixed replacement for a missing tooth, set in the jaw.','गुम हुए दाँत की जगह एक पक्का दाँत, जो जबड़े में लगाया जाता है।','ਗੁਆਚੇ ਦੰਦ ਦੀ ਥਾਂ ਇੱਕ ਪੱਕਾ ਦੰਦ, ਜੋ ਜਬਾੜੇ ਵਿੱਚ ਲਗਾਇਆ ਜਾਂਦਾ ਹੈ।'],
+    ['Repairs a cavity early, before it reaches the nerve.','कैविटी को जल्दी भर दिया जाता है, नस तक पहुँचने से पहले।','ਕੈਵਿਟੀ ਨੂੰ ਜਲਦੀ ਭਰ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ, ਨਸ ਤੱਕ ਪਹੁੰਚਣ ਤੋਂ ਪਹਿਲਾਂ।'],
+    ['Lightens stains from tea, food and tobacco, under the dentist\'s care.','चाय, खाने और तंबाकू के दाग़ डेंटिस्ट की देखरेख में हल्के किए जाते हैं।','ਚਾਹ, ਖਾਣੇ ਅਤੇ ਤੰਬਾਕੂ ਦੇ ਦਾਗ਼ ਡੈਂਟਿਸਟ ਦੀ ਦੇਖ-ਰੇਖ ਹੇਠ ਹਲਕੇ ਕੀਤੇ ਜਾਂਦੇ ਹਨ।'],
+    ['Show map here','यहीं नक्शा दिखाएँ','ਇੱਥੇ ਨਕਸ਼ਾ ਦਿਖਾਓ'],
+    ['Map: Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib','नक्शा: चंडीगढ़ मल्टीस्पेशियलिटी डेंटल क्लिनिक, चमकौर साहिब','ਨਕਸ਼ਾ: ਚੰਡੀਗੜ੍ਹ ਮਲਟੀਸਪੈਸ਼ਲਿਟੀ ਡੈਂਟਲ ਕਲੀਨਿਕ, ਚਮਕੌਰ ਸਾਹਿਬ'],
     ['Rated on Google','Google पर रेटिंग','Google \'ਤੇ ਰੇਟਿੰਗ'],
     ['Opposite the bus stand, Morinda Road','मोरिंडा रोड, बस स्टैंड के सामने','ਮੋਰਿੰਡਾ ਰੋਡ, ਬੱਸ ਅੱਡੇ ਦੇ ਸਾਹਮਣੇ'],
     ['Quick contact','तुरंत संपर्क','ਤੁਰੰਤ ਸੰਪਰਕ'],
@@ -1667,6 +1710,25 @@ html.lenis,html.lenis body{height:auto}
   // ---- hero: tap the tooth to give it a spin ----
   var stageEl = $('stage');
   stageEl.addEventListener('click', function(){ if(!reduce) window.dispatchEvent(new CustomEvent('toothspin')); });
+
+  // ---- "Ask about this" on a treatment: put it in the booking form ----
+  document.querySelector('.bento').addEventListener('click', function(e){
+    var b = e.target.closest('.ask'); if(!b) return;
+    $('svc').value = b.dataset.svc; updateWA();
+    if(window.lenis) window.lenis.scrollTo($('form'), {offset: -100, duration: 1.2}); else $('form').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+    setTimeout(function(){ $('name').focus({preventScroll: true}); }, 900);
+  });
+  // ---- map loads only when asked (no Google requests until then) ----
+  $('showmap').addEventListener('click', function(){
+    var box = $('mapbox');
+    if(!box.firstChild){
+      var f = document.createElement('iframe');
+      f.src = 'https://maps.google.com/maps?q=Chandigarh+Multispeciality+Dental+Clinic,+Morinda+Road,+Chamkaur+Sahib&output=embed';
+      f.title = T('Map: Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib'); f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade';
+      box.appendChild(f);
+    }
+    box.hidden = false; this.hidden = true;
+  });
 
   // ---- small bridge used by the voice assistant ----
   window.CD = {
