@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-08T23:18:44Z">
+<meta name="build" content="2026-11-09T01:37:48Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -121,9 +121,10 @@ html{overflow-x:clip}
 .stage .glow{position:absolute;inset:14%;border-radius:50%;background:var(--grad);filter:blur(60px);opacity:.45}
 .stage svg.big{position:absolute;inset:8%;width:84%;height:84%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));animation:float 6s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-14px) rotate(2deg)}}
-.stage canvas.gl{position:absolute;inset:-8%;width:116%;height:116%;display:none;pointer-events:none}
-.stage.gl-on canvas.gl{display:block}
-.stage.gl-on svg.big{display:none}
+.stage canvas.gl{position:absolute;inset:-8%;width:116%;height:116%;display:block;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 1.2s ease,visibility 0s 1.2s}
+.stage.gl-on canvas.gl{opacity:1;visibility:visible;transition:opacity 1.2s ease}
+.stage svg.big{transition:opacity 1s ease}
+.stage.gl-on svg.big{opacity:0}
 .stage.gl-on .spark{display:none}
 .progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);z-index:60}
 .hero h1 .w{display:inline-block;animation:wordin .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*70ms + 120ms)}
@@ -297,7 +298,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;
   .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;inset-inline:.7rem;bottom:calc(.7rem + env(safe-area-inset-bottom,0px));z-index:40;padding:.5rem;border-radius:99px;box-shadow:var(--shadow)}
   footer{padding-bottom:6rem}
 }
-.rv{transform:translateY(28px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv{transform:translateY(24px);transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
 .rv.in{transform:none}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -632,6 +633,29 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
 }
 @media(max-width:430px){.nav .acts .menubtn{width:2.5rem;height:2.5rem}}
 @media(prefers-reduced-motion:reduce){.menubtn path{transition:none}}
+/* ---- smoothness ---- */
+:root{interpolate-size:allow-keywords}
+.msheet,.vpanel{transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+@starting-style{.msheet{opacity:0;transform:translateY(-10px) scale(.98)}.vpanel{opacity:0;transform:translateY(14px)}}
+.mlinks li{transition:opacity .5s ease,transform .6s cubic-bezier(.16,1,.3,1)}
+@starting-style{.mlinks li{opacity:0;transform:translateY(-6px)}}
+.mlinks li:nth-child(2){transition-delay:.03s}.mlinks li:nth-child(3){transition-delay:.06s}.mlinks li:nth-child(4){transition-delay:.09s}.mlinks li:nth-child(5){transition-delay:.12s}
+details::details-content{block-size:0;overflow:clip;transition:block-size .9s cubic-bezier(.16,1,.3,1),content-visibility .9s allow-discrete}
+details[open]::details-content{block-size:auto}
+details p{transition:opacity .7s ease .1s}
+details:not([open]) p{opacity:0}
+.btn,.icon-btn,.seg button,.lang button,.tooth{transition:transform .18s ease,background-color .3s,color .3s,border-color .3s,box-shadow .3s}
+.btn:active,.icon-btn:active,.seg button:active,.lang button:active{transform:scale(.97)}
+.tooth .crown{transition:fill .35s ease,stroke .35s ease}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;animation-timing-function:ease}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+@media(prefers-reduced-motion:reduce){
+  .msheet,.vpanel,.mlinks li,details::details-content,details p{transition:none}
+  .btn:active,.icon-btn:active{transform:none}
+}
 /* voice assistant */
 .icon-btn.mic{position:relative}
 .icon-btn.mic.on{background:var(--grad);color:var(--on-aqua);border-color:transparent}
@@ -678,7 +702,7 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
   </div>
 </header>
 
-<aside class="msheet" id="msheet" hidden aria-label="Menu">
+<aside class="msheet" id="msheet" hidden aria-label="Menu" data-lenis-prevent>
   <nav aria-label="Sections"><ul class="mlinks"><li><a href="#treatments">Treatments</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book a visit</a></li></ul></nav>
   <div class="msets">
     <div class="mrow"><span class="mlabel" id="ml-lang">Language</span><div class="seg lang mlang" role="group" aria-labelledby="ml-lang"><button type="button" data-l="en" aria-pressed="true" lang="en">English</button><button type="button" data-l="pa" aria-pressed="false" lang="pa">ਪੰਜਾਬੀ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi">हिन्दी</button></div></div>
@@ -882,7 +906,7 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
   <div class="row"><span>© <span id="yr"></span> Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib</span><span>Proudly designed by <a href="https://ambs.co.nz" target="_blank" rel="noopener">AMBS Solutions</a></span></div>
 </div></footer>
 <nav class="callbar glass away" id="callbar" aria-label="Quick contact"><a class="btn" id="wabtn" href="https://wa.me/919915510261" target="_blank" rel="noopener">WhatsApp</a><a class="btn solid" id="callbtn" href="tel:+919915510261">Call</a></nav>
-<div class="vpanel" id="vpanel" hidden role="dialog" aria-labelledby="vtitle">
+<div class="vpanel" id="vpanel" hidden role="dialog" aria-labelledby="vtitle" data-lenis-prevent>
   <div class="vtop"><span class="vdot" aria-hidden="true"></span><b id="vtitle">Voice assistant</b><button class="icon-btn" id="vclose" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
   <p class="vheard" id="vheard"></p>
   <p class="vsay" id="vsay" aria-live="polite"></p>
@@ -1040,7 +1064,6 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
   function onScroll(){
     if(ticking) return; ticking = true;
     requestAnimationFrame(function(){
-      lockNav();
       var h = document.documentElement.scrollHeight - innerHeight, y = scrollY;
       bar.style.transform = 'scaleX(' + (h>0 ? y/h : 0) + ')';
       ticking = false;
@@ -1314,6 +1337,11 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fallback); } else fallback();
   });
 
+  // cross-fade big visual changes (theme, language, text size) where the browser supports it
+  function fade(fn){
+    if(document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches){ try{ document.startViewTransition(fn); return; }catch(e){} }
+    fn();
+  }
   // theme toggle
   function setTheme(m){
     var root = document.documentElement;
@@ -1324,7 +1352,7 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
   $('theme').addEventListener('click', function(){
     var root = document.documentElement;
     var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    setTheme(cur === 'dark' ? 'light' : 'dark');
+    fade(function(){ setTheme(cur === 'dark' ? 'light' : 'dark'); });
   });
 
   // ---- phone menu: sections and settings ----
@@ -1339,13 +1367,13 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
   document.addEventListener('click', function(e){ if(!sheet.hidden && !sheet.contains(e.target) && !mbtn.contains(e.target)) setMenu(false); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !sheet.hidden){ setMenu(false); mbtn.focus(); } });
   addEventListener('resize', function(){ if(innerWidth > 1060 && !sheet.hidden) setMenu(false); });
-  $('themeseg').addEventListener('click', function(e){ var b = e.target.closest('button'); if(b) setTheme(b.dataset.t); });
+  $('themeseg').addEventListener('click', function(e){ var b = e.target.closest('button'); if(b) fade(function(){ setTheme(b.dataset.t); }); });
   function setText(sz){
     document.documentElement.classList.toggle('text-lg', sz === 'large');
     try{ localStorage.setItem('cd-text', sz); }catch(e){}
     document.querySelectorAll('#textseg button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.s === sz ? 'true' : 'false'); });
   }
-  $('textseg').addEventListener('click', function(e){ var b = e.target.closest('button'); if(b) setText(b.dataset.s); });
+  $('textseg').addEventListener('click', function(e){ var b = e.target.closest('button'); if(b) fade(function(){ setText(b.dataset.s); }); });
   (function(){ var t = 'auto', z = 'normal'; try{ t = localStorage.getItem('cd-theme') || 'auto'; z = localStorage.getItem('cd-text') || 'normal'; }catch(e){} setTheme(t); setText(z); })();
 
   // ---- opening hours, in clinic time (IST) ----
@@ -1496,7 +1524,7 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
     try{ localStorage.setItem('cd-lang', l); }catch(e){}
   }
   document.querySelectorAll('.lang').forEach(function(g){ g.addEventListener('click', function(e){
-    var b = e.target.closest('button[data-l]'); if(b) applyLang(b.dataset.l);
+    var b = e.target.closest('button[data-l]'); if(b) fade(function(){ applyLang(b.dataset.l); });
   }); });
 
   // ---- Call button: if no dialer opens (desktop, or a frame that blocks tel: links), show the number with a copy button ----
@@ -1536,7 +1564,7 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
     setInterval(function(){
       if(!carouselOn() || autoHold || !autoSeen || document.hidden) return;
       goTo((nearest() + 1) % tiles.length);
-    }, 3600);
+    }, 5200);
   }
 
   // ---- hero: tap the tooth to give it a spin ----
@@ -1837,6 +1865,28 @@ html.framed .msheet{top:max(calc(env(safe-area-inset-top,0px) + 5rem),8.4rem)}
   // the WhatsApp button in the panel follows the form as it changes
   ['name','svc','day','msg'].forEach(function(id){ $(id).addEventListener('input', function(){ var b = $('vwa'); if(b) b.href = $('wa').href; }); });
   window.CDvoice = {handle: function(s){ openPanel(); handle(s); }}; // used by the page's tests
+})();
+</script>
+<script>
+(function(){
+  if(!matchMedia('(pointer: fine) and (hover: hover)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function start(){
+    if(typeof Lenis === 'undefined') return;
+    var lenis = new Lenis({lerp: .1, wheelMultiplier: 1, smoothWheel: true});
+    window.lenis = lenis;
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    // in-page links glide to their section, below the floating top bar
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a[href^="#"]'); if(!a) return;
+      var id = a.getAttribute('href'); if(id.length < 2) return;
+      var el = document.querySelector(id); if(!el) return;
+      e.preventDefault(); lenis.scrollTo(el, {offset: -88, duration: 1.2}); history.replaceState(null, '', id);
+    });
+  }
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js'; s.defer = true; s.onload = start;
+  if(document.readyState === 'complete') document.head.appendChild(s); else addEventListener('load', function(){ document.head.appendChild(s); });
 })();
 </script>
 </body>
