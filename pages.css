@@ -117,3 +117,6 @@ html:is([lang="hi"],[lang="pa"]) .svc-know h3{letter-spacing:0;text-transform:no
 .ticks li::before{width:1.2em;height:1.2em;top:calc(.775em - .6em);left:0;-webkit-mask:none;mask:none;border-radius:50%;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' fill='none' stroke='%23fff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat,var(--grad)}
 .ticks li::after{content:none}
+
+/* services page on laptops: the pinned "Book an appointment" button is the only call to action, so the closing band is hidden */
+@media(min-width:821px){.page-services section:has(.cta-band){display:none}.page-services .svcs{padding-bottom:4rem}}

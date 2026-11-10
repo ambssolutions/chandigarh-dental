@@ -51,7 +51,7 @@ def page(slug, title, title_key, desc, body):
     h += f'<meta name="page-title-key" content="{html.escape(title_key)}">\n'
     h += '<link rel="stylesheet" href="/pages.css">\n</head>\n'
     cur = '/' + slug
-    out = (h + '<body class="page-inner">\n' + localise_links(top, cur) + '\n<div class="navspace" aria-hidden="true"></div>\n'
+    out = (h + f'<body class="page-inner page-{slug}">\n' + localise_links(top, cur) + '\n<div class="navspace" aria-hidden="true"></div>\n'
            + '<main id="main" class="page">\n' + body + '\n</main>\n\n'
            + localise_links(footer, cur) + '\n' + callbar.replace('callbar glass away', 'callbar glass').replace('href="#book"', 'href="/#book"') + '\n'
            + '<script src="/site.js" defer></script>\n</body>\n</html>\n')
