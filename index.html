@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-10T00:45:32Z">
+<meta name="build" content="2026-11-10T11:31:49Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -25,6 +25,30 @@
 
 /* phones and tablets: the changing word sits on its own line, centred within the fixed-width box */
 @media(max-width:900px){.hero .rollbox>span{justify-self:center;text-align:center}}
+
+/* ==== hero keeps all its text on every screen: on shorter screens the tooth and spacing shrink instead ==== */
+@media(max-width:700px){
+  .hero .lede{display:block;font-size:clamp(.92rem,3.9vw,1rem);line-height:1.5;margin:.15rem auto 0;max-width:30rem}
+  .hero .sub{margin-bottom:.3rem}
+}
+@media(max-width:700px) and (max-height:860px){
+  .hero-grid .stage,.hero-grid .hero-side .stage{width:min(7.4rem,32vw);margin:0 auto .55rem}
+  .hero h1{margin-block:.45rem .25rem}
+  .hero-cta{margin-top:.8rem;gap:.5rem}
+  .hero-cta .btn{min-height:2.85rem}
+  .hero .proof{margin-top:.7rem;padding-top:.45rem}
+  .hero .proof .pyears{min-height:2.1rem}
+}
+@media(max-width:700px) and (max-height:760px){
+  .hero-grid .stage,.hero-grid .hero-side .stage{width:min(6.2rem,28vw);margin-bottom:.4rem}
+  .hero .lede{font-size:.9rem;line-height:1.45}
+  .hero-cta .btn{min-height:2.75rem}
+}
+@media(min-width:901px) and (max-height:800px){
+  .hero .stage{width:clamp(9rem,min(22vw,23vh),20rem)}
+  .hero .lede{display:block;max-width:40rem;font-size:clamp(.95rem,.9rem + .25vw,1.05rem);line-height:1.55}
+}
+@media(max-width:700px) and (max-height:760px){html:is([lang="hi"],[lang="pa"]) .hero .lede{font-size:.86rem;line-height:1.5}html:is([lang="hi"],[lang="pa"]) .hero h1{margin-block:.35rem .2rem}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Chandigarh Multispeciality Dental Clinic","telephone":"+919915510261","address":{"@type":"PostalAddress","streetAddress":"Morinda Road, Opposite Bus Stand","addressLocality":"Chamkaur Sahib","addressRegion":"Punjab","postalCode":"140112","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:00"}],"medicalSpecialty":"Dentistry","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.1","reviewCount":"9","bestRating":"5"},"availableService":[{"@type":"MedicalProcedure","name":"Root canal treatment"},{"@type":"MedicalProcedure","name":"Laser dentistry"},{"@type":"MedicalProcedure","name":"Braces and teeth straightening"},{"@type":"MedicalProcedure","name":"Tooth reshaping"},{"@type":"MedicalProcedure","name":"Dental fillings"},{"@type":"MedicalProcedure","name":"Dental implants"},{"@type":"MedicalProcedure","name":"Teeth whitening"},{"@type":"MedicalProcedure","name":"Oral and maxillofacial surgery"}],"areaServed":"Chamkaur Sahib, Punjab"}
@@ -906,13 +930,11 @@ html:not([lang="hi"]):not([lang="pa"]) .hero h1{max-width:none}
   .hero .proof li:last-child{flex-basis:100%;justify-content:center}
 }
 @media(max-width:700px) and (max-height:800px){
-  .hero .lede{display:none}
   .hero-grid .stage,.hero-grid .hero-side .stage{width:min(8rem,36vw)}
 }
 @media(max-width:700px) and (max-height:760px){
   .hero-grid .stage,.hero-grid .hero-side .stage{width:min(7rem,32vw);margin-bottom:.6rem}
   .hero h1{font-size:clamp(2rem,9.6vw,2.6rem);margin-block:.5rem .3rem}
-  .hero .proof li:last-child{display:none}
   .hero-cta .btn{min-height:2.85rem}
 }
 /* ---- smoothness ---- */
@@ -973,7 +995,7 @@ html.lenis,html.lenis body{height:auto}
   .hero .stage{width:clamp(10rem,min(24vw,28vh),21rem);margin:0 auto clamp(.6rem,1.8vh,1.2rem)}
   .hero h1{margin-bottom:clamp(.4rem,1.6vh,1.2rem)}
 }
-@media(min-width:901px) and (max-height:760px){.hero .lede{display:none}}
+
 @media(max-width:900px){.hero-cta{flex-direction:column;align-items:stretch;width:min(100%,24rem)}.hero-cta .btn{min-width:0}}
 @media(max-width:700px){.hero .proof{gap:0 1rem}.hero .proof li:last-child{flex-basis:100%;justify-content:center}.hero .proof li:last-child a span{white-space:normal}}
 
