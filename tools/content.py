@@ -145,7 +145,7 @@ STRINGS = [
      "ਇਸ ਪੇਜ ਦੀਆਂ ਤਸਵੀਰਾਂ AI ਨਾਲ ਬਣਾਏ ਚਿੱਤਰ ਹਨ, ਕਲੀਨਿਕ ਦੀਆਂ ਅਸਲ ਤਸਵੀਰਾਂ ਨਹੀਂ।"),
     ("A dentist showing a smiling patient his check-up results on a tablet", "डेंटिस्ट मुस्कुराते मरीज़ को टैबलेट पर उसकी जाँच के नतीजे दिखाते हुए", "ਡੈਂਟਿਸਟ ਮੁਸਕਰਾਉਂਦੇ ਮਰੀਜ਼ ਨੂੰ ਟੈਬਲੇਟ 'ਤੇ ਉਸਦੀ ਜਾਂਚ ਦੇ ਨਤੀਜੇ ਦਿਖਾਉਂਦੇ ਹੋਏ"),
     ("A dentist with magnifying loupes treating a back tooth", "मैग्निफ़ाइंग लूप पहने डेंटिस्ट पीछे के दाँत का इलाज करते हुए", "ਮੈਗਨੀਫ਼ਾਇੰਗ ਲੂਪ ਪਹਿਨੇ ਡੈਂਟਿਸਟ ਪਿਛਲੇ ਦੰਦ ਦਾ ਇਲਾਜ ਕਰਦੇ ਹੋਏ"),
-    ("A dental laser on a clean instrument tray", "साफ़ औज़ार ट्रे पर डेंटल लेज़र", "ਸਾਫ਼ ਔਜ਼ਾਰ ਟ੍ਰੇ 'ਤੇ ਡੈਂਟਲ ਲੇਜ਼ਰ"),
+    ("A dentist holding a dental laser above an instrument tray", "औज़ार ट्रे के ऊपर डेंटल लेज़र पकड़े डेंटिस्ट", "ਔਜ਼ਾਰ ਟ੍ਰੇ ਉੱਤੇ ਡੈਂਟਲ ਲੇਜ਼ਰ ਫੜੀ ਡੈਂਟਿਸਟ"),
     ("A smiling teenager wearing clear braces", "पारदर्शी ब्रेसेस पहने मुस्कुराती किशोरी", "ਪਾਰਦਰਸ਼ੀ ਬ੍ਰੇਸਿਜ਼ ਪਹਿਨੀ ਮੁਸਕਰਾਉਂਦੀ ਕੁੜੀ"),
     ("A patient checking her reshaped front teeth in a hand mirror", "मरीज़ हाथ के शीशे में अपने नए आकार वाले आगे के दाँत देखती हुई", "ਮਰੀਜ਼ ਹੱਥ ਦੇ ਸ਼ੀਸ਼ੇ ਵਿੱਚ ਆਪਣੇ ਨਵੀਂ ਸ਼ਕਲ ਵਾਲੇ ਅਗਲੇ ਦੰਦ ਵੇਖਦੀ ਹੋਈ"),
     ("A tooth-colour shade guide held next to a tooth model", "दाँत के मॉडल के पास रखा दाँत के रंगों का शेड गाइड", "ਦੰਦ ਦੇ ਮਾਡਲ ਕੋਲ ਰੱਖਿਆ ਦੰਦਾਂ ਦੇ ਰੰਗਾਂ ਦਾ ਸ਼ੇਡ ਗਾਈਡ"),

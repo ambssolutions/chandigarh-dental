@@ -119,7 +119,7 @@ SERVICES = [
 PHOTO_ALT = {
     'checkup': 'A dentist showing a smiling patient his check-up results on a tablet',
     'root-canal': 'A dentist with magnifying loupes treating a back tooth',
-    'laser': 'A dental laser on a clean instrument tray',
+    'laser': 'A dentist holding a dental laser above an instrument tray',
     'braces': 'A smiling teenager wearing clear braces',
     'reshaping': 'A patient checking her reshaped front teeth in a hand mirror',
     'fillings': 'A tooth-colour shade guide held next to a tooth model',
@@ -140,11 +140,10 @@ for i, (slug, name, option, bullets) in enumerate(SERVICES, 1):
     chips.append(f'<li><a href="#{slug}">{title}</a></li>')
     lis = ''.join(f'<li>{html.escape(b)}</li>' for b in bullets)
     cards.append(f'''  <article class="svc glass{" svc-flip" if i % 2 == 0 else ""}" id="{slug}">
-    <figure class="svc-photo"><img src="/img/svc-{slug}-768.webp" srcset="/img/svc-{slug}-768.webp 768w, /img/svc-{slug}-1536.webp 1536w" sizes="(min-width: 861px) 560px, 100vw" width="1536" height="1024" {"" if i==1 else "loading=\"lazy\" "}decoding="async" alt="{PHOTO_ALT[slug]}"><span class="svc-num" aria-hidden="true">{i:02d}</span></figure>
+    <figure class="svc-photo"><img src="/img/svc-{slug}-v2-800.webp" srcset="/img/svc-{slug}-v2-800.webp 800w, /img/svc-{slug}-v2-1536.webp 1536w" sizes="(min-width: 861px) 560px, 100vw" width="1536" height="1024" {"" if i==1 else "loading=\"lazy\" "}decoding="async" alt="{PHOTO_ALT[slug]}"></figure>
     <div class="svc-main">
       <span class="tag">{tag}</span><h2>{title}</h2><p class="svc-desc">{desc}</p>
       <div class="svc-know"><h3>Good to know</h3><ul class="ticks">{lis}</ul></div>
-      <div class="svc-acts"><a class="btn solid" href="{ask}">Ask about this</a><a class="btn" href="{wa}" target="_blank" rel="noopener">Ask on WhatsApp</a></div>
     </div>
   </article>''')
 
