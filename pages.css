@@ -50,7 +50,7 @@ html:is([lang="hi"],[lang="pa"]) .phead h1{font-weight:700;line-height:1.3;font-
 .mainnav a[aria-current="page"],.mlinks a[aria-current="page"]{color:var(--aqua-text)}
 
 /* the floating call bar is always available on inner pages */
-@media(max-width:900px){.page-inner .callbar.away{transform:none;opacity:1;pointer-events:auto}}
+.page-inner .callbar.away{transform:none;opacity:1;pointer-events:auto}
 
 /* dentists */
 .team-gen{border-radius:1.8rem;padding:clamp(1.5rem,4vw,2.6rem);text-align:center;display:grid;gap:.8rem;justify-items:center}
@@ -111,3 +111,9 @@ html:is([lang="hi"],[lang="pa"]) .phead h1{font-weight:700;line-height:1.3;font-
 html:is([lang="hi"],[lang="pa"]) .svc-know h3{letter-spacing:0;text-transform:none;font-size:.85rem}
 .svc-num{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);padding:.35rem .7rem .45rem;border-radius:.9rem;background:rgba(3,20,26,.42);border:1px solid rgba(255,255,255,.18);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-shadow:none}
+
+/* ticks: one image per tick (gradient circle with a centred check), lined up with the first line of text */
+.ticks li{padding-left:2em}
+.ticks li::before{width:1.2em;height:1.2em;top:calc(.775em - .6em);left:0;-webkit-mask:none;mask:none;border-radius:50%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' fill='none' stroke='%23fff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat,var(--grad)}
+.ticks li::after{content:none}

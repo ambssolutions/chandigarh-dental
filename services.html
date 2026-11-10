@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-10T22:59:11Z">
+<meta name="build" content="2026-11-10T23:04:15Z">
 <meta name="description" content="Root canal, laser dentistry, braces, tooth reshaping, fillings, implants, whitening, oral surgery and check-ups at Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1390,6 +1390,15 @@ html:is([lang="hi"],[lang="pa"]) .stage .txnames>span{text-transform:none;letter
 
 /* decorative animations start once the page has loaded and gone idle, keeping the startup window free */
 html:not(.live) .stage *,html:not(.live) .stage,html:not(.live) .marquee *,html:not(.live) .bento *{animation-play-state:paused!important}
+
+/* laptops and desktops: the same quick-contact bar sits at the bottom centre while the page scrolls */
+@media(min-width:821px){
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:50%;bottom:1.1rem;translate:-50% 0;width:min(25rem,calc(100% - 2rem));z-index:40;padding:.45rem;border-radius:99px;box-shadow:var(--shadow);
+    transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s}
+  .callbar .btn{min-height:2.8rem}
+  .callbar.away{transform:translateY(160%);opacity:0;pointer-events:none}
+  footer{padding-bottom:6.5rem}
+}
 </style>
 <meta name="page-title-key" content="Services">
 <link rel="stylesheet" href="/pages.css">
