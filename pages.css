@@ -70,3 +70,12 @@ html:is([lang="hi"],[lang="pa"]) .phead h1{font-weight:700;line-height:1.3;font-
 .doc-q{color:var(--aqua-text);font-weight:700;font-size:.85rem;letter-spacing:.04em}
 .doc-r{color:var(--muted);font-size:.92rem}
 .doc p{color:var(--muted);margin:.4rem 0 0;font-size:.95rem}
+
+/* treatment photos (AI-generated illustrations) */
+.svc-photo{margin:0 0 .6rem;width:100%;max-width:30rem;aspect-ratio:3/2;border-radius:1.3rem;overflow:hidden;position:relative;
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.12)}
+.svc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+@media(hover:hover){.svc:hover .svc-photo img{transform:scale(1.04)}}
+.svc-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);pointer-events:none}
+.phead .ainote{font-size:.8rem;line-height:1.5;color:var(--muted);margin:1rem auto 0;max-width:34rem;opacity:.85}
+.svc{align-items:center}

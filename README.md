@@ -116,3 +116,7 @@ python3 tools/build-pages.py
 ```
 
 Their own styles are in `pages.css` and their behaviour (theme, text size, menu, language) in `site.js`. New English text on these pages needs a Hindi and Punjabi line in `tools/content.py`; the build adds it to `i18n.json`.
+
+### Services page images
+
+`img/svc-*.webp` are AI-generated illustrations (Figma AI image generation), one per treatment, made for this site. People shown are Indian, as the clinic asked. The page says so under the treatment links ("Photos on this page are AI-generated illustrations, not photos of the clinic"). Replace them with the clinic's own photos when available, using new file names (images are cached for a year).

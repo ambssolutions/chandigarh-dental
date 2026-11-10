@@ -115,6 +115,19 @@ SERVICES = [
         'Maxillofacial prosthetics are also offered. Ask the clinic about your case.']),
 ]
 
+
+PHOTO_ALT = {
+    'checkup': 'A dentist showing a smiling patient his check-up results on a tablet',
+    'root-canal': 'A dentist with magnifying loupes treating a back tooth',
+    'laser': 'A dental laser on a clean instrument tray',
+    'braces': 'A smiling teenager wearing clear braces',
+    'reshaping': 'A patient checking her reshaped front teeth in a hand mirror',
+    'fillings': 'A tooth-colour shade guide held next to a tooth model',
+    'implants': 'A model of a dental implant with a crown, set in the jaw',
+    'whitening': 'A smiling man with naturally bright teeth in the dental chair',
+    'surgery': 'A dental surgeon explaining a jaw X-ray to an older patient',
+}
+
 cards, chips = [], []
 for i, (slug, name, option, bullets) in enumerate(SERVICES, 1):
     if name:
@@ -127,7 +140,7 @@ for i, (slug, name, option, bullets) in enumerate(SERVICES, 1):
     chips.append(f'<li><a href="#{slug}">{title}</a></li>')
     lis = ''.join(f'<li>{html.escape(b)}</li>' for b in bullets)
     cards.append(f'''  <article class="svc glass" id="{slug}">
-    <div class="svc-head"><div class="svc-art">{art}</div><span class="svc-n">{i:02d}</span><span class="tag">{tag}</span><h2>{title}</h2><p>{desc}</p></div>
+    <div class="svc-head"><figure class="svc-photo"><img src="/img/svc-{slug}-768.webp" srcset="/img/svc-{slug}-768.webp 768w, /img/svc-{slug}-1536.webp 1536w" sizes="(min-width: 861px) 460px, 92vw" width="1536" height="1024" {"" if i==1 else "loading=\"lazy\" "}decoding="async" alt="{PHOTO_ALT[slug]}"></figure><span class="svc-n">{i:02d}</span><span class="tag">{tag}</span><h2>{title}</h2><p>{desc}</p></div>
     <div class="svc-body"><h3>Good to know</h3><ul class="ticks">{lis}</ul>
       <div class="svc-acts"><a class="btn solid" href="{ask}">Ask about this</a><a class="btn" href="{wa}" target="_blank" rel="noopener">Ask on WhatsApp</a></div></div>
   </article>''')
@@ -137,6 +150,7 @@ services_body = f'''<section class="phead"><div class="wrap">
   <h1>Treatments at the clinic</h1>
   <p>Nine treatments under one roof in Chamkaur Sahib, explained in plain words.</p>
   <ul class="chips" aria-label="Treatments">{''.join(chips)}</ul>
+  <p class="ainote">Photos on this page are AI-generated illustrations, not photos of the clinic.</p>
 </div></section>
 <section class="svcs" style="padding-top:0"><div class="wrap">
 {chr(10).join(cards)}
