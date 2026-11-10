@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-09T21:30:44Z">
+<meta name="build" content="2026-11-10T00:45:32Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -22,6 +22,9 @@
 <style>
 @font-face{font-family:"DM Sans";font-style:normal;font-weight:100 1000;font-display:swap;src:url(fonts/dm-sans-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:"DM Serif Display";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-serif-display-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+/* phones and tablets: the changing word sits on its own line, centred within the fixed-width box */
+@media(max-width:900px){.hero .rollbox>span{justify-self:center;text-align:center}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Chandigarh Multispeciality Dental Clinic","telephone":"+919915510261","address":{"@type":"PostalAddress","streetAddress":"Morinda Road, Opposite Bus Stand","addressLocality":"Chamkaur Sahib","addressRegion":"Punjab","postalCode":"140112","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"19:00"}],"medicalSpecialty":"Dentistry","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.1","reviewCount":"9","bestRating":"5"},"availableService":[{"@type":"MedicalProcedure","name":"Root canal treatment"},{"@type":"MedicalProcedure","name":"Laser dentistry"},{"@type":"MedicalProcedure","name":"Braces and teeth straightening"},{"@type":"MedicalProcedure","name":"Tooth reshaping"},{"@type":"MedicalProcedure","name":"Dental fillings"},{"@type":"MedicalProcedure","name":"Dental implants"},{"@type":"MedicalProcedure","name":"Teeth whitening"},{"@type":"MedicalProcedure","name":"Oral and maxillofacial surgery"}],"areaServed":"Chamkaur Sahib, Punjab"}
@@ -779,7 +782,7 @@ html:is([lang="hi"],[lang="pa"]) .hero h1,html:is([lang="hi"],[lang="pa"]) .head
 .roll{overflow:visible}
 .rollbox{display:grid;animation:none!important;transform:none!important}
 .rollbox>span{grid-area:1/1;opacity:0;text-align:left;justify-self:start}
-.hero .roll{transition:width .6s cubic-bezier(.45,0,.55,1)}
+.hero .roll{transition:none}
 .hero .rollbox{justify-content:start}
 .rollbox>span:nth-child(5){display:none}
 /* each word: 0.6 s in, 2.4 s held, 0.6 s out; the next word's fade-in runs exactly over this word's fade-out */
@@ -2127,16 +2130,8 @@ html.anim .photos.in .ph img{transform:none}
     $('gallery').hidden = false;
   }
 
-  // ---- rolling headline word: the box eases to each word's width, so a centred line stays centred ----
-  (function(){
-    var h1 = $('h1'); if(!h1) return;
-    function fit(span){ var roll = span.closest('.roll'); if(roll && span.offsetWidth) roll.style.width = span.offsetWidth + 'px'; }
-    function onAnim(e){ if(e.animationName === 'wordcycle' && e.target.matches('.rollbox>span')) fit(e.target); }
-    h1.addEventListener('animationstart', onAnim); h1.addEventListener('animationiteration', onAnim);
-    function first(){ var sp = h1.querySelector('.rollbox>span'); if(sp) fit(sp); }
-    if(document.fonts && document.fonts.ready) document.fonts.ready.then(first); else first();
-    addEventListener('resize', function(){ var r = h1.querySelector('.roll'); if(r) r.style.width = ''; });
-  })();
+  // ---- rolling headline word: the words share one grid cell, so the box is as wide as the longest word
+  //      and the rest of the headline never moves; only the word itself changes ----
 
   // ---- small bridge used by the voice assistant ----
   window.CD = {
