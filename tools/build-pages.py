@@ -10,7 +10,7 @@ import html, json, os, re, sys, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'tools'))
-from content import STRINGS  # noqa: E402
+from content import STRINGS, DOCTORS  # noqa: E402
 
 src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
 WA = 'https://wa.me/919915510261'
@@ -151,6 +151,31 @@ page('services', 'Treatments | Chandigarh Multispeciality Dental Clinic, Chamkau
      'Root canal, laser dentistry, braces, tooth reshaping, fillings, implants, whitening, oral surgery and check-ups at Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib.',
      services_body)
 
+
+# ---------- dentists (About page) ----------
+if DOCTORS:
+    cards_d = []
+    for d in DOCTORS:
+        initials = ''.join(w[0] for w in d['name'].replace('Dr.', '').split()[:2]).upper()
+        pic = (f'<img src="/{d["photo"]}" alt="{html.escape(d["name"])}" width="400" height="400" loading="lazy" decoding="async">'
+               if d.get('photo') else f'<span class="doc-initials" aria-hidden="true">{initials}</span>')
+        bio = f'<p>{html.escape(d["bio"])}</p>' if d.get('bio') else ''
+        cards_d.append(f'<article class="doc glass"><div class="doc-pic">{pic}</div><h3>{html.escape(d["name"])}</h3>'
+                       f'<span class="doc-q">{html.escape(d.get("quals", ""))}</span><span class="doc-r">{html.escape(d.get("role", ""))}</span>{bio}</article>')
+    team = f'''<section style="padding-top:0"><div class="wrap">
+  <div class="head"><span class="kicker">Your dentists</span><h2>Meet the dentists</h2></div>
+  <div class="docs">{''.join(cards_d)}</div>
+</div></section>'''
+else:
+    team = '''<section style="padding-top:0"><div class="wrap">
+  <div class="team-gen glass">
+    <div class="team-art" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><linearGradient id="tmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2de2d0"/><stop offset="1" stop-color="#6cb8ff"/></linearGradient></defs><circle cx="60" cy="60" r="56" fill="none" stroke="url(#tmg)" stroke-width="2.5" opacity=".6"/><circle cx="60" cy="46" r="17" fill="url(#tmg)"/><path d="M28 96c4-18 17-28 32-28s28 10 32 28" fill="url(#tmg)"/><path d="M52 74l8 10 8-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="kicker">Your dentists</span><h2>Meet the dentists</h2>
+    <p>Treatment is carried out by the clinic's dentists, who explain each step in plain words before anything starts.</p>
+    <ul class="team-pts"><li>15+ years of experience</li><li>Explained in plain words</li><li>You choose before anything starts</li><li>Follow-up advice for home</li></ul>
+  </div>
+</div></section>'''
+
 # ---------- about ----------
 stats = cut('<div class="wrap stats">', '</div>\n</section>', inclusive=False).replace(' rv"', '"') + '</div>'
 steps = cut('<ol class="steps">', '</ol>').replace(' rv"', '"')
@@ -167,6 +192,7 @@ about_body = f'''<section class="phead"><div class="wrap">
   <div class="head"><h2>How a visit works</h2></div>
   {steps}
 </div></section>
+{team}
 <section style="padding-top:0"><div class="wrap">
   <div class="about-find glass">
     <h2>Find the clinic</h2>

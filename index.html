@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-10T21:30:48Z">
+<meta name="build" content="2026-11-10T22:01:37Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1324,7 +1324,7 @@ html.anim .photos.in .ph img{transform:none}
 .stage{--slot:3s;--n:7;--tx:calc(var(--slot) * var(--n))}
 .stage .tx{position:absolute;left:8%;top:5%;width:84%;height:84%;z-index:3;overflow:visible;pointer-events:none}
 .tx g,.tx path,.tx rect,.tx circle,.tx line{transform-box:view-box}
-.tx .st,.stage .txlabel>span{opacity:0;animation:txslot var(--tx) linear infinite both;animation-delay:calc(var(--k) * var(--slot))}
+.tx .st,.stage .txnames>span{opacity:0;animation:txslot var(--tx) linear infinite both;animation-delay:calc(var(--k) * var(--slot))}
 @keyframes txslot{0%{opacity:0}1.6%{opacity:1}12.6%{opacity:1}14.28%,100%{opacity:0}}
 .tx .st .mv{animation-duration:var(--slot);animation-iteration-count:infinite;animation-fill-mode:both;animation-delay:calc(var(--k) * var(--slot) + var(--d,0s))}
 .tx-mirror{animation-name:tm;animation-timing-function:cubic-bezier(.45,0,.55,1)}
@@ -1359,18 +1359,40 @@ html.anim .photos.in .ph img{transform:none}
 .tx-spark .mv{animation-name:tspark;transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 0 3px rgba(45,226,208,.9))}
 @keyframes tspark{0%{opacity:0;scale:.2}12%{opacity:1;scale:1.25;rotate:45deg}30%,100%{opacity:0;scale:.4;rotate:90deg}}
 .txlabel{position:absolute;left:50%;bottom:-.2rem;translate:-50% 0;z-index:4;display:grid;pointer-events:none}
-.stage .txlabel>span{grid-area:1/1;justify-self:center;white-space:nowrap;font:600 .68rem/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--aqua-text);
+.stage .txnames>span{grid-area:1/1;justify-self:center;white-space:nowrap;font:600 .68rem/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--aqua-text);
   padding:.32rem .65rem;border-radius:99px;background:rgba(3,20,26,.55);border:1px solid rgba(98,230,214,.3)}
-html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter-spacing:0;font-size:.74rem}
-@media(max-width:700px){.stage .txlabel>span{font-size:.6rem;padding:.26rem .5rem}}
+html:is([lang="hi"],[lang="pa"]) .stage .txnames>span{text-transform:none;letter-spacing:0;font-size:.74rem}
+@media(max-width:700px){.stage .txnames>span{font-size:.6rem}}
 @media(prefers-reduced-motion:reduce){.stage .tx,.txlabel{display:none}}
-:root[data-theme="light"] .stage .txlabel>span{background:rgba(255,255,255,.75);border-color:rgba(7,154,140,.3)}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .stage .txlabel>span{background:rgba(255,255,255,.75);border-color:rgba(7,154,140,.3)}
+:root[data-theme="light"] .stage .txlabel{background:rgba(255,255,255,.8);border-color:rgba(7,154,140,.3)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .stage .txlabel{background:rgba(255,255,255,.8);border-color:rgba(7,154,140,.3)}
 }
 
 
 /* link from the treatments grid to the services page */
 .allsvc{text-align:center;margin:1.6rem 0 0}
+
+/* treatment label: seven progress dots (the current treatment's dot glows) and the treatment name */
+.stage .txlabel{display:flex;align-items:center;gap:.5rem;padding:.34rem .7rem;border-radius:99px;background:rgba(3,20,26,.6);border:1px solid rgba(98,230,214,.3);
+}
+.txnames{display:grid}
+.stage .txlabel .txnames>span{padding:0;background:none;border:0}
+.txdots{display:inline-flex;gap:3px}
+.txdots{gap:9px;padding-inline:4px}
+.txdots i{width:5px;height:5px;border-radius:99px;background:var(--aqua);opacity:.4;will-change:transform;
+  animation:txdot var(--tx) linear infinite both;animation-delay:calc(var(--k) * var(--slot))}
+@keyframes txdot{0%{transform:scaleX(1);opacity:.4}2%,12%{transform:scaleX(2.6);opacity:1}14.28%,100%{transform:scaleX(1);opacity:.4}}
+@media(max-width:700px){.txdots{gap:7px}.txdots i{width:4px;height:4px}.stage .txlabel{gap:.4rem;padding:.28rem .55rem}}
+@media(prefers-reduced-motion:reduce){.txdots{display:none}}
+
+/* phones and tablets: drop the layered headline shadow, which repaints the whole headline each time the word changes */
+@media(max-width:900px){.hero h1,:root .hero h1{filter:none!important}}
+
+/* off-screen sections are laid out only when they come near the screen, so the page starts faster */
+#chart,#visit,#book,#faq,main>section:not([id]),footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
+
+/* decorative animations start once the page has loaded and gone idle, keeping the startup window free */
+html:not(.live) .stage *,html:not(.live) .stage,html:not(.live) .marquee *,html:not(.live) .bento *{animation-play-state:paused!important}
 </style>
 </head>
 <body>
@@ -1461,7 +1483,7 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
         <g class="st" style="--k:6"><g clip-path="url(#txclip)"><path class="tx-glow mv" d="M100 30C70 8 22 22 24 78c2 40 20 62 26 100 4 32 12 48 24 48 16 0 14-50 26-50s10 50 26 50c12 0 20-16 24-48 6-38 26-60 26-100C178 22 130 8 100 30z" fill="#fff"/><rect class="tx-beam mv" x="0" y="0" width="200" height="46" fill="url(#txbeam)"/></g>
           <g class="tx-spark"><g transform="translate(184 34) scale(1.5)"><path class="mv" style="--d:1.2s" fill="#fff" d="M0 -7 L1.6 -1.6 L7 0 L1.6 1.6 L0 7 L-1.6 1.6 L-7 0 L-1.6 -1.6Z"/></g><g transform="translate(14 96) scale(1.25)"><path class="mv" style="--d:1.6s" fill="#fff" d="M0 -7 L1.6 -1.6 L7 0 L1.6 1.6 L0 7 L-1.6 1.6 L-7 0 L-1.6 -1.6Z"/></g><g transform="translate(118 112) scale(1.4)"><path class="mv" style="--d:2s" fill="#2de2d0" d="M0 -7 L1.6 -1.6 L7 0 L1.6 1.6 L0 7 L-1.6 1.6 L-7 0 L-1.6 -1.6Z"/></g></g></g>
       </svg>
-      <span class="txlabel" aria-hidden="true"><span style="--k:0">Check-up</span><span style="--k:1">Cleaning</span><span style="--k:2">Filling</span><span style="--k:3">Root canal</span><span style="--k:4">Laser</span><span style="--k:5">Braces</span><span style="--k:6">Whitening</span></span>
+      <span class="txlabel" aria-hidden="true"><span class="txdots"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i></span><span class="txnames"><span style="--k:0">Check-up</span><span style="--k:1">Cleaning</span><span style="--k:2">Filling</span><span style="--k:3">Root canal</span><span style="--k:4">Laser</span><span style="--k:5">Braces</span><span style="--k:6">Whitening</span></span></span>
     </div>
     </div>
   </div>
@@ -2595,6 +2617,12 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
 <script>
 (function(){ try{ var q = new URLSearchParams(location.search).get('svc'); if(!q) return; var sel = document.getElementById('svc'); if(!sel) return;
   for(var i = 0; i < sel.options.length; i++){ if(sel.options[i].value === q || sel.options[i].textContent === q){ sel.selectedIndex = i; ['input','change'].forEach(function(t){ sel.dispatchEvent(new Event(t, {bubbles: true})); }); break; } } }catch(e){} })();
+</script>
+<script>
+(function(){ var r = document.documentElement; function go(){ r.classList.add('live'); }
+  function idle(){ (window.requestIdleCallback || function(f){ setTimeout(f, 300); })(function(){ setTimeout(go, 500); }, {timeout: 2000}); }
+  if(document.readyState === 'complete') idle(); else addEventListener('load', idle);
+  setTimeout(go, 5000); })();
 </script>
 </body>
 </html>

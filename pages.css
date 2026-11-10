@@ -51,3 +51,22 @@ html:is([lang="hi"],[lang="pa"]) .phead h1{font-weight:700;line-height:1.3;font-
 
 /* the floating call bar is always available on inner pages */
 @media(max-width:900px){.page-inner .callbar.away{transform:none;opacity:1;pointer-events:auto}}
+
+/* dentists */
+.team-gen{border-radius:1.8rem;padding:clamp(1.5rem,4vw,2.6rem);text-align:center;display:grid;gap:.8rem;justify-items:center}
+.team-gen h2{font-family:var(--f-hero);font-weight:400;font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);margin:0}
+.team-gen p{color:var(--muted);margin:0;max-width:36rem;text-wrap:pretty}
+.team-art{width:6.5rem;height:6.5rem;filter:drop-shadow(0 10px 24px color-mix(in srgb,var(--aqua) 30%,transparent))}
+.team-art svg{width:100%;height:100%}
+.team-pts{list-style:none;padding:0;margin:.4rem 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem}
+.team-pts li{padding:.45rem .95rem;border-radius:99px;border:1px solid var(--line);background:var(--glass);font-weight:600;font-size:.92rem}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.doc{border-radius:1.6rem;padding:1.6rem;text-align:center;display:grid;justify-items:center;align-content:start;gap:.35rem}
+.doc-pic{width:8rem;height:8rem;border-radius:50%;overflow:hidden;margin-bottom:.6rem;box-shadow:0 0 0 3px color-mix(in srgb,var(--aqua) 50%,transparent),0 14px 30px -12px rgba(0,0,0,.5)}
+.doc-pic img{width:100%;height:100%;object-fit:cover}
+.doc-pic{display:grid}
+.doc-initials{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--grad);color:var(--on-aqua);font:700 2rem var(--f-display)}
+.doc h3{margin:0;font-size:1.25rem}
+.doc-q{color:var(--aqua-text);font-weight:700;font-size:.85rem;letter-spacing:.04em}
+.doc-r{color:var(--muted);font-size:.92rem}
+.doc p{color:var(--muted);margin:.4rem 0 0;font-size:.95rem}

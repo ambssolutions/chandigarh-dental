@@ -3,6 +3,7 @@
 (function(){
   var $ = function(id){ return document.getElementById(id); };
   var root = document.documentElement;
+  root.classList.add('live');
 
   // ---- theme and text size ----
   function setTheme(m){

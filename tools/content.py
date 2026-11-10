@@ -2,6 +2,12 @@
 # Each English string is also the key the language switch looks up in i18n.json.
 # Only the clinic's real details are used; treatment notes are general guidance, not promises.
 
+# Dentists shown on the About page. Leave empty until the clinic supplies real details; the page then shows
+# a general section about how the dentists work, with no names. Example entry:
+#   {"name": "Dr. Full Name", "quals": "BDS, MDS (Oral Surgery)", "role": "Dental surgeon",
+#    "photo": "img/team-fullname-800.webp", "bio": "One or two sentences supplied by the clinic."}
+DOCTORS = []
+
 # (English, Hindi, Punjabi)
 STRINGS = [
     ("Services", "सेवाएँ", "ਸੇਵਾਵਾਂ"),
@@ -125,4 +131,13 @@ STRINGS = [
      "ਕਾਲ ਕਰੋ, WhatsApp ਸੁਨੇਹਾ ਭੇਜੋ ਜਾਂ ਅਪਾਇੰਟਮੈਂਟ ਮੰਗੋ, ਕਲੀਨਿਕ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੇਗਾ।"),
     ("Request an appointment", "अपॉइंटमेंट का अनुरोध करें", "ਅਪਾਇੰਟਮੈਂਟ ਦੀ ਬੇਨਤੀ ਕਰੋ"),
     ("Home", "होम", "ਹੋਮ"),
+    ("Your dentists", "आपके डेंटिस्ट", "ਤੁਹਾਡੇ ਡੈਂਟਿਸਟ"),
+    ("Meet the dentists", "डेंटिस्ट से मिलें", "ਡੈਂਟਿਸਟ ਨੂੰ ਮਿਲੋ"),
+    ("Treatment is carried out by the clinic's dentists, who explain each step in plain words before anything starts.",
+     "इलाज क्लिनिक के डेंटिस्ट करते हैं, जो कुछ भी शुरू होने से पहले हर कदम आसान शब्दों में समझाते हैं।",
+     "ਇਲਾਜ ਕਲੀਨਿਕ ਦੇ ਡੈਂਟਿਸਟ ਕਰਦੇ ਹਨ, ਜੋ ਕੁਝ ਵੀ ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਹਰ ਕਦਮ ਸੌਖੇ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਉਂਦੇ ਹਨ।"),
+    ("Explained in plain words", "आसान शब्दों में समझाया गया", "ਸੌਖੇ ਸ਼ਬਦਾਂ ਵਿੱਚ ਸਮਝਾਇਆ"),
+    ("You choose before anything starts", "कुछ भी शुरू होने से पहले आप चुनते हैं", "ਕੁਝ ਵੀ ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਸੀਂ ਚੁਣਦੇ ਹੋ"),
+    ("Follow-up advice for home", "घर के लिए बाद की सलाह", "ਘਰ ਲਈ ਬਾਅਦ ਦੀ ਸਲਾਹ"),
+    ("15+ years of experience", "15+ वर्षों का अनुभव", "15+ ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ"),
 ]
