@@ -79,3 +79,35 @@ html:is([lang="hi"],[lang="pa"]) .phead h1{font-weight:700;line-height:1.3;font-
 .svc-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);pointer-events:none}
 .phead .ainote{font-size:.8rem;line-height:1.5;color:var(--muted);margin:1rem auto 0;max-width:34rem;opacity:.85}
 .svc{align-items:center}
+
+/* ==== treatment cards, refined: split layout with the photo filling one side, sides alternate ==== */
+.svcs .wrap{gap:1.6rem}
+.page .svc{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;padding:0;overflow:hidden;align-items:stretch;border-radius:2rem}
+.svc-flip .svc-photo{order:2}
+.page .svc-photo{margin:0;max-width:none;width:100%;height:100%;min-height:22rem;aspect-ratio:auto;border-radius:0;box-shadow:none;position:relative}
+.page .svc-photo::after{border-radius:0;box-shadow:none;background:linear-gradient(90deg,transparent 70%,rgba(0,0,0,.18))}
+.svc-flip .svc-photo::after{background:linear-gradient(270deg,transparent 70%,rgba(0,0,0,.18))}
+.svc-num{position:absolute;left:1.1rem;top:1rem;z-index:1;font:400 clamp(2.6rem,2rem + 2vw,3.6rem)/1 var(--f-hero);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45);letter-spacing:-.02em}
+.svc-flip .svc-num{left:auto;right:1.1rem}
+.svc-main{padding:clamp(1.6rem,3.2vw,2.8rem);display:grid;gap:.75rem;justify-items:center;text-align:center;align-content:center}
+.svc-main h2{font-size:clamp(1.6rem,1.25rem + 1.1vw,2.2rem)}
+.svc-desc{color:var(--muted);margin:0;max-width:30rem;text-wrap:pretty}
+.svc-know{margin-top:.4rem;padding:1.1rem 1.25rem;border-radius:1.2rem;background:color-mix(in srgb,var(--ink) 4%,transparent);border:1px solid var(--line);width:100%;max-width:32rem;text-align:left}
+.svc-know h3{margin:0 0 .7rem;text-align:center}
+.page .svc-acts{justify-content:center;margin-top:.4rem}
+.page .svc .svc-art{display:none}
+/* page header: tighter treatment links and a quieter AI note */
+.phead .chips{margin-top:1.4rem;gap:.5rem}
+.phead .ainote{margin-top:1.1rem}
+@media(max-width:860px){
+  .page .svc{grid-template-columns:minmax(0,1fr)}
+  .svc-flip .svc-photo{order:0}
+  .page .svc-photo{min-height:0;aspect-ratio:3/2}
+  .page .svc-photo::after,.svc-flip .svc-photo::after{background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.2))}
+  .svc-flip .svc-num{right:auto;left:1.1rem}
+  .svc-know{padding:1rem}
+}
+.svc-know h3{font:700 .72rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+html:is([lang="hi"],[lang="pa"]) .svc-know h3{letter-spacing:0;text-transform:none;font-size:.85rem}
+.svc-num{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);padding:.35rem .7rem .45rem;border-radius:.9rem;background:rgba(3,20,26,.42);border:1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-shadow:none}
