@@ -36,6 +36,7 @@ callbar = cut('<nav class="callbar', '</nav>')
 def localise_links(chunk, current):
     chunk = chunk.replace('href="#top"', 'href="/"')
     chunk = re.sub(r'href="#([\w-]+)"', r'href="/#\1"', chunk)
+    chunk = chunk.replace('class="btn solid pinbook" href="#book"', 'class="btn solid pinbook" href="/#book"')
     if current:
         chunk = chunk.replace(f'<a href="{current}">', f'<a href="{current}" aria-current="page">')
     return chunk
@@ -52,7 +53,7 @@ def page(slug, title, title_key, desc, body):
     cur = '/' + slug
     out = (h + '<body class="page-inner">\n' + localise_links(top, cur) + '\n<div class="navspace" aria-hidden="true"></div>\n'
            + '<main id="main" class="page">\n' + body + '\n</main>\n\n'
-           + localise_links(footer, cur) + '\n' + callbar.replace('callbar glass away', 'callbar glass') + '\n'
+           + localise_links(footer, cur) + '\n' + callbar.replace('callbar glass away', 'callbar glass').replace('href="#book"', 'href="/#book"') + '\n'
            + '<script src="/site.js" defer></script>\n</body>\n</html>\n')
     open(os.path.join(ROOT, slug + '.html'), 'w', encoding='utf-8').write(out)
     return out
