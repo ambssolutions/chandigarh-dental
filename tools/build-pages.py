@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.join(ROOT, 'tools'))
 from content import STRINGS, DOCTORS  # noqa: E402
 
 src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
+SITE = 'https://chandigarh-dental.vercel.app'  # the live address; change here if the clinic gets its own domain
 WA = 'https://wa.me/919915510261'
 TEL = 'tel:+919915510261'
 MAP = 'https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib'
@@ -47,6 +48,11 @@ def page(slug, title, title_key, desc, body):
     h = re.sub(r'<title>.*?</title>', f'<title>{html.escape(title)}</title>', h, flags=re.S)
     h = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{html.escape(desc)}">', h)
     h = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{html.escape(title)}">', h)
+    if slug == '404':
+        h = re.sub(r'<link rel="canonical" href="[^"]*">\n?', '<meta name="robots" content="noindex">\n', h)
+    else:
+        h = h.replace(f'<link rel="canonical" href="{SITE}/">', f'<link rel="canonical" href="{SITE}/{slug}">')
+    h = h.replace(f'<meta property="og:url" content="{SITE}/">', f'<meta property="og:url" content="{SITE}/{slug}">')
     h = h.replace('</head>', '')
     h += f'<meta name="page-title-key" content="{html.escape(title_key)}">\n'
     h += '<link rel="stylesheet" href="/pages.css">\n</head>\n'
@@ -161,7 +167,7 @@ services_body = f'''<section class="phead"><div class="wrap">
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="cta-band glass"><span class="kicker">Not sure what you need?</span><h2>Start with a check-up.</h2>
-    <div class="acts"><a class="btn solid" href="/?svc={urllib.parse.quote('General check-up')}#book">Book a check-up</a><a class="btn" href="{WA}" target="_blank" rel="noopener">WhatsApp</a></div></div>
+    <div class="acts"><a class="btn solid" href="/?svc={urllib.parse.quote('General check-up')}#book">Book a check-up</a></div></div>
 </div></section>'''
 
 page('services', 'Treatments | Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib', 'Services',
@@ -201,7 +207,7 @@ about_body = f'''<section class="phead"><div class="wrap">
   <h1>Dental care in Chamkaur Sahib</h1>
   <p>Chandigarh Multispeciality Dental Clinic is on Morinda Road in Chamkaur Sahib, opposite the bus stand.</p>
   <p style="margin-top:.8rem">It brings check-ups, root canals, laser dentistry, braces, implants and oral surgery under one roof, so there is no second trip to Ropar or Chandigarh for a specialist.</p>
-  <p class="chips"><a href="/services">See all treatments</a></p>
+  <p class="allsvc"><a class="btn" href="/services">See all treatments</a></p>
 </div></section>
 <section style="padding-block:0">{stats}
 </section>
@@ -215,17 +221,34 @@ about_body = f'''<section class="phead"><div class="wrap">
     <h2>Find the clinic</h2>
     <address><span>Morinda Road, Opposite Bus Stand</span><br><span>Chamkaur Sahib, Punjab 140112</span></address>
     <p class="hrs"><span>Mon–Sat · 10 AM – 7 PM</span><br><span>Sunday</span> · <span>Closed</span></p>
-    <div class="acts"><a class="btn" href="{MAP}" target="_blank" rel="noopener">Open in Google Maps</a><a class="btn" href="{TEL}">Call</a><a class="btn" href="{WA}" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="acts"><a class="btn" href="{MAP}" target="_blank" rel="noopener">Open in Google Maps</a></div>
   </div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="cta-band glass"><h2>Ready when you are</h2><p>Call, send a WhatsApp message or request an appointment, and the clinic will get back to you.</p>
-    <div class="acts"><a class="btn solid" href="/#book">Request an appointment</a><a class="btn" href="{TEL}">Call</a></div></div>
+    <div class="acts"><a class="btn solid" href="/#book">Book an appointment</a></div></div>
 </div></section>'''
 
 page('about', 'About | Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib', 'About the clinic',
      'About Chandigarh Multispeciality Dental Clinic on Morinda Road, Chamkaur Sahib: treatments under one roof, opening hours and how to find the clinic.',
      about_body)
+
+# ---------- 404 ----------
+page('404', 'Page not found | Chandigarh Multispeciality Dental Clinic', 'Page not found',
+     'This page does not exist or has moved.',
+     '''<section class="phead" style="min-height:52vh;display:grid;align-content:center"><div class="wrap">
+  <span class="kicker">404</span>
+  <h1>Page not found</h1>
+  <p>This page does not exist or has moved.</p>
+  <p class="allsvc"><a class="btn solid" href="/">Back to home</a> <a class="btn" href="/services">See all treatments</a></p>
+</div></section>''')
+
+# ---------- sitemap and robots ----------
+import datetime
+today = datetime.date.today().isoformat()
+open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + ''.join(f'  <url><loc>{SITE}/{u}</loc><lastmod>{today}</lastmod></url>\n' for u in ['', 'services', 'about']) + '</urlset>\n')
+open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
 
 # ---------- translations ----------
 ipath = os.path.join(ROOT, 'i18n.json')

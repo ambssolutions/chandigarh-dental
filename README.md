@@ -120,3 +120,11 @@ Their own styles are in `pages.css` and their behaviour (theme, text size, menu,
 ### Services page images
 
 `img/svc-*.webp` are AI-generated illustrations (Figma AI image generation), one per treatment, made for this site. People shown are Indian, as the clinic asked. The page says so under the treatment links ("Photos on this page are AI-generated illustrations, not photos of the clinic"). Replace them with the clinic's own photos when available, using new file names (images are cached for a year).
+
+## Launch notes
+
+- Live address: set as `SITE` in `tools/build-pages.py` and in the canonical / `og:url` / `og:image` tags near the top of `index.html`. If the clinic gets its own domain, change both and rebuild.
+- `sitemap.xml`, `robots.txt` and `404.html` are written by `python3 tools/build-pages.py`.
+- Sharing preview: `img/og-cover.jpg` (1200×630). Home-screen icon: `img/apple-touch-icon.png`.
+- Buttons: one system. `.btn` (52px high), `.btn.solid` for the main action, `.btn.sm` for small utility buttons. The main action is always worded "Book an appointment".
+- Floating bar: WhatsApp and Call on phones, "Book an appointment" on laptops. It hides while a section's own buttons are on screen.

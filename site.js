@@ -93,6 +93,17 @@
   var saved = null; try{ saved = localStorage.getItem('cd-lang'); }catch(e){}
   if(saved === 'hi' || saved === 'pa') apply(saved);
 
+  // ---- floating contact bar: hidden while a section's own buttons are on screen ----
+  (function(){ var bar = document.getElementById('callbar'); if(!bar) return;
+    if(!('IntersectionObserver' in window)){ bar.classList.remove('away'); return; }
+    var seen = new Set();
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+      bar.classList.toggle('away', seen.size > 0);
+    }, {rootMargin: '-70px 0px 0px 0px'});
+    document.querySelectorAll('.hero-cta, main .btn:not(.sm), #form').forEach(function(el){ io.observe(el); });
+  })();
+
   // ---- reading-progress bar and footer year ----
   var bar = $('progress');
   if(bar){

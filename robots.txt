@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://chandigarh-dental.vercel.app/sitemap.xml
