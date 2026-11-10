@@ -102,3 +102,17 @@ The three photos in "Your visit" (`img/visit-*.webp`) are free stock photos from
 - `visit-checkup`: pexels.com/photo/8224633 (Lakhinandan Borah, North Lakhimpur, Assam, India)
 - `visit-room`: pexels.com/photo/8224629 (same photographer and shoot)
 - `visit-implant`: pexels.com/photo/6502343 (implant model, no people)
+
+## Pages
+
+- `index.html`: the home page (hero, treatments, tooth chart, your visit, booking, questions).
+- `services.html` (`/services`): every treatment explained, each with "Ask about this", which opens the home booking form with that treatment selected (`/?svc=...#book`).
+- `about.html` (`/about`): the clinic, opening hours and how to find it.
+
+The inner pages are generated from `index.html`, so their header, menu, footer, styles and settings always match the home page. After changing `index.html` (or the page text in `tools/content.py` and `tools/build-pages.py`), rebuild them:
+
+```
+python3 tools/build-pages.py
+```
+
+Their own styles are in `pages.css` and their behaviour (theme, text size, menu, language) in `site.js`. New English text on these pages needs a Hindi and Punjabi line in `tools/content.py`; the build adds it to `i18n.json`.

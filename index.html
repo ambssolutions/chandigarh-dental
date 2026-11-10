@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-10T21:20:15Z">
+<meta name="build" content="2026-11-10T21:30:48Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1368,6 +1368,9 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .stage .txlabel>span{background:rgba(255,255,255,.75);border-color:rgba(7,154,140,.3)}
 }
 
+
+/* link from the treatments grid to the services page */
+.allsvc{text-align:center;margin:1.6rem 0 0}
 </style>
 </head>
 <body>
@@ -1383,7 +1386,7 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
       <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2de2d0"/><stop offset="1" stop-color="#6cb8ff"/></linearGradient></defs><rect width="40" height="40" rx="13" fill="url(#lg)"/><path fill="#fff" d="M20 12.5c-3-2.4-8-1.6-8.600 3.200-.4 3.600 1.600 5.600 2.100 9 .3 2 .6 3.800 1.800 3.800 1.500 0 1.400-4.300 4.700-4.300s3.200 4.300 4.700 4.300c1.200 0 1.500-1.800 1.800-3.800.5-3.400 2.500-5.400 2.100-9-.6-4.800-5.600-5.600-8.600-3.200z"/></svg>
       <span>Chandigarh Dental<small>Chamkaur Sahib</small></span>
     </a>
-    <nav aria-label="Main" class="mainnav"><ul><li><a href="#treatments">Treatments</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li></ul></nav>
+    <nav aria-label="Main" class="mainnav"><ul><li><a href="/services">Services</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="/about">About</a></li><li><a href="#faq">Questions</a></li></ul></nav>
     <div class="acts">
       <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true" lang="en">EN</button><button type="button" data-l="pa" aria-pressed="false" lang="pa" aria-label="ਪੰਜਾਬੀ">ਪੰ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi" aria-label="हिन्दी">हि</button></div>
       <button class="icon-btn mic" id="mic" type="button" aria-label="Ask by voice" aria-pressed="false" aria-controls="vpanel" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
@@ -1396,7 +1399,7 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
 </header>
 
 <aside class="msheet" id="msheet" hidden aria-label="Menu" data-lenis-prevent>
-  <nav aria-label="Sections"><ul class="mlinks"><li><a href="#treatments">Treatments</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book a visit</a></li></ul></nav>
+  <nav aria-label="Sections"><ul class="mlinks"><li><a href="/services">Services</a></li><li><a href="/about">About</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book a visit</a></li></ul></nav>
   <div class="msets">
     <div class="mrow"><span class="mlabel" id="ml-lang">Language</span><div class="seg lang mlang" role="group" aria-labelledby="ml-lang"><button type="button" data-l="en" aria-pressed="true" lang="en">English</button><button type="button" data-l="pa" aria-pressed="false" lang="pa">ਪੰਜਾਬੀ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi">हिन्दी</button></div></div>
     <div class="mrow"><span class="mlabel" id="ml-theme">Theme</span><div class="seg" id="themeseg" role="group" aria-labelledby="ml-theme"><button type="button" data-t="auto">Auto</button><button type="button" data-t="light">Light</button><button type="button" data-t="dark">Dark</button></div></div>
@@ -1525,6 +1528,7 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
         <a class="btn solid" href="#book">Book a check-up</a>
       </article>
     </div>
+    <p class="allsvc"><a class="btn" href="/services">See all treatments</a></p>
   </div>
 </section>
 
@@ -1668,8 +1672,8 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
         <li><a href="https://wa.me/919915510261" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span><span>WhatsApp</span> +91 99155 10261</span></a></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span>Mon–Sat · 10 AM – 7 PM</span><br><span>Sunday</span> · <span>Closed</span></span></li>
       </ul></div>
-    <div><h2>Treatments</h2><ul><li><a href="#treatments">Root canal</a></li><li><a href="#treatments">Laser dentistry</a></li><li><a href="#treatments">Straightening</a></li><li><a href="#treatments">Oral surgery</a></li></ul></div>
-    <div><h2>Explore</h2><ul><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book</a></li></ul></div>
+    <div><h2>Treatments</h2><ul><li><a href="/services#root-canal">Root canal</a></li><li><a href="/services#laser">Laser dentistry</a></li><li><a href="/services#braces">Straightening</a></li><li><a href="/services#surgery">Oral surgery</a></li><li><a href="/services">All treatments</a></li></ul></div>
+    <div><h2>Explore</h2><ul><li><a href="/about">About the clinic</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="#faq">Questions</a></li><li><a href="#book">Book</a></li></ul></div>
   </div>
   <div class="row"><span>© <span id="yr"></span> Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib</span><span>Proudly designed by <a href="https://ambs.co.nz" target="_blank" rel="noopener">AMBS Solutions</a></span></div>
 </div></footer>
@@ -2587,6 +2591,10 @@ html:is([lang="hi"],[lang="pa"]) .stage .txlabel>span{text-transform:none;letter
   }); },{threshold:.6});
   document.querySelectorAll('.stat b:not(.txt)').forEach(function(b){ io.observe(b); });
 })();
+</script>
+<script>
+(function(){ try{ var q = new URLSearchParams(location.search).get('svc'); if(!q) return; var sel = document.getElementById('svc'); if(!sel) return;
+  for(var i = 0; i < sel.options.length; i++){ if(sel.options[i].value === q || sel.options[i].textContent === q){ sel.selectedIndex = i; ['input','change'].forEach(function(t){ sel.dispatchEvent(new Event(t, {bubbles: true})); }); break; } } }catch(e){} })();
 </script>
 </body>
 </html>

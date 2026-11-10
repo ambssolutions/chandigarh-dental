@@ -1,0 +1,53 @@
+/* Inner pages (services, about). Builds on the home page's design tokens and components. */
+.page section{padding-block:clamp(2.5rem,6vw,4.5rem)}
+/* inner pages use the page-wide gradient only; per-section glows would leave seams between short sections */
+main.page>section::before{content:none}
+.page .phead{padding-block:clamp(2rem,5vw,3.5rem) clamp(1rem,3vw,2rem);text-align:center}
+.phead .kicker{display:inline-block;margin-bottom:.8rem}
+.phead h1{font-family:var(--f-hero);font-weight:400;font-size:clamp(2.3rem,1.6rem + 3.6vw,4.4rem);line-height:1.05;letter-spacing:-.015em;margin:0 auto .9rem;max-width:16ch;text-wrap:balance}
+.phead p{color:var(--muted);font-size:clamp(1rem,.95rem + .35vw,1.2rem);max-width:40rem;margin:0 auto;text-wrap:pretty}
+html:is([lang="hi"],[lang="pa"]) .phead h1{font-weight:700;line-height:1.3;font-size:clamp(2rem,1.4rem + 3vw,3.6rem)}
+
+/* treatment chips under the page header */
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin:1.6rem auto 0;max-width:52rem;padding:0;list-style:none}
+.chips a{display:inline-flex;align-items:center;min-height:2.6rem;padding:.45rem 1rem;border-radius:99px;border:1px solid var(--line);background:var(--glass);color:var(--ink);text-decoration:none;font-size:var(--fs-sm,.92rem);font-weight:600;transition:background .25s,border-color .25s,transform .25s}
+.chips a:hover{border-color:var(--aqua);transform:translateY(-1px)}
+
+/* treatment cards */
+.svcs .wrap{display:grid;gap:1.4rem}
+.svc{border-radius:1.8rem;padding:clamp(1.3rem,3vw,2.4rem);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.2rem,3vw,3rem);align-items:center;scroll-margin-top:6rem}
+.svc-head{text-align:center;display:grid;justify-items:center;gap:.55rem}
+.svc-art{width:min(100%,15rem);height:9rem;display:grid;place-items:center;overflow:hidden}
+.svc-art svg{display:block;height:9rem;width:auto;max-width:100%;overflow:visible}
+.svc-n{font:700 .72rem/1 var(--f-body);letter-spacing:.14em;color:var(--muted)}
+.svc .tag{font:700 .7rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--aqua-text)}
+.svc h2{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,1.2rem + 1vw,2rem);letter-spacing:-.015em;margin:0;text-wrap:balance}
+.svc-head p{color:var(--muted);margin:0;max-width:26rem;text-wrap:pretty}
+.svc-body h3{font:700 .74rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 .8rem}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;text-align:left}
+.ticks li{position:relative;padding-left:1.9rem;line-height:1.55;text-wrap:pretty}
+.ticks li::before{content:"";position:absolute;left:0;top:.2em;width:1.15rem;height:1.15rem;border-radius:50%;background:var(--grad);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E") center/contain no-repeat}
+.ticks li::after{content:"";position:absolute;left:.36rem;top:calc(.2em + .3rem);width:.42rem;height:.24rem;border-left:2px solid var(--on-aqua);border-bottom:2px solid var(--on-aqua);transform:rotate(-45deg)}
+.svc-acts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
+.note{text-align:center;color:var(--muted);font-size:.88rem;margin:.6rem 0 0}
+@media(max-width:860px){
+  .svc{grid-template-columns:minmax(0,1fr)}
+  .svc-acts{justify-content:center}
+  .svc-acts .btn{flex:1 1 12rem}
+}
+
+/* about */
+.about-find{border-radius:1.8rem;padding:clamp(1.3rem,3vw,2.4rem);text-align:center;display:grid;gap:1rem;justify-items:center}
+.about-find h2{font-family:var(--f-hero);font-weight:400;font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);margin:0}
+.about-find address{font-style:normal;font-size:1.1rem;line-height:1.6}
+.about-find .hrs{color:var(--muted)}
+.about-find .acts{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.cta-band{border-radius:1.8rem;padding:clamp(1.5rem,4vw,2.6rem);text-align:center;display:grid;gap:.9rem;justify-items:center}
+.cta-band h2{font-family:var(--f-hero);font-weight:400;font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);margin:0}
+.cta-band p{color:var(--muted);margin:0;max-width:34rem}
+.cta-band .acts{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.mainnav a[aria-current="page"],.mlinks a[aria-current="page"]{color:var(--aqua-text)}
+
+/* the floating call bar is always available on inner pages */
+@media(max-width:900px){.page-inner .callbar.away{transform:none;opacity:1;pointer-events:auto}}

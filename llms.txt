@@ -8,3 +8,4 @@
 - Google rating: 4.1 from 9 reviews (as last checked).
 - Booking: call, or send the booking form on the website, which opens WhatsApp with the details filled in.
 - The website is available in English, Hindi and Punjabi.
+- Pages: / (home: treatments, tooth chart, booking), /services (each treatment explained), /about (the clinic, hours and how to find it).
