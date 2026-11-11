@@ -58,6 +58,13 @@ def page(slug, title, title_key, desc, body):
     # the build stamp is added to the shared files so phones fetch the new copy after each release
     ver = re.search(r'<meta name="build" content="([^"]*)">', h).group(1).replace(':', '').replace('-', '')
     h += f'<link rel="stylesheet" href="/pages.css?v={ver}">\n</head>\n'
+    # Scroll reveals: the class goes on before first paint so nothing flashes; if site.js never arrives, it comes off again.
+    h = h.replace('</head>', "<script>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;d.classList.add('anim');setTimeout(function(){if(!window.cdReveal)d.classList.remove('anim')},3500)})();</script>\n</head>")
+    for a, r in (('class="head"', 'class="head sr"'), ('class="svc-photo"', 'class="svc-photo sr"'), ('class="svc-main"', 'class="svc-main sr"'),
+                 ('class="stat glass"', 'class="stat glass sr"'), ('<li class="glass"><b>', '<li class="glass sr"><b>'),
+                 ('class="team-gen glass"', 'class="team-gen glass sr"'), ('class="about-find glass"', 'class="about-find glass sr"'),
+                 ('class="cta-band glass"', 'class="cta-band glass sr"')):
+        body = body.replace(a, r)
     cur = '/' + slug
     out = (h + f'<body class="page-inner page-{slug}">\n' + localise_links(top, cur) + '\n<div class="navspace" aria-hidden="true"></div>\n'
            + '<main id="main" class="page">\n' + body + '\n</main>\n\n'
