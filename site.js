@@ -104,6 +104,23 @@
     document.querySelectorAll('.hero-cta, main .btn:not(.sm), #form, footer').forEach(function(el){ io.observe(el); });
   })();
 
+  // ---- scroll reveals: text and photos come in as they reach the screen. Skipped for reduced motion,
+  //      and for anything already on screen when the page opens, so nothing flashes. ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } });
+    }, {threshold: .15});
+    var limit = innerHeight * .92;
+    document.querySelectorAll('main .head, .svc-photo, .svc-main, main .stat, .steps li, .team-gen, .about-find, .cta-band').forEach(function(el){
+      if(el.getBoundingClientRect().top < limit) return;
+      var sib = [].filter.call(el.parentElement.children, function(c){ return c.tagName === el.tagName; });
+      if(el.matches('.stat, .steps li')) el.style.setProperty('--d', (Math.min(sib.indexOf(el), 5) * 90) + 'ms');
+      el.classList.add('sr'); io.observe(el);
+    });
+    root.classList.add('anim');
+  })();
+
   // ---- reading-progress bar and footer year ----
   var bar = $('progress');
   if(bar){
