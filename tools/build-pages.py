@@ -55,12 +55,14 @@ def page(slug, title, title_key, desc, body):
     h = h.replace(f'<meta property="og:url" content="{SITE}/">', f'<meta property="og:url" content="{SITE}/{slug}">')
     h = h.replace('</head>', '')
     h += f'<meta name="page-title-key" content="{html.escape(title_key)}">\n'
-    h += '<link rel="stylesheet" href="/pages.css">\n</head>\n'
+    # the build stamp is added to the shared files so phones fetch the new copy after each release
+    ver = re.search(r'<meta name="build" content="([^"]*)">', h).group(1).replace(':', '').replace('-', '')
+    h += f'<link rel="stylesheet" href="/pages.css?v={ver}">\n</head>\n'
     cur = '/' + slug
     out = (h + f'<body class="page-inner page-{slug}">\n' + localise_links(top, cur) + '\n<div class="navspace" aria-hidden="true"></div>\n'
            + '<main id="main" class="page">\n' + body + '\n</main>\n\n'
            + localise_links(footer, cur) + '\n' + callbar.replace('callbar glass away', 'callbar glass').replace('href="#book"', 'href="/#book"') + '\n'
-           + '<script src="/site.js" defer></script>\n</body>\n</html>\n')
+           + f'<script src="/site.js?v={ver}" defer></script>\n</body>\n</html>\n')
     open(os.path.join(ROOT, slug + '.html'), 'w', encoding='utf-8').write(out)
     return out
 

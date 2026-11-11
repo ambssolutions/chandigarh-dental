@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-11T00:33:22Z">
+<meta name="build" content="2026-11-11T00:46:40Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>(function(){var d=document.documentElement,f;try{f=self!==top}catch(e){f=true}if(!f)return;/* inside an embedding viewer 100svh can be wrong, so use the real height there */var w=innerWidth;function set(){d.style.setProperty('--vh0',innerHeight+'px')}set();addEventListener('load',set);addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;set()}})})();try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -585,9 +585,10 @@ footer .row a{text-decoration:underline;text-underline-offset:.25em}
 /* phone menu and settings */
 html.text-lg{font-size:112.5%}
 .menubtn{display:none}
-.menubtn path{transition:transform .35s ease;transform-origin:12px 12px}
-.menubtn[aria-expanded="true"] .l1{transform:translateY(4px) rotate(45deg)}
-.menubtn[aria-expanded="true"] .l2{transform:translateY(-4px) rotate(-45deg)}
+/* the close mark is drawn, not made by rotating the two lines: rotated lines landed off-centre in some phone browsers and were clipped */
+.menubtn svg{overflow:visible}
+.menubtn .lx,.menubtn[aria-expanded="true"] .l1,.menubtn[aria-expanded="true"] .l2{display:none}
+.menubtn[aria-expanded="true"] .lx{display:inline}
 .msheet{position:fixed;z-index:49;top:calc(env(safe-area-inset-top,0px) + 5rem);left:.8rem;right:.8rem;max-width:30rem;margin-inline:auto;max-height:calc(100svh - 6.2rem);overflow:auto;overscroll-behavior:contain;background:var(--bg2);border:1px solid var(--line);border-radius:var(--rad);box-shadow:var(--shadow);padding:.6rem 1.1rem 1.1rem}
 .msheet[hidden]{display:none}
 .mlinks{list-style:none;margin:0;padding:0}
@@ -1518,7 +1519,7 @@ html.anim .rv>p{--td:.34s}
       <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true" lang="en">EN</button><button type="button" data-l="pa" aria-pressed="false" lang="pa" aria-label="ਪੰਜਾਬੀ">ਪੰ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi" aria-label="हिन्दी">हि</button></div>
       <button class="icon-btn mic" id="mic" type="button" aria-label="Ask by voice" aria-pressed="false" aria-controls="vpanel" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
       <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.800z"/></svg></button>
-      <button class="icon-btn menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 8h16"/><path class="l2" d="M4 16h16"/></svg></button>
+      <button class="icon-btn menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 8h16"/><path class="l2" d="M4 16h16"/><path class="lx" d="M6 6l12 12M18 6L6 18"/></svg></button>
       <a class="icon-btn navwa" href="https://wa.me/919915510261" target="_blank" rel="noopener" aria-label="WhatsApp +91 99155 10261"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a>
       <a class="btn solid sm navphone" id="navcall" href="tel:+919915510261" aria-label="Call +91 99155 10261"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.100 4.200 2 2 0 014.100 2h3a2 2 0 012 1.700c.1 1 .4 1.900.7 2.800a2 2 0 01-.5 2.100L8.100 9.900a16 16 0 006 6l1.300-1.300a2 2 0 012.100-.4c.9.3 1.800.6 2.800.7a2 2 0 011.700 2z"/></svg><span>+91 99155 10261</span></a>
     </div>
