@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-13T00:42:40Z">
+<meta name="build" content="2026-11-13T00:56:30Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>(function(){var d=document.documentElement,f;try{f=self!==top}catch(e){f=true}if(!f)return;/* inside an embedding viewer 100svh can be wrong, so use the real height there */var w=innerWidth;function set(){d.style.setProperty('--vh0',innerHeight+'px')}set();addEventListener('load',set);addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;set()}})})();try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1503,13 +1503,14 @@ html.anim .rv>p{--td:.34s}
 .langpick{position:relative;display:none}
 .langbtn{font:700 .82rem/1 var(--f-body);letter-spacing:0}
 .langbtn span{display:none}
+.langbtn .lb-name{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 html:not([lang="hi"]):not([lang="pa"]) .langbtn [data-c="en"],html[lang="pa"] .langbtn [data-c="pa"],html[lang="hi"] .langbtn [data-c="hi"]{display:inline}
 .langmenu{position:absolute;top:calc(100% + .7rem);right:0;z-index:60;flex-direction:column;gap:2px;padding:.35rem;min-width:9.5rem;border-radius:1.1rem;background:var(--bg2);box-shadow:0 18px 40px -12px rgba(0,0,0,.35)}
 .langmenu[hidden]{display:none}
 .langmenu button{width:100%;min-height:2.75rem;font-size:.95rem;padding:0 .9rem;border-radius:.8rem}
 @media(max-width:1060px){.langpick{display:block}}
 @media(max-width:400px){.nav .acts{gap:.3rem}.nav .brand{min-width:0}.nav .brand span{overflow:hidden;text-overflow:ellipsis}}
-@media(max-width:345px){.nav .brand{gap:.4rem}.nav .brand span{font-size:.86rem}}
+@media(max-width:345px){.nav .brand{gap:.4rem}.nav .brand span{font-size:.76rem}.nav .acts{gap:.2rem}.nav .icon-btn{width:2.375rem;height:2.375rem;min-width:0;min-height:0}}
 </style>
 </head>
 <body>
@@ -1528,7 +1529,7 @@ html:not([lang="hi"]):not([lang="pa"]) .langbtn [data-c="en"],html[lang="pa"] .l
     <nav aria-label="Main" class="mainnav"><ul><li><a href="/services">Services</a></li><li><a href="#chart">Tooth chart</a></li><li><a href="#visit">Your visit</a></li><li><a href="/about">About</a></li><li><a href="#faq">Questions</a></li></ul></nav>
     <div class="acts">
       <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true" lang="en">EN</button><button type="button" data-l="pa" aria-pressed="false" lang="pa" aria-label="ਪੰਜਾਬੀ">ਪੰ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi" aria-label="हिन्दी">हि</button></div>
-      <div class="langpick"><button class="icon-btn langbtn" id="langbtn" type="button" aria-label="Language" aria-expanded="false" aria-controls="langmenu"><span data-c="en" lang="en" aria-hidden="true">EN</span><span data-c="pa" lang="pa" aria-hidden="true">ਪੰ</span><span data-c="hi" lang="hi" aria-hidden="true">हि</span></button>
+      <div class="langpick"><button class="icon-btn langbtn" id="langbtn" type="button" aria-expanded="false" aria-controls="langmenu"><span data-c="en" lang="en">EN</span><span data-c="pa" lang="pa">ਪੰ</span><span data-c="hi" lang="hi">हि</span><b class="lb-name">Language</b></button>
         <div class="lang langmenu" id="langmenu" role="group" aria-label="Language" hidden><button type="button" data-l="en" aria-pressed="true" lang="en">English</button><button type="button" data-l="pa" aria-pressed="false" lang="pa">ਪੰਜਾਬੀ</button><button type="button" data-l="hi" aria-pressed="false" lang="hi">हिन्दी</button></div></div>
       <button class="icon-btn mic" id="mic" type="button" aria-label="Ask by voice" aria-pressed="false" aria-controls="vpanel" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
       <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.800z"/></svg></button>
