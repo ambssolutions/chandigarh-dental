@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(ROOT, 'tools'))
 from content import STRINGS, DOCTORS  # noqa: E402
 
 src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
-SITE = 'https://chandigarh-dental.vercel.app'  # the live address; change here if the clinic gets its own domain
+SITE = 'https://chandigarhdentalclinics.com'  # the live address; change here if the clinic gets its own domain
 WA = 'https://wa.me/919915510261'
 TEL = 'tel:+919915510261'
 MAP = 'https://www.google.com/maps/search/?api=1&amp;query=Chandigarh+Multispeciality+Dental+Clinic+Chamkaur+Sahib'
