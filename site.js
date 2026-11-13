@@ -93,6 +93,15 @@
   var saved = null; try{ saved = localStorage.getItem('cd-lang'); }catch(e){}
   if(saved === 'hi' || saved === 'pa') apply(saved);
 
+  // ---- language list in the phone header ----
+  (function(){ var b = $('langbtn'), m = $('langmenu'); if(!b || !m) return;
+    function set(o){ m.hidden = !o; b.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+    b.addEventListener('click', function(){ set(m.hidden); });
+    m.addEventListener('click', function(e){ if(e.target.closest('button')) set(false); });
+    document.addEventListener('click', function(e){ if(!m.hidden && !m.contains(e.target) && !b.contains(e.target)) set(false); }, true);
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !m.hidden){ set(false); b.focus(); } });
+  })();
+
   // ---- floating contact bar: hidden while a section's own buttons are on screen ----
   (function(){ var bar = document.getElementById('callbar'); if(!bar) return;
     if(!('IntersectionObserver' in window)){ bar.classList.remove('away'); return; }
