@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chandigarhdentalclinics.com/sitemap.xml

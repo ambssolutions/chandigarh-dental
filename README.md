@@ -2,11 +2,11 @@
 
 Single-page website for the clinic. Everything is in one file, `index.html`. There is no build step.
 
-**Features:** interactive tooth chart, treatments carousel, live open/closed status in clinic time (IST) with a countdown, English / Hindi / Punjabi, WhatsApp booking, light and dark themes, works on phones, tablets and laptops.
+**Features:** interactive tooth chart, treatments carousel, live open/closed status in clinic time (IST) with a countdown, English / Hindi / Punjabi, WhatsApp booking, a voice assistant (English, Hindi and Punjabi), light and dark themes, works on phones, tablets and laptops.
 
 ## Put it online with GitHub Pages
 
-1. Create a repository on GitHub and upload these files (`index.html`, `README.md`, `.nojekyll`).
+1. Create a repository on GitHub and upload these files (`index.html`, `i18n.json`, `robots.txt`, `llms.txt`, `vercel.json`, `README.md`, `.nojekyll`).
 2. Open the repository's **Settings > Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, pick `main` and `/ (root)`, then **Save**.
 4. After a minute the site is live at `https://<your-user>.github.io/<repository>/`.
@@ -22,7 +22,7 @@ You can also open `index.html` by double-clicking it. It needs an internet conne
 | Address (Morinda Road, opposite the bus stand, Chamkaur Sahib 140112) | search `Morinda Road` |
 | Rating (4.1 from 9 Google reviews, as of when it was checked) and the review link | search `Average of 9 reviews` |
 | "15+ years of experience" | search `Years of experience` |
-| Hindi and Punjabi wording | the `var TR = [` translation table |
+| Hindi and Punjabi wording | `i18n.json` (English text → Hindi and Punjabi). It loads only when a visitor picks one of those languages. |
 
 The phone number, address, hours and rating match the clinic's public Google listing at the time they were checked. Keep them in step with your Google Business Profile if they change.
 
@@ -36,6 +36,23 @@ var GOOGLE = {placeId: '', apiKey: ''};
 
 Fill in the clinic's Google Place ID and a Google Maps Places API key to read the hours (including holidays) from Google. The key is visible to anyone who views the page, so restrict it to your website address in Google Cloud. Do not commit a key that is not restricted.
 
+## Doctors, reviews and photos
+
+Near the end of `index.html` there is one line to fill in:
+
+```js
+var CLINIC = {doctors: [], reviews: [], photos: []};
+```
+
+Each section ("Your dentists", "What patients say", "Inside the clinic") stays hidden until it has real entries. Only add real names, reviews the patient agreed to share, and the clinic's own photos. Never add made-up ones.
+
+## Files
+
+- `index.html`: the whole site
+- `i18n.json`: Hindi and Punjabi text
+- `robots.txt` and `llms.txt`: for search engines and AI assistants
+- `vercel.json`: deploys `main` only, adds security headers, and allows the microphone for the voice assistant
+
 ## Seeing old content after an update?
 
 - `vercel.json` tells Vercel (and browsers) to check for a new version on every visit instead of reusing an old copy. Keep it in the repository.
@@ -47,5 +64,67 @@ Fill in the clinic's Google Place ID and a Google Maps Places API key to read th
 ## Notes
 
 - Hindi and Punjabi wording was written by an AI assistant and should be checked by a native speaker.
-- The 3D tooth uses three.js, loaded from cdnjs after the page appears. The flat tooth shows first and is the fallback.
-- Fonts (Plus Jakarta Sans, Unbounded, Figtree, JetBrains Mono, plus Noto Sans for Hindi and Punjabi) come from Google Fonts.
+- The 3D tooth uses three.js from cdnjs. It loads only on laptops and desktops (mouse, wide screen, more than 4 CPU cores), after the first mouse move or scroll or after 4 seconds. Phones, tablets and data-saver connections keep the flat tooth, which keeps scrolling smooth.
+- Fonts (Unbounded for the hero headline, Plus Jakarta Sans for everything else, plus Noto Sans for Hindi and Punjabi when chosen) come from Google Fonts.
+
+## Phone menu and settings
+
+On phones and tablets the top bar shows the logo, the voice button and a menu button. The menu holds the page sections and the settings, each remembered on that device:
+
+- **Language:** English, ਪੰਜਾਬੀ, हिन्दी
+- **Theme:** Auto (follows the phone), Light or Dark
+- **Text size:** Normal or Large
+- **Voice replies:** whether the voice assistant answers out loud
+
+It also has Call and WhatsApp buttons.
+
+## Voice assistant
+
+The microphone button in the top bar listens in the language chosen on the page (English, Hindi or Punjabi) and answers out loud. It uses the browser's own speech recognition, so it works in Chrome, Edge, Samsung Internet and Safari. In browsers without it (for example Firefox) the button does not appear. Speech is turned into text by the browser's service (Google in Chrome); the clinic does not record anything.
+
+Things it understands, for example:
+
+| Say | What happens |
+|---|---|
+| "Are you open now?" / "ਕੀ ਕਲੀਨਿਕ ਹੁਣ ਖੁੱਲ੍ਹਾ ਹੈ?" | Reads the live open/closed status and hours |
+| "Book a root canal on Monday, my name is Raj" / "सोमवार को रूट कैनाल बुक करो" | Fills in the booking form and offers a "Send on WhatsApp" button |
+| "Show tooth 14" / "upper left wisdom tooth" | Picks the tooth on the chart and reads what it usually needs |
+| "Do you treat children?" / "मुझे दाँत में दर्द है" | Opens the matching question and reads the answer |
+| "Call the clinic", "WhatsApp", "Where is the clinic?" | Offers a Call, WhatsApp or map button (browsers only open these from a tap) |
+| "Switch to Punjabi", "dark mode" | Changes the language or theme |
+
+The words it listens for are in the `var W = {` and `var SVC = [` lists near the end of `index.html`. Spoken replies are in `var VT = {`.
+
+## Photos
+
+The three photos in "Your visit" (`img/visit-*.webp`) are free stock photos from Pexels (Pexels licence: free to use, no attribution required), labelled on the page as "Illustrative photos". They are not photos of this clinic. Only photos of Indian people, or photos without people, are used. Replace them with the clinic's own photos when available, using new file names and updating the `srcset` in `index.html`. Files in `img/` and `fonts/` are cached by browsers for a year, so a changed file must get a new name.
+
+- `visit-checkup`: pexels.com/photo/8224633 (Lakhinandan Borah, North Lakhimpur, Assam, India)
+- `visit-room`: pexels.com/photo/8224629 (same photographer and shoot)
+- `visit-implant`: pexels.com/photo/6502343 (implant model, no people)
+
+## Pages
+
+- `index.html`: the home page (hero, treatments, tooth chart, your visit, booking, questions).
+- `services.html` (`/services`): every treatment explained, each with "Ask about this", which opens the home booking form with that treatment selected (`/?svc=...#book`).
+- `about.html` (`/about`): the clinic, opening hours and how to find it.
+
+The inner pages are generated from `index.html`, so their header, menu, footer, styles and settings always match the home page. After changing `index.html` (or the page text in `tools/content.py` and `tools/build-pages.py`), rebuild them:
+
+```
+python3 tools/build-pages.py
+```
+
+Their own styles are in `pages.css` and their behaviour (theme, text size, menu, language) in `site.js`. New English text on these pages needs a Hindi and Punjabi line in `tools/content.py`; the build adds it to `i18n.json`.
+
+### Services page images
+
+`img/svc-*.webp` are AI-generated illustrations (Figma AI image generation), one per treatment, made for this site. People shown are Indian, as the clinic asked. The page says so under the treatment links ("Photos on this page are AI-generated illustrations, not photos of the clinic"). Replace them with the clinic's own photos when available, using new file names (images are cached for a year).
+
+## Launch notes
+
+- Live address: set as `SITE` in `tools/build-pages.py` and in the canonical / `og:url` / `og:image` tags near the top of `index.html`. If the clinic gets its own domain, change both and rebuild.
+- `sitemap.xml`, `robots.txt` and `404.html` are written by `python3 tools/build-pages.py`.
+- Sharing preview: `img/og-cover.jpg` (1200×630). Home-screen icon: `img/apple-touch-icon.png`.
+- Buttons: one system. `.btn` (52px high), `.btn.solid` for the main action, `.btn.sm` for small utility buttons. The main action is always worded "Book an appointment".
+- Floating bar: WhatsApp and Call on phones, "Book an appointment" on laptops. It hides while a section's own buttons are on screen.
