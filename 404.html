@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-14T01:35:01Z">
+<meta name="build" content="2026-11-14T01:48:25Z">
 <meta name="description" content="This page does not exist or has moved.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>(function(){var d=document.documentElement,f;try{f=self!==top}catch(e){f=true}if(!f)return;/* inside an embedding viewer 100svh can be wrong, so use the real height there */var w=innerWidth;function set(){d.style.setProperty('--vh0',innerHeight+'px')}set();addEventListener('load',set);addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;set()}})})();try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1575,9 +1575,18 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
 @media(max-width:700px){html.text-lg .navwrap .nav .icon-btn,html.text-lg .navwrap .langbtn{width:44px;height:44px;min-width:0;min-height:0}html.text-lg .navwrap .nav .brand span{font-size:14.5px}html.text-lg .navwrap .nav .acts{gap:5px}}
 @media(max-width:380px){html.text-lg .navwrap .nav .icon-btn,html.text-lg .navwrap .langbtn{width:41px;height:41px}html.text-lg .navwrap .nav .brand span{font-size:13.6px}html.text-lg .navwrap .nav .acts{gap:4px}}
 @media(max-width:345px){html.text-lg .navwrap .nav .icon-btn,html.text-lg .navwrap .langbtn{width:37px;height:37px}html.text-lg .navwrap .nav .brand span{font-size:11.9px}html.text-lg .navwrap .nav .brand{gap:6px}html.text-lg .navwrap .nav .acts{gap:3px}}
+/* the phone number is the call link itself: tap to call, long-press (or select) to copy */
+.copyrow .phonelink{font:700 clamp(1.4rem,3vw,1.9rem) var(--f-display);letter-spacing:-.015em;color:var(--ink);text-decoration:none;user-select:text;-webkit-user-select:text;-webkit-touch-callout:default;border-bottom:2px solid color-mix(in srgb,var(--aqua) 55%,transparent);padding-bottom:.05em}
+@media(hover:hover){.copyrow .phonelink:hover{border-bottom-color:var(--aqua)}}
+@media(max-width:700px){.copyrow .phonelink{font-size:1.45rem}}
+/* phones: the language button shows only the short code, so it never runs into the mic button at any text size */
+@media(max-width:700px){html .navwrap .langbtn{width:2.75rem;padding:0;justify-content:center}html .navwrap .langbtn .lb-globe{display:none}}
+@media(max-width:700px){html.text-lg .navwrap .langbtn{width:44px}}
+@media(max-width:380px){html.text-lg .navwrap .langbtn{width:41px}}
+@media(max-width:345px){html.text-lg .navwrap .langbtn{width:37px}html .navwrap .langbtn{width:2.375rem}}
 </style>
 <meta name="page-title-key" content="Page not found">
-<link rel="stylesheet" href="/pages.css?v=20261114T013501Z">
+<link rel="stylesheet" href="/pages.css?v=20261114T014825Z">
 <script>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;d.classList.add('anim');setTimeout(function(){if(!window.cdReveal)d.classList.remove('anim')},3500)})();</script>
 </head>
 <body class="page-inner page-404">
@@ -1640,6 +1649,6 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
   <div class="row"><span>© <span id="yr"></span> Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib</span><span>Proudly designed by <a href="https://ambs.co.nz" target="_blank" rel="noopener">AMBS Solutions</a></span></div>
 </div></footer>
 <nav class="callbar glass" id="callbar" aria-label="Quick contact"><a class="btn" id="wabtn" href="https://wa.me/919915510261" target="_blank" rel="noopener">WhatsApp</a><a class="btn solid" id="callbtn" href="tel:+919915510261">Call</a><a class="btn solid pinbook" href="/#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M8 2.5v4M16 2.5v4M3 10h18M9 15l2 2 4-4"/></svg>Book an appointment</a></nav>
-<script src="/site.js?v=20261114T013501Z" defer></script>
+<script src="/site.js?v=20261114T014825Z" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,viewport-fit=cover">
-<meta name="build" content="2026-11-14T01:35:01Z">
+<meta name="build" content="2026-11-14T01:48:25Z">
 <meta name="description" content="Chandigarh Multispeciality Dental Clinic, Chamkaur Sahib. Root canal, laser dentistry, braces, tooth reshaping and oral surgery. Open Mon-Sat 10 AM to 7 PM.">
 <style>html.i18n-wait body{visibility:hidden}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>(function(){var d=document.documentElement,f;try{f=self!==top}catch(e){f=true}if(!f)return;/* inside an embedding viewer 100svh can be wrong, so use the real height there */var w=innerWidth;function set(){d.style.setProperty('--vh0',innerHeight+'px')}set();addEventListener('load',set);addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;set()}})})();try{var sl=localStorage.getItem('cd-lang');if(sl==='hi'||sl==='pa'){document.documentElement.classList.add('i18n-wait');setTimeout(function(){document.documentElement.classList.remove('i18n-wait')},2000);var lk=document.createElement('link');lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family='+(sl==='hi'?'Noto+Sans+Devanagari':'Noto+Sans+Gurmukhi')+':wght@400;500;600;700;800&display=swap';document.head.appendChild(lk);document.documentElement.lang=sl;}var t=localStorage.getItem('cd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('cd-text')==='large')document.documentElement.classList.add('text-lg');}catch(e){}</script>
@@ -1578,6 +1578,15 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
 @media(max-width:700px){html.text-lg .navwrap .nav .icon-btn,html.text-lg .navwrap .langbtn{width:44px;height:44px;min-width:0;min-height:0}html.text-lg .navwrap .nav .brand span{font-size:14.5px}html.text-lg .navwrap .nav .acts{gap:5px}}
 @media(max-width:380px){html.text-lg .navwrap .nav .icon-btn,html.text-lg .navwrap .langbtn{width:41px;height:41px}html.text-lg .navwrap .nav .brand span{font-size:13.6px}html.text-lg .navwrap .nav .acts{gap:4px}}
 @media(max-width:345px){html.text-lg .navwrap .nav .icon-btn,html.text-lg .navwrap .langbtn{width:37px;height:37px}html.text-lg .navwrap .nav .brand span{font-size:11.9px}html.text-lg .navwrap .nav .brand{gap:6px}html.text-lg .navwrap .nav .acts{gap:3px}}
+/* the phone number is the call link itself: tap to call, long-press (or select) to copy */
+.copyrow .phonelink{font:700 clamp(1.4rem,3vw,1.9rem) var(--f-display);letter-spacing:-.015em;color:var(--ink);text-decoration:none;user-select:text;-webkit-user-select:text;-webkit-touch-callout:default;border-bottom:2px solid color-mix(in srgb,var(--aqua) 55%,transparent);padding-bottom:.05em}
+@media(hover:hover){.copyrow .phonelink:hover{border-bottom-color:var(--aqua)}}
+@media(max-width:700px){.copyrow .phonelink{font-size:1.45rem}}
+/* phones: the language button shows only the short code, so it never runs into the mic button at any text size */
+@media(max-width:700px){html .navwrap .langbtn{width:2.75rem;padding:0;justify-content:center}html .navwrap .langbtn .lb-globe{display:none}}
+@media(max-width:700px){html.text-lg .navwrap .langbtn{width:44px}}
+@media(max-width:380px){html.text-lg .navwrap .langbtn{width:41px}}
+@media(max-width:345px){html.text-lg .navwrap .langbtn{width:37px}html .navwrap .langbtn{width:2.375rem}}
 </style>
 </head>
 <body>
@@ -1789,7 +1798,7 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
     <div class="card glass rv">
       <h2>Book a visit</h2>
       <dl class="info">
-        <div><dt>Phone</dt><dd class="copyrow"><b id="phone">+91 99155 10261</b><button class="btn sm" type="button" id="copy">Copy</button></dd></div>
+        <div><dt>Phone</dt><dd class="copyrow"><a id="phone" class="phonelink" href="tel:+919915510261" aria-label="Call +91 99155 10261">+91 99155 10261</a></dd></div>
         <div><dt>Address</dt><dd>Morinda Road, Opposite Bus Stand<br>Chamkaur Sahib, Punjab 140112</dd></div>
         <div><dt>Hours</dt><dd>
           <table aria-label="Opening hours" id="hours">
@@ -2159,12 +2168,6 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
   ['name','svc','day','msg'].forEach(function(id){ $(id).addEventListener('input', updateWA); });
   $('form').addEventListener('submit', function(e){ e.preventDefault(); });
 
-  $('copy').addEventListener('click', function(){
-    var btn = this, txt = '+91 99155 10261';
-    function done(){ btn.textContent = T('Copied'); setTimeout(function(){ btn.textContent = T('Copy'); }, 1600); }
-    function fallback(){ var r = document.createRange(); r.selectNodeContents($('phone')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = T('Selected'); }
-    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fallback); } else fallback();
-  });
 
   // cross-fade big visual changes (theme, language, text size) where the browser supports it
   function fade(fn){
@@ -2308,7 +2311,7 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
   } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
 
   // ---- language engine ----
-  var nodes = [], attrEls = [], SKIP = '#opentext,#r-who,#r-title,#r-note,#r-tags,#copy,#tooth-note,#h1,#hours td:last-child,script,style,svg';
+  var nodes = [], attrEls = [], SKIP = '#opentext,#r-who,#r-title,#r-note,#r-tags,#tooth-note,#h1,#hours td:last-child,script,style,svg';
   function collect(){
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), nd;
     while((nd = walker.nextNode())){
@@ -2356,7 +2359,6 @@ html .msheet .mquick .btn{min-height:clamp(2.75rem,6.4svh,3.25rem)}
     $('h1').innerHTML = H1[l];
     document.title = LANG === 'en' ? 'Chandigarh Multispeciality Dental Clinic | Dentist in Chamkaur Sahib' : T('Chandigarh Multispeciality Dental Clinic');
     renderStatus(); renderHours();
-    $('copy').textContent = T('Copy');
     document.querySelectorAll('.quad').forEach(function(q,i){ q.dataset.label = T(QN[quads[i].q]); });
     document.querySelectorAll('.tooth').forEach(function(b){
       var n = b.dataset.n;
